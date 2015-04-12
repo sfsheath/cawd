@@ -1,0 +1,8 @@
+Package: cawd
+Title: Collected Ancient World Data 
+Version: 0.0.0.1000
+Authors@R: person("Sebsatian", "Heath", , "sebastian.heath@nyu.edu", role = c("aut", "cre"))
+Description: Collected open-licensed data for the Ancient World. Please note that the CC0 license applies to any original work inherent only in the collection of the data. Each source used is licensed by its authors. Users of this package should make sure their use of data in this package complies with the data's original license.  
+Depends: R (>= 3.1.2)
+License: CC0
+LazyData: true
