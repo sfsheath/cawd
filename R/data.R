@@ -1,16 +1,19 @@
 #' AWMC Map of Persian Empire.
+#'
 #' Available from the Ancient World Mapping Center under an CC-BY-NC License 
 #'
 #' @format SP object
 #' @source \url{http://awmc.unc.edu}
 "awmc.persian.extent.sp"
 #' AWMC Map of Roman Empire in 200 AD.
+#'
 #' Available from the Ancient World Mapping Center under an CC-BY-NC License 
 #'
 #' @format SP object
 #' @source \url{http://awmc.unc.edu}
 "awmc.roman.empire.200.sp"
 #' AWMC Map of Senatorial Provinces of the Roman Empire
+#'
 #' Available from the Ancient World Mapping Center under an CC-BY-NC License 
 #'
 #' @format SP object

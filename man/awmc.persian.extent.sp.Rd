@@ -3,8 +3,7 @@
 \docType{data}
 \name{awmc.persian.extent.sp}
 \alias{awmc.persian.extent.sp}
-\title{AWMC Map of Persian Empire.
-Available from the Ancient World Mapping Center under an CC-BY-NC License}
+\title{AWMC Map of Persian Empire.}
 \format{SP object}
 \source{
 \url{http://awmc.unc.edu}
@@ -13,7 +12,6 @@ Available from the Ancient World Mapping Center under an CC-BY-NC License}
 awmc.persian.extent.sp
 }
 \description{
-AWMC Map of Persian Empire.
 Available from the Ancient World Mapping Center under an CC-BY-NC License
 }
 \keyword{datasets}

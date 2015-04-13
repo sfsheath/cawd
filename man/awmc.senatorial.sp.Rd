@@ -3,8 +3,7 @@
 \docType{data}
 \name{awmc.senatorial.sp}
 \alias{awmc.senatorial.sp}
-\title{AWMC Map of Senatorial Provinces of the Roman Empire
-Available from the Ancient World Mapping Center under an CC-BY-NC License}
+\title{AWMC Map of Senatorial Provinces of the Roman Empire}
 \format{SP object}
 \source{
 \url{http://awmc.unc.edu}
@@ -13,7 +12,6 @@ Available from the Ancient World Mapping Center under an CC-BY-NC License}
 awmc.senatorial.sp
 }
 \description{
-AWMC Map of Senatorial Provinces of the Roman Empire
 Available from the Ancient World Mapping Center under an CC-BY-NC License
 }
 \keyword{datasets}

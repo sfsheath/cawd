@@ -3,8 +3,7 @@
 \docType{data}
 \name{awmc.roman.empire.200.sp}
 \alias{awmc.roman.empire.200.sp}
-\title{AWMC Map of Roman Empire in 200 AD.
-Available from the Ancient World Mapping Center under an CC-BY-NC License}
+\title{AWMC Map of Roman Empire in 200 AD.}
 \format{SP object}
 \source{
 \url{http://awmc.unc.edu}
@@ -13,7 +12,6 @@ Available from the Ancient World Mapping Center under an CC-BY-NC License}
 awmc.roman.empire.200.sp
 }
 \description{
-AWMC Map of Roman Empire in 200 AD.
 Available from the Ancient World Mapping Center under an CC-BY-NC License
 }
 \keyword{datasets}
