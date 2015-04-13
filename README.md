@@ -5,4 +5,4 @@ Install with
 devtools::install_github("sfsheath/cawd")
 ```
 
-See the 'data' directory for current list of R objects provided. Then '?<object name>' for limited preliminary documentation.
+See the 'data' directory for current list of R objects provided. And run data() in R to see the same but formatted.
