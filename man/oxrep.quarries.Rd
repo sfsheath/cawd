@@ -12,7 +12,7 @@
 oxrep.quarries
 }
 \description{
-First go at merging data from the downloable csv and from the JS map version. Probably not yet entirely correct. The data is downloadable from the OXREP website. I could not find an indication of license or restriction on use. Users may want to confer with the author (Ben Russell) before further distribution. The original data can be cited as Russell, B. J. (2013). Gazetteer of Stone Quarries in the Roman World. Version 1.0. Accessed (date): oxrep.classics.ox.ac.uk/databases/stone_quarries_database/
+First go at merging data from the downloable csv and from the JS map version. Probably not yet entirely correct. The data is downloadable from the OXREP website. I could not find an indication of license or restriction on use. Users may want to confer with the author (Ben Russell) before further distribution. The original data can be cited as Russell, B. J. (2013). Gazetteer of Stone Quarries in the Roman World. Version 1.0.
 }
 \keyword{datasets}
 
