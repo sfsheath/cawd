@@ -26,6 +26,11 @@
 #' @format A data frame (needs info on columns) 
 #' @source \url{http://orbis.stanford.edu}
 "orbis.edited.nodes"
+#' Oxford Roman Economy Project: Quarries.
+#'
+#' @format A data frame (needs info on columns) 
+#' @source \url{http://oxrep.classics.ox.ac.uk/databases/stone_quarries_database/}
+"oxrep.quarries"
 #' Roman Amphitheaters.
 #'
 #' Data for Roman amphitheaters.
