@@ -1,15 +1,12 @@
-require(curl)
 require(devtools)
-require(ggplot2)
-require(ggmap)
-require(lattice)
 require(plyr)
 require(dplyr) # recommended to load plyr first
+require(jsonlite)
 require(sp)
 require(spatstat)
-require(jsonlite)
 
-jamphs <- fromJSON("https://raw.githubusercontent.com/sfsheath/roman-amphitheaters/master/roman-amphitheaters.geojson")
+
+jamphs <- fromJSON("./inst/extdata//roman-amphitheaters.geojson")
 
 #jamphs <- jsonlite::fromJSON("~/Documents/roman-amphitheaters/roman-amphitheaters.geojson")
 
@@ -80,15 +77,15 @@ ramphs$nearest.third <- apply(ramphs.distances,2,sort)[4,]
 ramphs$nearest.fifth <- apply(ramphs.distances,2,sort)[6,]
 ramphs$nearest.tenth <- apply(ramphs.distances,2,sort)[11,]
 
-# calculate nearest in relation to gorbit sites (aka Orbis)
-ramphs.distances.gorbit <- spDists(as.matrix(filter(gorbit,rank >=9)[c("longitude","latitude")]),as.matrix(ramphs[c("longitude","latitude")]),longlat = TRUE)
-ramphs$gorbit.nearest9 <- apply(ramphs.distances.gorbit,2,sort)[1,]
+# calculate nearest in relation to Orbis sites
+ramphs.nearest.orbis <- spDists(as.matrix(filter(orbis.nodes,size.rank >=9)[c("longitude","latitude")]),as.matrix(ramphs[c("longitude","latitude")]),longlat = TRUE)
+ramphs$nearest.orbis9 <- apply(ramphs.nearest.orbis,2,sort)[1,]
 
-ramphs.distances.gorbit <- spDists(as.matrix(filter(gorbit,rank >=8)[c("longitude","latitude")]),as.matrix(ramphs[c("longitude","latitude")]),longlat = TRUE)
-ramphs$gorbit.nearest8 <- apply(ramphs.distances.gorbit,2,sort)[1,]
+ramphs.distances.orbis <- spDists(as.matrix(filter(orbis.nodes,size.rank >=8)[c("longitude","latitude")]),as.matrix(ramphs[c("longitude","latitude")]),longlat = TRUE)
+ramphs$nearest.orbis8 <- apply(ramphs.distances.orbis,2,sort)[1,]
 
-ramphs.distances.quarries <- spDists(as.matrix(quarries.ll[c("longitude","latitude")]),as.matrix(ramphs[c("longitude","latitude")]),longlat = TRUE)
-ramphs$quarries.nearest <- apply(ramphs.distances.quarries,2,sort)[1,]
+#ramphs.distances.quarries <- spDists(as.matrix(oxrep.quarries[c("longitude","latitude")]),as.matrix(ramphs[c("longitude","latitude")]),longlat = TRUE)
+#ramphs$quarries.nearest <- apply(ramphs.distances.quarries,2,sort)[1,]
 
 # clustering
 ramphs$kmeans.cluster <- kmeans(dplyr::select(ramphs,latitude, longitude),10)$cluster

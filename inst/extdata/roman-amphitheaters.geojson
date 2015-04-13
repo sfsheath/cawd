@@ -1,0 +1,6037 @@
+{
+  "@context":{
+    "dcterms":"http://purl.org/dc/terms/",
+    "gn":"http://www.geonames.org/ontology#",
+    "prov":"http://www.w3.org/ns/prov#",
+    "rdfs":"http://www.w3.org/2000/01/rdf-schema#",
+    "xsd":"http://www.w3.org/2001/XMLSchema#",
+
+    "@base": "http://purl.org/roman-amphitheaters/id/#",
+   
+    "Feature":{"@id":"http://geovocab.org/spatial#Feature"},
+    "FeatureCollection":{"@id":"http://example.org/vocab#FeatureCollection"},
+    "Point":{"@id":"http://geovocab.org/geometry#Point"},
+
+    "coordinates":{ "@id":"http://www.w3.org/1999/02/22-rdf-syntax-ns#value", "@container":"@list" },
+    "features":"@graph",
+    "geometry":{"@id":"http://geovocab.org/geometry#geometry"},
+    "id":"@id",
+    "properties":{ "@id":"rdfs:isDefinedBy" },
+    "type":"@type",
+
+    "buildingtype" : { "@id": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type", "@type": "@id" },
+    "capacity":{"@id":"http://dbpedia.org/property/seatingCapacity" },
+    "chronogroup": {"@id":"dcterms:coverage"},
+    "comment":{"@id":"rdfs:comment" },
+    "created":{ "@id":"dcterms:created", "@type":"xsd:gDate" },
+    "dedication": {"@id":"http://purl.org/roman-amphitheaters/ontology#dedication"},
+    "pleiades":{"@id":"gn:locatedIn","@type":"@id"},
+    "see":{"@id":"rdfs:seeAlso","@type":"@id" },
+    "source":{"@id":"prov:wasDerivedFrom","@type":"@id" },
+    "title":{"@id":"dcterms:title"},
+    "wikipedia":{"@id":"rdfs:seeAlso","@type":"@id"}
+  },
+
+  "type":"FeatureCollection",
+  "@id":"http://purl.org/roman-amphitheaters/",
+  "see": ["http://en.wikipedia.org/wiki/Roman_amphitheatre","http://en.wikipedia.org/wiki/List_of_Roman_amphitheatres"],
+  "features":[
+    {
+      "type":"Feature",
+      "id":"duraEuroposAmphitheater",
+      "properties":{
+        "title": "Amphitheater at Dura Europos",
+        "amphitheatrum": "http://amphi-theatrum.de/1449.html",
+        "buildingtype": "amphitheater",
+        "capacity": 1000,
+        "chronogroup": "Severan",
+        "comment": "Capacity and date drawn from N. Pollard's “Soldiers, Cities, and Civilians in Roman Syria”, p. 52",
+        "created": 216,
+        "dedication":["http://edh-www.adw.uni-heidelberg.de/edh/inschrift/HD023604"],
+        "dimensions":{
+          "exterior-major": 50,
+          "exterior-minor": 44,
+          "arena-major": 31,
+          "arena-minor": 25,
+          "source": "Golvin"
+          },
+        "emperor": "Septimius Severus",
+        "hypogeum": false,
+        "label": "Dura",
+        "military": true,
+        "pleiades": "http://pleiades.stoa.org/places/893989",
+        "moderncountry": "Syria"
+      },
+      "geometry": {
+        "type":"Point",
+        "coordinates":[
+          40.728926,
+          34.749855,
+          223
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"arlesAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Arles",
+        "amphitheatrum": "http://amphi-theatrum.de/1371.html",
+        "buildingtype": "amphitheater",
+        "capacity":20000,
+        "chronogroup": "Flavian",
+        "citywall": "inside",
+        "created":90,
+        "dimensions":{
+          "exterior-major": 136,
+          "exterior-minor": 107,
+          "arena-major": 47,
+          "arena-minor": 32
+          },
+        "hypogeum": true,
+        "label": "Arles",
+        "latintoponym": "Arelate",
+        "pleiades": "http://pleiades.stoa.org/places/148217",
+        "moderncountry": "France",
+        "see":"http://pleiades.stoa.org/places/148217/location-of-roman-amphitheater",
+        "wikipedia":"http://en.wikipedia.org/wiki/Arles_Amphitheatre",
+        "wilsonpopulation": 10000,
+        "youtube": ["https://www.youtube.com/watch?v=oCz-76hb1LU"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          4.631111,
+          43.677778,
+          21
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"lyonAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Lyon",
+        "amphitheatrum": "http://amphi-theatrum.de/1416.html",
+        "buildingtype": "amphitheater",
+        "capacity": 20000,
+        "chronogroup": "Second Century",
+        "comment": "The capacity refers to number of seats after the early 2nd AD century expansion. In AD 19 the capacity was under 2000.",
+        "created": 19,
+        "dimensions": {
+                "exterior-major": 105,
+                "arena-major": 67.6,
+                "arena-minor": 42,
+                "source": "http://maps.google.com"
+            },
+        "emperor": "Tiberius",
+        "hypogeum": true,
+        "label": "Lyon",
+        "latintoponym": "Lugdunum", 
+        "moderncountry": "France",
+        "pleiades": "http://pleiades.stoa.org/places/167717",
+        "wikipedia": "http://en.wikipedia.org/wiki/Amphitheatre_of_the_Three_Gauls",
+        "wilsonpopulation": 25000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          4.830556,
+          45.770556,
+          206
+        ]
+      }
+    },{
+      "type":"Feature",
+      "id":"ludusMagnusArena",
+      "properties":{
+        "title":"Ludus Magnus Arena",
+        "buildingtype": "practice-arena",
+        "chronogroup": "Imperial",
+        "created":81,
+        "label": "Ludus Magnus",
+        "pleiades": "http://pleiades.stoa.org/places/423025",
+        "moderncountry": "Italy",
+        "wikipedia":"http://en.wikipedia.org/wiki/Ludus_Magnus"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          12.494913,
+          41.889950,
+          22
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"romeFlavianAmphitheater",
+      "properties":{
+        "title":"Flavian Amphitheater at Rome",
+        "buildingtype": "amphitheater",
+        "capacity":50000,
+        "chronogroup": "Flavian",
+        "citywall": "inside",
+        "created":80,
+        "dimensions":{
+           "exterior-major": 189,
+           "exterior-minor": 156,
+           "arena-major": 83,
+           "arena-minor": 48
+           },
+        "emperor": "Vespasian",
+        "label": "Colosseum",
+        "last-use": 523,
+        "pleiades": "http://pleiades.stoa.org/places/423025",
+        "moderncountry": "Italy",
+        "see":"http://pleiades.stoa.org/places/285857974/centerpoint-of-amphitheatrum-flavium",
+        "wikipedia":"http://en.wikipedia.org/wiki/Colosseum",
+        "wilsonpopulation": 1000000,
+        "youtube": ["https://www.youtube.com/watch?v=kxwenPo1grc","https://www.youtube.com/watch?v=flXe8h3i5vc"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          12.492269,
+          41.890169,
+          22
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"romeAmphitheatrumCastrense",
+      "properties":{
+        "title":"Amphitheatrum Castrense (Rome)",
+        "buildingtype": "amphitheater",
+        "capacity":7000,
+        "chronogroup": "Severan",
+        "comment": "Brick construction.",
+        "created":218,
+        "dimensions": {
+          "exterior-major": 88,
+          "exterior-minor": 75.8
+        },
+        "emperor": "Caracalla",
+        "golvinID": "189",
+        "label": "Amph. Castrense",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/423025",
+        "wikipedia":"http://en.wikipedia.org/wiki/Amphitheatrum_Castrense"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          12.515144,
+          41.887715,
+          48
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"eleutheropolisAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Eleutheropolis",
+        "amphitheatrum": "http://amphi-theatrum.de/2397.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Second Century",
+        "capacity": 3500,
+        "dimensions": {
+          "exterior-major": 71,
+          "exterior-minor": 56,
+          "arena-major": 47,
+          "arena-minor": 38
+         },
+        "label": "Eleutheropolis",
+        "last-use": 363,
+        "moderncountry": "Israel",
+        "pleiades": "http://pleiades.stoa.org/places/687854",
+        "youtube": ["https://www.youtube.com/watch?v=bA6YNf8ZwlI"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           34.893845,
+           31.608189,
+           253
+        ],
+        "source":["http://pleiades.stoa.org/places/687854/location-of-roman-amphitheater","http://maps.google.com/"]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"pompeiiAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Pompeii",
+        "buildingtype": "amphitheater",
+        "capacity": 22000,
+        "chronogroup": "Republican",
+        "created":-80,
+        "dimensions": {
+          "exterior-major": 135,
+          "exterior-minor": 104,
+          "arena-major": 66,
+          "arena-minor": 35
+         },
+        "exclude": true,
+        "label": "Pompeii",
+        "last-use":79,
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/433032",
+        "see":["https://3dwarehouse.sketchup.com/model.html?redirect=1&mid=6971b010096197d8dfd89dd71a555b12","http://pleiades.stoa.org/places/433032/amphitheater-of-pompeii"],
+        "welch-id":"1",
+        "wikipedia":"http://en.wikipedia.org/wiki/Amphitheatre_of_Pompeii",
+        "wilsonpopulation": 11000,
+        "youtube": ["https://www.youtube.com/watch?v=bqf4bJyo3rU"],
+        "bibliography": [
+                    {
+                        "dc:bibliographicCitation": "P. Zanker, <i>Pompeii: Public and private life</i> (Cambridge, MA, 1998) 68-72.",
+                        "worldcat": "http://www.worldcat.org/oclc/39143166"
+                    },
+                    {
+                        "dc:bibliographicCitation": "K. Welch, <i>The Roman Amphitheater from its Origins to the Colosseum</i> (Cambridge, MA, 2007) 192-198.",
+                        "worldcat": "http://www.worldcat.org/oclc/39143166"
+                    }
+                ]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          14.495262,
+          40.751213,
+          21
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"meridaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Mérida",
+        "buildingtype": "amphitheater",
+        "capacity":15000,
+        "chronogroup": "Julio-Claudian",
+        "created":-8,
+        "dimensions": {
+          "exterior-major": 126,
+          "exterior-minor": 102,
+          "arena-major": 64,
+          "arena-minor": 41
+         },
+        "emperor": "Augustus",
+        "hypogeum": true,
+        "label": "Mérida",
+        "latintoponym": "Emerita Augusta",
+        "moderncountry": "Spain",
+        "pleiades": "http://pleiades.stoa.org/places/256155",
+        "wikipedia":"http://en.wikipedia.org/wiki/Mérida_amphitheatre",
+        "youtube": ["https://www.youtube.com/watch?v=g4gNhPD2dV4","https://www.youtube.com/watch?v=T3QufLdGrU0"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -6.337952,
+            38.916168,
+            231
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"newsteadAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Newstead",
+        "amphitheatrum": "http://amphi-theatrum.de/1899.html",
+        "bibliography": "http://archaeologydataservice.ac.uk/archiveDS/archiveDownload?t=arch-352-1/dissemination/pdf/vol_129/129_373_391.pdf",
+        "buildingtype": "amphitheater",
+        "capacity":1500,
+        "chronogroup": "Flavian",
+        "comment": "Date based on main period of military activity at the site.",
+        "created" : 80,
+        "dimensions": {
+          "exterior-major": 70,
+          "exterior-minor": 60,
+          "arena-major": 37,
+          "arena-minor": 23,
+          "source": "http://amphi-theatrum.de/1899.html"
+         },
+        "label": "Newstead",
+        "latintoponum": "Trimontium",
+        "military": true,
+        "moderncountry": "United Kingdom",
+        "pleiades": "http://pleiades.stoa.org/places/89304"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -2.6919,
+          55.6026,
+          83
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"conimbrigaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Conimbriga",
+        "buildingtype": "amphitheater",
+        "capacity":4000,
+        "chronogroup": "Julio-Claudian",
+        "dimensions": {
+          "exterior-major": 94,
+          "exterior-minor": 80,
+          "arena-major": 54,
+          "arena-minor": 40,
+          "source": "Golvin"
+         },
+        "created":50,
+        "label": "Conimbriga",
+        "moderncountry": "Portugal",
+        "pleiades": "http://pleiades.stoa.org/places/236443"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -8.49333,
+          40.099444,
+          100
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"cumaeAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Cumae",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Republican",
+        "created":-100,
+        "dimensions": {
+          "exterior-major": 114,
+          "exterior-minor": 84
+        },
+        "label": "Cumae",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/432808",
+        "see":"http://pleiades.stoa.org/places/432808/location-of-roman-amphitheater",
+        "welch-id":"4"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          14.056,
+          40.841847,
+          19
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"pozzuoliFlavianAmphitheater",
+      "properties":{
+        "title":"Flavian Amphitheater at Pozzuoli",
+        "buildingtype": "amphitheater",
+        "created":70,
+        "capacity": 35700,
+        "chronogroup": "Flavian",
+        "dimensions": {
+          "exterior-major": 149,
+          "exterior-minor": 116,
+          "arena-major": 74.8,
+          "arena-minor": 42,
+          "source": "Bomgardner"
+         },
+        "label": "Pozzuoli (Flavian)",
+        "moderncountry": "Italy",
+        "period": "Vespasian",
+        "pleiades": "http://pleiades.stoa.org/places/432815",
+        "wikipedia":"http://en.wikipedia.org/wiki/Flavian_Amphitheater_(Pozzuoli)",
+        "youtube": ["https://www.youtube.com/watch?v=VCCD-YeNQKk",
+           "https://www.youtube.com/watch?v=lRV_NbfLgro",
+           "https://www.youtube.com/watch?v=S4yHdPOzxck"
+           ]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          14.125315,
+          40.825929,
+          41
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"pozzuoliEarlyAmphitheater",
+      "properties":{
+        "title":"Early Amphitheater at Pozzuoli",
+        "buildingtype": "amphitheater",
+        "chronogroup":"Republican",
+        "created":-100,
+        "label": "Pozzuoli (Early)",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/432815"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          14.127615,
+          40.826239,
+          58
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"syracuseAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Syracuse",
+        "amphitheatrum": "http://amphi-theatrum.de/1514.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Julio-Claudian",
+        "dimensions": {
+          "exterior-major": 146.8,
+          "exterior-minor": 118.7,
+          "arena-major": 69.8,
+          "arena-minor": 39.7,
+           "source": "http://amphi-theatrum.de/1514.html"
+          },
+        "label": "Syracuse",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/462503",
+        "wikipedia": "http://it.wikipedia.org/wiki/Anfiteatro_romano_di_Siracusa",
+        "wilsonpopulation": 90000,
+        "youtube": ["https://www.youtube.com/watch?v=aUcjHzMZCeY"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          15.278934,
+          37.074132,
+          23
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"carthageAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Carthage",
+        "buildingtype": "amphitheater",
+        "created":100,
+        "capacity":30000,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 120,
+          "exterior-minor": 93,
+          "arena-major": 64,
+          "arena-minor": 36,
+          "source": "Golvin"
+        },
+        "label": "Carthage",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/314921",
+        "wikipedia": "http://en.wikipedia.org/wiki/Carthage_amphitheatre",
+        "wilsonpopulation": 300000,
+        "youtube": ["https://www.youtube.com/watch?v=oDiCqZCu06I"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          10.314924,
+          36.856078,
+          14
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"hadrianVillaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Hadrian's Villa at Tivoli",
+        "buildingtype": "amphitheater",
+        "private": true,
+        "chronogroup": "Hadrianic",
+        "created":120,
+        "label": "Tivoli Villa",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/423127"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          12.778929,
+          41.941708,
+          99
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"corinthAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Corinth",
+        "amphitheatrum": "http://amphi-theatrum.de/1361.html",
+        "buildingtype": "amphitheater",
+        "capacity": 14000,
+        "chronogroup": "Julius Caesar",
+        "created":-44,
+        "dimensions": {
+          "exterior-major": 98,
+          "exterior": 70,
+          "arena-major":  58,
+          "arena-minor": 30,
+          "source": "Golvin"
+         },
+        "label": "Corinth",
+        "moderncountry": "Greece",
+        "pleiades": "http://pleiades.stoa.org/places/570182",
+        "see":"http://corinth.sas.upenn.edu/gisamphitheater.html",
+        "wilsonpopulation": 80000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          22.892126,
+          37.909629,
+          98
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"marcianopolisAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Marcianopolis (Devnya)",
+        "amphitheatrum": "http://amphi-theatrum.de/1534.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Severan",
+        "capacity":4000,
+        "created":200,
+        "dimensions": {
+          "exterior-major": 70,
+          "exterior-minor": 60,
+          "arena-major": 50,
+          "arena-minor": 40,
+          "source": "Golvin"
+         },
+        "label": "Marcianopolis",
+        "moderncountry": "Bulgaria",
+        "pleiades": "http://pleiades.stoa.org/places/216878"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          27.556674,
+          43.218689,
+          120
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"porolissumAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Porolissum",
+        "amphitheatrum": "http://amphi-theatrum.de/1443.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Second Century",
+        "comment":"There was a wooden predecessor.",
+        "created":157,
+        "dimensions": {
+          "exterior-major": 84,
+          "exterior-minor": 75,
+          "arena-major": 64,
+          "arena-minor": 52
+         },
+        "label": "Porolissum",
+        "moderncountry": "Romania",
+        "pleiades": "http://pleiades.stoa.org/places/207361"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          23.154052,
+          47.177552,
+          441
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"nijmegenAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Nijmegen",
+        "amphitheatrum": "http://amphi-theatrum.de/1453.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Nijmegen",
+        "moderncountry": "Netherlands",
+        "pleiades": "http://pleiades.stoa.org/places/98921",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          5.878859,
+          51.838523,
+          46
+        ]
+      }
+    },{
+      "type":"Feature",
+      "id":"carnuntumMilitaryAmphitheater",
+      "properties":{
+        "title":"Military Amphitheater at Carnuntum",
+        "amphitheatrum": "http://amphi-theatrum.de/1430.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "First Century",
+        "capacity":8000,
+        "created":80,
+        "dimensions": {
+          "exterior-major": 99.5,
+          "exterior-minor": 81.5,
+          "arena-major": 71,
+          "arena-minor": 43
+         },
+        "label": "Carnuntum (Mil.)",
+        "military": true,
+        "moderncountry": "Austria",
+        "pleiades": "http://pleiades.stoa.org/places/128376"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          16.892619,
+          48.126824,
+          164
+        ]
+      }
+    },{
+      "type":"Feature",
+      "id":"carnuntumLudus",
+      "properties":{
+        "title":"Ludus at Carnuntum",
+        "buildingtype": "practice-arena",
+        "chronogroup": "Imperial",
+        "label": "Carnuntum Ludus",
+        "moderncountry": "Austria",
+        "pleiades": "http://pleiades.stoa.org/places/128376",
+        "see": "https://www.academia.edu/3791251/The_discovery_of_a_gladiatorial_school_at_Carnuntum",
+        "youtube": ["https://www.youtube.com/watch?v=aJFH3TCVzTk"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          16.848689,
+          48.109807,
+          185
+        ]
+      }
+    },{
+      "type":"Feature",
+      "id":"carnuntumCivilianAmphitheater",
+      "properties":{
+        "title":"Civilian Amphitheater at Carnuntum",
+        "amphitheatrum": "http://amphi-theatrum.de/1430.html",
+        "buildingtype": "amphitheater",
+        "created":100,
+        "capacity":13000,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 129,
+          "exterior-minor": 113,
+          "arena-major": 66,
+          "arena-minor": 50
+         },
+        "label": "Carnuntum (Civ.)",
+        "moderncountry": "Austria",
+        "pleiades": "http://pleiades.stoa.org/places/128376",
+        "see": "https://www.academia.edu/3791286/The_amphitheatre_of_Carnuntum_Towards_a_complete_3D_model_using_airborne_Structure_from_Motion_and_dense_image_matching",
+        "wilsonpopulation": 12000,
+        "youtube": ["https://www.youtube.com/watch?v=Z5TcbJdyEns"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          16.850943,
+          48.110019,
+          185
+        ]
+      }
+    },{
+      "type":"Feature",
+      "id":"leptisMagnaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Leptis Magna",
+        "buildingtype": "amphitheater",
+        "capacity":16000,
+        "chronogroup": "Neronian",
+        "created":56,
+        "dedication": "http://edh-www.adw.uni-heidelberg.de/edh/inschrift/HD015590",
+        "dimensions": {
+          "exterior-major": 121,
+          "exterior-minor": 111,
+          "arena-major": 57,
+          "arena-minor": 47
+         },
+        "emperor": "Nero",
+        "golvinid": "174",
+        "label": "Leptis Magna",
+        "moderncountry": "Libya",
+        "pleiades": "http://pleiades.stoa.org/places/344448",
+        "wilsonpopulation": 90000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          14.309452,
+          32.632340,
+          18
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"empuriesAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Empuries",
+        "buildingtype": "amphitheater",
+        "created":50,
+        "capacity":3300,
+        "chronogroup": "First Century",
+        "dimensions": {
+          "exterior-major": 86,
+          "exterior-minor": 54,
+          "arena-major": 71,
+          "arena-minor": 42
+         },
+        "label": "Empuries",
+        "moderncountry": "Spain",
+        "pleiades": "http://pleiades.stoa.org/places/246382"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          3.117431,
+          42.130042,
+          27
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"tarragonaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Tarragona",
+        "buildingtype": "amphitheater",
+        "created":100,
+        "capacity":15000,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 95,
+          "exterior-minor": 69.5,
+          "arena-major": 62,
+          "arena-minor": 39
+         },
+        "label": "Tarragona",
+        "moderncountry": "Spain",
+        "pleiades": "http://pleiades.stoa.org/places/246349",
+        "youtube": ["https://www.youtube.com/watch?v=Z-1Qrk5qLAE",
+          "https://www.youtube.com/watch?v=puw8pLl9vJU"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          1.258780,
+          41.114522,
+          13
+        ],
+        "source":"http://pleiades.stoa.org/places/246349/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"cagliariAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Cagliari",
+        "buildingtype": "amphitheater",
+        "capacity": 10000,
+        "chronogroup": "Second Century",
+        "created": 100,
+        "dimensions": {
+          "arena-major": 50,
+          "arena-minor": 30
+        },
+        "hypogeum": true, 
+        "label": "Cagliari",
+        "pleiades": "http://pleiades.stoa.org/places/471899",
+        "moderncountry": "Italy",
+        "wikipedia": "http://en.wikipedia.org/wiki/Roman_Amphitheatre_of_Cagliari"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          9.113228,
+          39.223908,
+          60
+        ],
+        "source": "http://maps.google.com/"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"italicaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Italica",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Second Century",
+        "created": 140,
+        "capacity": 25000,
+        "dimensions": {
+          "exterior-major": 160,
+          "exterior-minor": 136,
+          "arena-major": 70,
+          "arena-minor": 44
+         },
+        "hypogeum": true,
+        "label": "Italica",
+        "pleiades": "http://pleiades.stoa.org/places/256231",
+        "moderncountry": "Spain",
+        "see":"http://pleiades.stoa.org/places/256231/roman-amphitheater-of-italica"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -6.046742,
+          37.443893,
+          17
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"segobrigaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Segobriga",
+        "buildingtype": "amphitheater",
+        "created":90,
+        "capacity":7500,
+        "chronogroup": "Flavian",
+        "dimensions": {
+          "exterior-major": 75,
+          "exterior-minor": 64,
+          "arena-major": 47,
+          "arena-minor": 31
+         },
+        "label": "Segobria",
+        "moderncountry": "Spain",
+        "pleiades": "http://pleiades.stoa.org/places/266036",
+        "see":"http://pleiades.stoa.org/places/266036/location-of-roman-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -2.813944,
+          39.886018,
+          817
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"catiniaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Catinia",
+        "buildingtype": "amphitheater",
+        "capacity":16000,
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 90,
+          "exterior-minor": 70,
+          "arena-major": 52,
+          "arena-minor": 38,
+          "comment": "Estimates from portion visible on Google Earth."
+         },
+        "label": "Catinia",
+        "pleiades": "http://pleiades.stoa.org/places/462270",
+        "moderncountry": "Italy"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            15.085323,
+            37.507096,
+            31
+        ],
+        "source":"http://pleiades.stoa.org/places/462270/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"paestumAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Paestum",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Republican",
+        "created": -75,
+        "capacity": 4500,
+        "dimensions": {
+          "exterior-major": 79,
+          "exterior-minor": 59,
+          "arena-major": 56,
+          "arena-minor": 35,
+          "comment": "Estimates from portion visible on Google Earth."
+         },
+        "label": "Paestum",
+        "pleiades": "http://pleiades.stoa.org/places/442733",
+        "moderncountry": "Italy",
+        "welch-id": "10"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            15.006449,
+            40.422354,
+            18
+        ],
+        "source":"http://pleiades.stoa.org/places/442733/location-of-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"lunaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Luna",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 87,
+          "exterior-minor": 71,
+          "arena-major": 52,
+          "arena-minor": 34.5
+         },
+        "label": "Luna",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/403235"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            10.022386,
+            44.062656,
+            4
+        ],
+        "source":"http://pleiades.stoa.org/places/403235/location-of-roman-amphitheater-at-guildhall"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"casinumAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Casinum",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Casinum",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/432764"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+         13.823575,
+         41.482933,
+         73
+        ],
+        "source":"http://pleiades.stoa.org/places/432764/loation-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"viminaciumAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Viminacium",
+        "bibliography": "https://www.academia.edu/5679643/Roman_stone_and_clay_shot_from_the_Viminacium_amphitheatre",
+        "buildingtype": "amphitheater",
+        "capacity": 12000,
+        "chronogroup": "Second Century",
+        "dimensions": {
+            "exterior-length": 85,
+            "source": "http://maps.google.com"
+        },
+        "label": "Viminacium",
+        "moderncountry": "Serbia",
+        "pleiades": "http://pleiades.stoa.org/places/207549",
+        "wilsonpopulation": 12500
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          21.220083,
+          44.737985,
+          72
+        ],
+        "source":"http://pleiades.stoa.org/places/207549/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"flaviaSolvaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Flavia Solva",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Flavia Solva", 
+        "moderncountry": "Austria",
+        "pleiades": "http://pleiades.stoa.org/places/197273",
+        "wilsonpopulation": 7000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          15.5657773,
+          46.76715349,
+          266
+        ],
+        "source":"http://pleiades.stoa.org/places/197273/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"rusellaeAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Rusellae",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Julio-Claudian",
+        "dimensions": {
+          "exterior-major": 38,
+          "exterior-minor": 27,
+          "arena-major": 30,
+          "arena-minor": 20,
+          "source": "Golvin"
+         },
+        "label": "Rusellae",
+        "moderncountry": "Italy", 
+        "pleiades": "http://pleiades.stoa.org/places/413288",
+        "source":"http://pleiades.stoa.org/places/413288/location-of-roman-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          11.159132,
+          42.828405,
+          165
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"parisAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Paris",
+        "buildingtype": "gallo-roman-amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Paris",
+        "latintoponym": "Lutetia Parisiorum",
+        "pleiades": "http://pleiades.stoa.org/places/109126",
+        "moderncountry": "France",
+        "wilsonpopulation": 8000,
+        "youtube": ["https://www.youtube.com/watch?v=DStHFfxd_qo"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            2.352855,
+            48.845097,
+            46
+        ],
+        "source":"http://pleiades.stoa.org/places/109126/location-of-arenes-de-lutece"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"octodurusForumClaudiiVallensiumAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Octodurus/Forum Claudii Vallensium",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+"dimensions": {
+          "exterior-major": 118,
+          "exterior-minor": 106,
+          "arena-major": 74,
+          "arena-minor": 62
+         },
+        "label": "Octodorus",
+        "moderncountry": "Switzerland",
+        "pleiades": "http://pleiades.stoa.org/places/167859"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            7.073493,
+            46.094356,
+            480
+        ],
+        "source":"http://pleiades.stoa.org/places/167859/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"cyreneAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Cyrene",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "arena-major": 32.7,
+          "arena-minor": 28.8,
+          "source": "Golvin"
+         },
+        "label": "Cyrene",
+        "moderncountry": "Libya",
+        "pleiades": "http://pleiades.stoa.org/places/373778",
+        "wilsonpopulation": 25000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            21.850808,
+            32.824526,
+            550
+        ],
+        "source":"http://pleiades.stoa.org/places/373778/cyrene-main-theatre"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"libarnaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Libarna",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 88,
+          "exterior-minor": 58.7,
+          "arena-major": 66,
+          "arena-minor": 36.6,
+          "source": "Golvin"
+         },
+        "hypogeum": true,
+        "label": "Libarna",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/383694",
+        "source":"http://pleiades.stoa.org/places/383694/location-of-roman-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            8.867967,
+            44.706013,
+            225
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"luceriaNoukeriaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Luceria/Noukeria (Apoulon)",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Augustan",
+"dimensions": {
+          "exterior-major": 126.8,
+          "exterior-minor": 94.5,
+          "arena-major": 72.2,
+          "arena-minor": 43.2,
+          "source": "Golvin"
+         },
+        "label": "Luceria",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/442640"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            15.344984,
+            41.508249,
+            196
+        ],
+        "source":"http://pleiades.stoa.org/places/442640/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"avellaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Abella",
+        "amphitheatrum": "http://amphi-theatrum.de/1461.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Republican",
+        "label": "Abella",
+        "latintoponym": "Abella",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/432617"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            14.608415,
+            40.961526,
+            224
+        ],
+        "source":"http://pleiades.stoa.org/places/432617/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"nimesAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Nimes",
+        "buildingtype": "amphitheater",
+        "created": 90,
+        "capacity": 24000,
+        "chronogroup": "Flavian",
+        "citywall": "inside",
+        "dimensions": {
+           "exterior-major": 133.4,
+           "exterior-minor": 101.4,
+           "arena-major": 69.1,
+           "arena-minor": 38.4,
+           "source": "Golvin"
+        },
+        "label": "Nimes",
+        "latintoponym": "Nemausus",
+        "moderncountry": "France",
+        "pleiades": "http://pleiades.stoa.org/places/148142",
+        "youtube": ["https://www.youtube.com/watch?v=c384XQlnINo"],
+        "wilsonpopulation": 12000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            4.359599,
+            43.834876,
+            50
+        ],
+        "source":"http://pleiades.stoa.org/places/148142/arenes"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"charterhouseAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Charterhouse",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 50,
+          "exterior-minor": 39,
+          "arena-major": 35,
+          "arena-minor": 24,
+          "source": "Golvin"
+         },
+        "label": "Charterhouse",
+        "moderncountry": "United Kingdom",
+        "pleiades": "http://pleiades.stoa.org/places/79534",
+        "source":"http://pleiades.stoa.org/places/79534/location-of-roman-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -2.720301,
+            51.305437,
+            296
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"chesterAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Chester",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Chester",
+        "dimensions": {
+          "exterior-major": 95.5,
+          "exterior-minor": 86.6,
+          "arena-major": 56.7,
+          "arena-minor": 48.3,
+          "source": "Golvin"
+         },
+        "latintoponym": "Deva Victrix",
+        "moderncountry": "United Kingdom",
+        "pleiades": "http://pleiades.stoa.org/places/79420"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -2.886928,
+            53.189079,
+            23
+        ],
+        "source":"http://pleiades.stoa.org/places/79420/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"gennesAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Gennes",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Gennes",
+        "moderncountry": "France",
+        "pleiades": "http://pleiades.stoa.org/places/138371"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -0.2386057,
+          47.3352194,
+          47
+        ],
+        "source":"http://pleiades.stoa.org/places/138371/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"scythopolisNysaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Scythopolis/Nysa",
+        "buildingtype": "amphitheater-in-hippodrome",
+        "chronogroup": "Imperial",
+        "exclude": true,
+        "label": "Scythopolis",
+        "moderncountry": "Israel",
+        "pleiades": "http://pleiades.stoa.org/places/678378"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          35.501631,
+          32.498395,
+          -121
+        ],
+        "source":"http://pleiades.stoa.org/places/678378/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"scylletiumScolaciumAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Scylletium/Scolacium",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1598.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "First Century",
+        "created": 98,
+        "dimensions":{
+          "exterior-major": 88,
+          "exterior-minor": 64,
+          "source": "http://maps.google.com"
+        },
+        "emperor": "Nerva",
+        "italianregion": "region ii",
+        "label": "Scylletium",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/452439"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          16.59232919,
+          38.80688779,
+          44
+        ],
+       "source":["http://pleiades.stoa.org/places/452439/location-of-roman-amphitheater","http://maps.google.com"]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"bordeauxAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Bordeaux",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1388.html",
+        "buildingtype": "amphitheater",
+        "capacity":28700,
+        "chronogroup": "Severan",
+        "dimensions": {
+           "exterior-major": 132.3,
+           "exterior-minor": 110.6,
+           "arena-major": 69.8,
+           "arena-minor": 46.7,
+           "source": "Bomgardner"
+          },
+        "created":220,
+        "exclude": true,
+        "golvinID": "188",
+        "label": "Bordeaux",
+        "latintoponym": "Burdigala",
+        "moderncountry": "France",
+        "pleiades": "http://pleiades.stoa.org/places/138248",
+        "wilsonpopulation": 15000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           -0.582476,
+           44.847382,
+           17
+        ],
+        "source":["http://maps.google.com/","http://pleiades.stoa.org/places/138248/location-of-roman-amphitheater"]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"oudnaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Oudna",
+        "buildingtype": "amphitheater",
+        "created":120,
+        "capacity": 15000,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 96,
+          "exterior-minor": 81,
+          "arena-major": 52.5,
+          "arena-minor": 37.5,
+          "source": "Bomgardner"
+        },
+        "golvinid": "115",
+        "hypogeum": true,
+        "label": "Uthina",
+        "latintoponym": "Uthina",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/315247"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           10.169215,
+           36.608597,
+           112
+        ],
+        "source": "http://maps.google.com"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"carthagoNovaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Carthago Nova/Col. Urbs Iulia",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Carthago Nova",
+        "moderncountry": "Spain",
+        "pleiades": "http://pleiades.stoa.org/places/265849"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -0.9801609,
+          37.600645499,
+          23
+        ],
+        "source":"http://pleiades.stoa.org/places/265849/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"virunumAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Virunum",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 96,
+          "exterior-minor": 42,
+          "source": "Golvin"
+         },
+        "label": "Virunum",
+        "moderncountry": "Austria",
+        "pleiades": "http://pleiades.stoa.org/places/197583",
+        "source":"http://pleiades.stoa.org/places/197583/location-of-roman-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          14.366995899,
+          46.697877699,
+          479
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"carsulaeAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Carsulae",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Carsulae",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/413065",
+        "source":"http://pleiades.stoa.org/places/413065/location-of-roman-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          12.5596789,
+          42.6394249,
+          440
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"florenceAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Florence",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Florence",
+        "latintoponym": "Florentia",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/413138"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          11.2595198,
+          43.7687303,
+          47
+        ],
+        "source":"http://pleiades.stoa.org/places/413138/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"ocriculumAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Ocriculum",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Ocriculcum",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/413231",
+        "source":"http://pleiades.stoa.org/places/413231/location-of-roman-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          12.467190499,
+          42.4115648,
+          86
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"lixusAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Lixus",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Lixus",
+        "moderncountry": "Morocco",
+        "pleiades": "http://pleiades.stoa.org/places/275666",
+        "source":"http://pleiades.stoa.org/places/275666/location-of-roman-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -6.1084683,
+          35.19990039,
+          52
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"arezzoAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Arezzo",
+        "buildingtype": "amphitheater",
+        "created": 80,
+        "capacity": 8000,
+        "chronogroup": "Flavian",
+        "dimensions": {
+           "exterior-major": 109.4,
+           "exterior-minor": 80,
+           "arena-major": 71.9,
+           "arena-minor": 42.7,
+           "source": "Golvin"
+        },
+        "label": "Arezzo",
+        "latintoponym": "Arretium",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/413032"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           11.880370,
+           43.460491,
+           263
+        ],
+        "source":["http://pleiades.stoa.org/places/413032/location-of-roman-amphitheater","http://maps.google.com/"]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"larinumAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Larinum",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 98,
+          "exterior-minor": 86,
+          "arena-major": 57,
+          "arena-minor": 40
+         },
+        "label": "Larinum",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/442629",
+        "source":"http://pleiades.stoa.org/places/442629/location-of-roman-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          14.9159226,
+          41.8058428,
+          406
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"lucusFeroniaeAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Lucus Feroniae",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Lucus Feroniae",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/413184",
+        "source":"http://pleiades.stoa.org/places/413184/location-of-lucus-feroniae-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          12.594868,
+          42.129831,
+          52
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"allifaeAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Allifae",
+        "amphitheatrum": "http://amphi-theatrum.de/2038.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+            "exterior-major": 107,
+            "exterior-minor": 84,
+            "arena-major": 72,
+            "arena-minor": 48
+        },
+        "hypogeum": true,
+        "label": "Allifae",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/432658"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          14.334997,
+          41.325601,
+          106
+        ],
+        "source":["http://maps.google.com/","http://pleiades.stoa.org/places/432658/location-of-roman-amphitheater"]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"cimiezAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Cimiéz",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Julio-Claudian",
+        "dimensions": {
+          "exterior-major": 55,
+          "exterior-minor": 44,
+          "source": "Golvin"
+         },
+        "golvinid": "16",
+        "label": "Cimiez",
+        "latintoponym": "Cemenelum",
+        "moderncountry": "France"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          7.2752435,
+          43.71967279,
+          112
+        ],
+        "source":["http://maps.google.com","http://pleiades.stoa.org/places/157834/location-of-roman-amphitheater"]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"hydataHypsitanaForumTraianiAmphitheatre",
+      "properties":{
+        "title":"Amphitheater at Hydata Hypsitana/Forum Traiani",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Forum Traiani",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/471947",
+        "source":"http://pleiades.stoa.org/places/471947/location-of-roman-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          8.8044188,
+          39.9931239,
+          49
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"luccaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Lucca",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        
+        "label": "Lucca",
+        "latintoponym": "Luca",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/403234",
+        "source":"http://pleiades.stoa.org/places/403234/location-of-roman-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          10.505772199,
+          43.8455202,
+          19
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"hispellumAmphitheatre",
+      "properties":{
+        "title":"Amphitheater at Spello",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Spello",
+        "latintoponym": "Hispellum",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/413170",
+        "source":"http://pleiades.stoa.org/places/413170/location-of-roman-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          12.6662021,
+          42.9957909,
+          211
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"veronaAmphitheatre",
+      "properties":{
+        "title":"Amphitheater at Verona",
+        "buildingtype": "amphitheater",
+        "capacity": 30000,
+        "created":30,
+        "chronogroup": "Julio-Claudian",
+        "dimensions": {
+          "exterior-major": 152.43,
+          "exterior-minor": 123.42,
+          "arena-major": 75.68,
+          "arena-minor": 44.43,
+          "source": "Bomgardner"
+         },
+        "label": "Verona",
+        "pleiades": "http://pleiades.stoa.org/places/383816",
+        "moderncountry": "Italy",
+        "wikipedia":"https://en.wikipedia.org/wiki/Verona_Arena",
+        "source":"http://pleiades.stoa.org/places/383816/location-of-amphitheater",
+        "youtube": ["https://www.youtube.com/watch?v=CJoS5abKuYc"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          10.994350,
+          45.439040,
+          62
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"aquincumCivilAmphitheater",
+      "properties":{
+        "title":"Civil Amphitheater at Budapest",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 86.5,
+          "exterior-minor": 75.5,
+          "arena-major": 51,
+          "arena-minor": 42,
+          "source": "Golvin"
+         },
+        "label": "Aquincum (Civilian)",
+        "latintoponym": "Aquincum",
+        "moderncountry": "Hungary",
+        "pleiades": "http://pleiades.stoa.org/places/197130",
+        "created":275,
+        "wikipedia": "http://en.wikipedia.org/wiki/Aquincum_Civil_Amphitheatre",
+        "wilsonpopulation": 10000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          19.047985,
+          47.567577,
+          105
+        ],
+        "source":"http://pleiades.stoa.org/places/197130/location-of-roman-amphitheater-1"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"aquincumMilitaryAmphitheater",
+      "properties":{
+        "title":"Military Amphitheater at Budapest",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "created":150,
+        "dimensions": {
+          "exterior-major": 131,
+          "exterior-minor": 107,
+          "arena-major": 88,
+          "arena-minor": 42,
+          "source": "Golvin"
+         },
+        "label": "Aquincum (Military)",
+        "military": true,
+        "moderncountry": "Hungary",
+        "pleiades": "http://pleiades.stoa.org/places/197130",
+        "wikipedia": "http://en.wikipedia.org/wiki/Aquincum_Military_Amphitheatre"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          19.03906599,
+          47.532947,
+          101
+        ],
+        "source":"http://pleiades.stoa.org/places/197130/location-of-roman-amphitheater-2"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"aldburoughAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Aldborough",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Aldburough",
+        "latintoponym": "Isurium Brigantium",
+        "moderncountry": "United Kingdom",
+        "pleiades": "http://pleiades.stoa.org/places/89209"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -1.3796295999,
+          54.0881157,
+          41
+        ],
+        "source":"http://pleiades.stoa.org/places/89209/possible-location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"perigueuxAmphitheatre",
+      "properties":{
+        "title":"Amphitheater at Perigueux",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+         "exterior-major": 131,
+         "exterior-minor": 113
+        },
+        "label": "Perigeux",
+        "latintoponym": "Vesuna Petrucorriorum",
+        "moderncountry": "France",
+        "pleiades": "http://pleiades.stoa.org/places/138650"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          0.7133087,
+          45.183192099,
+          97
+        ],
+        "source":"http://pleiades.stoa.org/places/138650/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"cividateCamunoAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Cividate Camuno",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Cividate Camuno",
+        "latintoponym": "Civitas Camunnorum",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/383617"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          10.280644,
+          45.94381289,
+          283
+        ],
+        "source":"http://pleiades.stoa.org/places/383617/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"grumentoAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Grumento",
+        "amphitheatrum": "http://amphi-theatrum.de/1519.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+           "exterior-major": 90,
+           "exterior-minor": 70,
+           "arena-major": 60,
+           "arena-minor": 40,
+           "source": "http://amphi-theatrum.de/1519.html"
+           },
+        "label": "Grumento",
+        "latintoponym": "Grumentum",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/442603"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          15.9115794,
+          40.2876404,
+          579
+        ],
+        "source":"http://pleiades.stoa.org/places/442603/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"albaFucensAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Alba Fucens",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Julio-Claudian",
+        "dimensions": {
+          "exterior-major": 103,
+          "exterior-minor": 76,
+          "arena-major": 64,
+          "arena-minor": 37
+         },
+        "label": "Alba Fucens",
+        "latintoponym": "Alba Fucens",
+        "pleiades": "http://pleiades.stoa.org/places/413005",
+        "moderncountry": "Italy",
+        "source":"http://pleiades.stoa.org/places/413005/amphitheater-of-alba-fucens"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           13.412289,
+           42.077200,
+           977
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"colAugustaRauricaAmphitheatre",
+      "properties":{
+        "title":"Amphitheater at Col. Augusta Raurica",
+        "buildingtype": "amphitheater",
+        "created" : 200,
+        "capacity" : 6000,
+        "chronogroup": "Severan",
+        "dimensions": {
+          "exterior-major": 102,
+          "exterior-minor": 87,
+          "arena-major": 48,
+          "arena-minor": 33,
+          "source": "Golvin"
+         },
+        "label": "Aug. Raurica",
+        "moderncountry": "Switzerland",
+        "pleiades": "http://pleiades.stoa.org/places/177494",
+        "source":"http://pleiades.stoa.org/places/177494/location-of-roman-amphitheater",
+        "wilsonpopulation": 8000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           7.720610,
+           47.529294,
+           285
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"sutriumAmphitheatre",
+      "properties":{
+        "title":"Amphitheater at Sutrium",
+        "pleiades": "http://pleiades.stoa.org/places/413328",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "source":"http://pleiades.stoa.org/places/413328/location-of-roman-amphitheater",
+        "capacity":8500,
+        "chronogroup": "Republican",
+        "created":-50,
+        "label": "Sutrium",
+        "moderncountry": "Italy",
+        "welch-id": "15",
+        "youtube": ["https://www.youtube.com/watch?v=OgHl5MT95bg"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          12.2293009,
+          42.2393124,
+          271
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"sarmizegetusaAmphitheatre",
+      "properties":{
+        "title":"Amphitheater at Ulpia Traiana Sarmizegetusa",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 88,
+          "exterior-minor": 69,
+          "arena-major": 66,
+          "arena-minor": 47,
+          "source": "Golvin"
+         },
+        "label": "Sarmizegetusa",
+        "lastuse":{"date": 350, "source": "https://www.academia.edu/4276122/35917843_Dacia_Land_of_Transylvania"},
+        "latintoponym": "Ulpia Traiana Sarmizegetusa",
+        "moderncountry": "Romania",
+        "pleiades": "http://pleiades.stoa.org/places/207527",
+        "wilsonpopulation": 15000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          22.785320599,
+          45.51667729,
+          491
+        ],
+        "source":"http://pleiades.stoa.org/places/207527/location-of-roman-amphitheater"
+      }
+    },{
+      "type":"Feature",
+      "id":"salonaAmphitheatre",
+      "properties":{
+        "title":"Amphitheater at Salona",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1565.html",
+        "buildingtype": "amphitheater",
+        "capacity": 13380,
+        "chronogroup": "Second Century",
+        "created": 170,
+        "dimensions": {
+          "exterior-major": 124.75,
+          "exterior-minor": 100.65,
+          "arena-major": 64.30,
+          "arena-minor": 40.20,
+          "source": "Bomgardner"
+        },
+        "golvinid": "181",
+        "label": "Salona",
+        "moderncountry": "Croatia",
+        "pleiades": "http://pleiades.stoa.org/places/197488",
+        "source":"http://pleiades.stoa.org/places/197488/location-of-roman-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          16.473893,
+          43.5381718,
+          8
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"londonAmphitheatre",
+      "properties":{
+        "title":"Amphitheater at London",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "London",
+        "latintoponym": "Londinium",
+        "moderncountry": "United Kingdom",
+        "pleiades": "http://pleiades.stoa.org/places/79574",
+        "youtube": ["https://www.youtube.com/watch?v=qvw9xA-hTz8"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -0.092136,
+            51.515522,
+            29
+        ],
+        "source":["http://maps.google.com","http://pleiades.stoa.org/places/79574/location-of-roman-amphitheater-at-guildhall"]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"tiburAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Tibur",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Tibur",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/423081"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          12.798114,
+          41.960571,
+          248
+        ],
+        "source":"http://pleiades.stoa.org/places/423081/location-of-anfiteatro-di-bleso"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"caerleonAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Caerleon",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Caerleon",
+        "moderncountry": "United Kingdom",
+        "pleiades": "http://pleiades.stoa.org/places/79532",
+        "youtube": [
+           "https://www.youtube.com/watch?v=VIT1JAOadho",
+           "https://www.youtube.com/watch?v=vV-DCm-MFNI"
+           ]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -2.956878,
+          51.6080589,
+          13
+        ],
+        "source": ["http://maps.google.com/","http://pleiades.stoa.org/places/79532/roman-amphitheatre"]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"telesiaAmphitheatre",
+      "properties":{
+        "title":"Amphitheater at Telesia",
+        "buildingtype": "amphitheater",
+        "created": -75,
+        "capacity": 9000,
+        "chronogroup": "Republican",
+        "dimensions": {
+          "exterior-major": 112,
+          "source": "http://maps.google.com"
+        },
+        "label": "Telesia",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/433147",
+        "source":"http://pleiades.stoa.org/places/433147/location-of-roman-amphitheater",
+        "welch-id":"9"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          14.500496,
+          41.223911,
+          68
+        ]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"urbisagliaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Urbs Salvia",
+        "amphitheatrum": "http://amphi-theatrum.de/1556.html",
+        "buildingtype": "amphitheater",
+        "capacity": 5150,
+        "chronogroup": "Flavian",
+        "creation": 81,
+        "dimensions": {
+          "exterior-major": 98,
+          "exterior-minor": 71,
+          "arena-major": 59,
+          "arena-minor": 35
+        },
+        "label": "Urbs Salvia",
+        "latintoponym": "Urbs Saglia",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/413364"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           13.387224,
+           43.200877,
+           219
+        ],
+        "source":"http://pleiades.stoa.org/places/413364/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"saintesAmphitheatre",
+      "properties":{
+        "title":"Amphitheater at Saintes",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 126.4,
+          "exterior-minor": 101.6,
+          "arena-major": 65.2,
+          "arena-minor": 39.2,
+          "source": "Golvin"
+         },
+        "label": "Saintes",
+        "moderncountry": "France",
+        "pleiades": "http://pleiades.stoa.org/places/138458",
+        "youtube": ["https://www.youtube.com/watch?v=2TCI21s-bxM"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -0.6433512,
+          45.7453926,
+          20
+        ],
+        "source":"http://pleiades.stoa.org/places/138458/location-of-gallo-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"assisiAmphitheatre",
+      "properties":{
+        "title":"Amphitheater at Assisi",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Assisi",
+        "latintoponym": "Asisium",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/413037",
+        "youtube": ["https://www.youtube.com/watch?v=uLSmRRxtf4M"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+             12.620454,
+             43.071077,
+             445
+        ],
+        "source":["http://pleiades.stoa.org/places/413037/roman-amphitheater-of-asisium","http://maps.google.com"]
+      }
+    },{
+      "type":"Feature",
+      "id":"durresAmphitheatre",
+      "properties":{
+        "title":"Amphitheater at Durrës",
+        "bibliography": "http://dx.doi.org/10.1017/S1047759400013209",
+        "created" : 100,
+        "capacity" : 20000,
+        "chronogroup": "Second Century",
+        "buildingtype": "amphitheater",
+        "dimensions": {
+            "exterior-major": 132.4,
+            "exterior-minor": 113.2,
+            "arena-major": 61.4,
+            "arena-minor": 42.2,
+            "source": "http://en.wikipedia.org/wiki/Durrës_Amphitheatre"
+        },
+        "label": "Durrës",
+        "pleiades": "http://pleiades.stoa.org/places/481818",
+        "moderncountry": "Albania",
+        "wikipedia": "http://en.wikipedia.org/wiki/Durrës_Amphitheatre"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           19.445131,
+           41.312241,
+           15
+        ],
+        "source":"http://pleiades.stoa.org/places/481818/location-of-roman-amphitheater"
+      }
+    },{
+      "type":"Feature",
+      "id":"lambaesisAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Lambaesis",
+        "buildingtype": "amphitheater",
+        "capacity": 15400,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 104.6,
+          "exterior-minor": 94,
+          "arena-major": 68,
+          "arena-minor": 55,
+          "source": "Golvin"
+        },
+        "hypogeum": true,
+        "label": "Lambaesis",
+        "military": true,
+        "moderncountry": "Algeria",
+        "pleiades": "http://pleiades.stoa.org/places/334570"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          6.2599349,
+          35.4892469,
+          1170
+        ],
+        "source":"http://pleiades.stoa.org/places/334570/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"mactarisAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Mactaris",
+        "buildingtype": "amphitheater",
+        "capacity": 5000,
+        "chronogroup": "Imperial",
+        "dimensions": {
+           "exterior-major": 63.2,
+           "exterior-minor": 49.6,
+           "arena-major": 38.4,
+           "arena-minor": 24.8,
+           "source": "Bomgardner"
+        },
+        "golvinid": "119",
+        "label": "Mactaris",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/324774"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          9.2066727,
+          35.8556279,
+          911
+        ],
+        "source":"http://pleiades.stoa.org/places/324774/location-of-roman-amphitheater"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"cirencesterAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Cirencester",
+        "amphitheatrum": "http://amphi-theatrum.de/1490.html",
+        "latintoponym": "Corinium Dobunnorum",
+        "buildingtype": "amphitheater",
+        "label": "Cirencester",
+        "chronogroup": "Imperial",
+        "moderncountry": "United Kingdom",
+        "pleiades": "http://pleiades.stoa.org/places/197225",
+        "youtube": [
+            "https://www.youtube.com/watch?v=9RFDium7TYU",
+            "https://www.youtube.com/watch?v=8Nfeu_GD8KM",
+            "https://www.youtube.com/watch?v=gjrfQOxRj6k"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -1.972188,
+            51.711510,
+            119
+        ],
+        "source":["http://maps.google.com/","http://pleiades.stoa.org/places/197225/location-of-roman-amphitheater"]
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"vindonissaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Vindonissa",
+        "firstphase": {
+          "chronogroup": "Julio-Claudian",
+          "created": 50
+        },
+        "buildingtype": "amphitheater",
+        "capacity" : 11000,
+        "chronogroup": "Flavian",
+        "dimensions": {
+          "exterior-major": 112,
+          "exterior-minor": 98,
+          "arena-major": 64,
+          "arena-minor": 51
+         },
+        "golvinid": "17",
+        "label": "Vindonissa",
+        "moderncountry": "Switzerland",
+        "pleiades": "http://pleiades.stoa.org/places/177661"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           8.213605,
+           47.476290,
+           361
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"thysdrusSmallAmphitheater",
+      "properties":{
+        "title":"Small Amphitheater at Thysdrus",
+        "buildingtype": "amphitheater",
+        "created": 125,
+        "capacity": 9000,
+        "chronogroup": "Second Century",
+        "dimensions": {
+            "exterior-major": 92,
+            "exterior-minor": 72,
+            "arena-major": 60,
+            "arena-minor": 40,
+            "source": "Golvin"
+         },
+        "label": "Thysdrus (Sm.)",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/324835",
+        "youtube":["https://www.youtube.com/watch?v=bDDyEMg34Os",
+                   "https://www.youtube.com/watch?v=HGjt7TVcbAY"],
+        "wilsonpopulation": 45000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          10.707911,
+          35.290106,
+          116
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"thysdrusAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Thysdrus",
+        "buildingtype": "amphitheater",
+        "pleiades": "http://pleiades.stoa.org/places/324835",
+        "created": 238,
+        "capacity": 35000,
+        "chronogroup": "Post-Severan",
+        "dimensions": {
+           "exterior-major": 148,
+           "exterior-minor": 122,
+           "arena-major": 65,
+           "arena-minor": 39,
+           "source": "http://fr.wikipedia.org/wiki/Amphith%C3%A9%C3%A2tre_d%27El_Jem"
+          },
+        "emperor": "Gordian III",
+        "exclude": true,
+        "label": "Thysdrus (lg.)",
+        "moderncountry": "Tunisia",
+        "youtube": ["https://www.youtube.com/watch?v=bDDyEMg34Os"],
+        "wilsonpopulation": 45000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          10.706939,
+          35.29639,
+          111
+        ],
+        "source":"http://pleiades.stoa.org/places/324835/amphitheatre-of-el-jem"
+      }
+    },
+    {
+      "type":"Feature",
+      "id":"frejusAmphitheater",
+      "properties":{
+        "title":"Amphitheater Fréjus",
+        "amphitheatrum": "http://amphi-theatrum.de/1540.html",
+        "buildingtype": "amphitheater",
+        "capacity": 12000,
+        "created": 100,
+        "chronogroup": "Flavian",
+"dimensions": {
+           "exterior-major": 113.7,
+           "exterior-minor": 85.7,
+           "arena-major": 67.7,
+           "arena-minor": 39.7,
+           "source": "Golvin"
+          },
+        "label": "Fréjus",
+        "latintoponym": "Forum Julii",
+        "moderncountry": "France",
+        "pleiades": "http://pleiades.stoa.org/places/157836",
+        "wilsonpopulation": 10000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          6.728710,
+          43.434460,
+          12
+        ],
+        "source":["http://pleiades.stoa.org/places/157836/location-of-roman-amphitheater","http://maps.google.com/"]
+      }
+    },{
+      "type":"Feature",
+      "id":"gortynAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Gortyn",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Second Century",
+        "created":150,
+        "label": "Gortyn",
+        "moderncountry": "Greece",
+        "pleiades": "http://pleiades.stoa.org/places/589796"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          24.953076,
+          35.056454,
+          150
+        ]
+      }
+    },{
+      "type":"Feature",
+      "id":"leptiminusAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Leptiminus",
+        "buildingtype": "amphitheater",
+        "capacity": 9000,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 81,
+          "exterior-minor": 62,
+          "arena-major": 45,
+          "arena-minor": 26,
+          "source": ["Golvin","https://www.academia.edu/4309219/Roman_Amphitheatres_and_Spectacula_a_21st_-Century_PerspectiveArchaeopress_Publishers_of_British_Archaeological_Reports15._The_Magerius_Mosaic_Revisited"]
+        },
+        "label": "Leptiminus",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/324767"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          10.866282,
+          35.678077,
+          9
+        ]
+      }
+    },{
+      "type":"Feature",
+      "id":"miciaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Micia",
+        "buildingtype": "amphitheater",
+        "capacity": 1500,
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 56,
+          "exterior-minor": 37,
+          "arena-major": 44,
+          "arena-minor": 26,
+          "source": "Golvin"
+         },
+        "label": "Micia",
+        "moderncountry": "Romania",
+        "pleiades": "http://pleiades.stoa.org/places/207286"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          22.817310,
+          45.915008,
+          183
+        ]
+      }
+    },{
+      "type":"Feature",
+      "id":"gemellaeAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Gemellae",
+        "buildingtype": "amphitheater",
+        "capacity": 2000,
+        "chronogroup": "Second Century",
+        "created": 130,
+        "dimensions": {
+           "exterior-major": 72,
+           "exterior-minor": 52,
+           "arena-major": 52,
+           "arena-minor": 32,
+           "source": "Bomgardner"
+         },
+        "golvinID": "44",
+        "label": "Gemellae",
+        "moderncountry": "Algeria",
+        "pleiades": "http://pleiades.stoa.org/places/334553"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          5.522904,
+          34.636598,
+          83
+        ],
+        "comment": "Location is of fort as a proxy for amphitheater."
+      }
+    },{
+      "type":"Feature",
+      "id":"cherchellAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Cherchell",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Augustan",
+        "dimensions": {
+           "exterior-major": 145,
+           "exterior-minor": 78,
+           "arena-major": 98,
+           "arena-minor": 37
+        },
+        "label": "Cherchel",
+        "moderncountry": "Algeria",
+        "pleiades": "http://pleiades.stoa.org/places/295279",
+        "wilsonpopulation": 63000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          2.198958,
+          36.608780,
+          29
+        ]
+      }
+    },{
+      "type":"Feature",
+      "id":"pulaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Pula",
+        "buildingtype": "amphitheater",
+        "created":1,
+        "capacity":26000,
+        "chronogroup":"Julio-Claudian",
+        "dimensions": {
+          "exterior-major": 132.45,
+          "exterior-minor": 105.10,
+          "arena-major": 67.95,
+          "arena-minor": 41.65,
+          "height": 32.45
+         },
+        "label": "Pula",
+        "latintoponym": "Colonia Pietas Iulia Pola Pollentia Herculanea",
+        "moderncountry": "Croatia",
+        "wikipedia": "http://en.wikipedia.org/wiki/Pula_Arena",
+        "youtube": ["https://www.youtube.com/watch?v=hqTud5XxI_s","https://www.youtube.com/watch?v=YZGAZ6HFUmA","https://www.youtube.com/watch?v=oF1jrFn-5mY"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          13.850243,
+          44.873229,
+          16
+        ]
+      }
+    },{
+      "type":"Feature",
+      "id":"carmonaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Carmona",
+        "buildingtype": "amphitheater",
+        "created": -50,
+        "capacity": 8000,
+        "chronogroup":"Julius Caesar",
+        "comment": "Size is only estimate based on Welch reporting a comparison with Sutrium.",
+        "label": "Carmona",
+        "latintoponym": "Carmo",
+        "military": "yes",
+        "moderncountry": "Spain",
+        "welch-id": "17"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -5.650907,
+          37.469674,
+          223
+        ]
+      }
+    },{
+      "type":"Feature",
+      "id":"caesareaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Caesarea",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Second Century",
+        "created": 150,
+        "comment": "Date very approximate.",
+        "dimensions": {
+          "exterior-major": 134,
+          "exterior-minor": 77,
+          "arena-major": 101,
+          "arena-minor": 44,
+          "source": "Golvin"
+         },
+        "label": "Caesarea",
+        "moderncountry": "Israel",
+        "wilsonpopulation": 75000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           34.897451,
+           32.506473,
+           11
+        ]
+      }
+    },{
+      "type":"Feature",
+      "id":"pergamumAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Pergamum",
+        "buildingtype": "amphitheater",
+        "created": 100,
+        "capacity": 25000,
+        "chronogroup": "Second Century",
+        "comment": "Date very approximate.",
+        "dimensions": {
+           "exterior-major": 136.2,
+           "exterior-minor": 107.4,
+           "arena-major": 53,
+           "arena-minor": 37
+        },
+        "label": "Pergamum",
+        "moderncountry": "Turkey",
+        "wilsonpopulation": 32850
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           27.174177,
+           39.125751,
+           100
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"anazarbusAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Anazarbus",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 109,
+          "exterior-minor": 80,
+          "arena-major": 60,
+          "arena-minor": 43 
+        },
+        "label": "Anazarbus",
+        "moderncountry": "Turkey"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          35.894673,
+          37.244094,
+          42
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"antiochAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Antioch",
+        "created": -50,
+        "buildingtype": "amphitheater",
+        "chronogroup": "Republican",
+        "comment": "Location not specific.",
+        "label": "Antioch",
+        "moderncountry": "Turkey",
+        "welch-id": "19",
+        "wilsonpopulation": 250000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            36.160437,
+            36.202624,
+            89
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"cyzicusAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Cyzicus",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "comment": "Location not specific.",
+        "dimensions": {
+          "exterior-major": 150,
+          "exterior-minor": 100
+        },
+        "label": "Cyzicus",
+        "moderncountry": "Turkey",
+        "wilsonpopulation": 25200
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           27.884552,
+           40.398213,
+           54
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"sabrathaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Sabratha",
+        "buildingtype": "amphitheater",
+        "capacity" : 20700,
+        "created" : 125,
+        "chronogroup": "Second Century",
+        "dimensions": {
+           "exterior-major": 115,
+           "exterior-minor": 99,
+           "arena-major": 65,
+           "arena-minor": 49,
+           "source": "Bomgardner"
+           },
+        "golvinid": "120",
+        "label": "Sabratha",
+        "moderncountry": "Libya"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           12.494040,
+           32.803879,
+           11
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"salamisAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Salamis",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Salamis",
+        "moderncountry": "Northern Cyprus",
+        "wilsonpopulation": 20000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           33.902435,
+           35.185517,
+           6
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"paphosAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Paphos",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Paphos",
+        "moderncountry": "Cyprus",
+        "wilsonpopulation": 15000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           32.405344,
+           34.754942,
+           6
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"carmarthenAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Carmarthen",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Flavian",
+        "label": "Carmarthen",
+        "moderncountry": "United Kingdom"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           -4.296651,
+           51.862005,
+           29
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"caerwentAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Caerwent",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 63,
+          "exterior-minor": 53,
+          "arena-major": 44,
+          "arena-minor": 35,
+          "source": "Golvin"
+         },
+        "golvinid": "128",
+        "label": "Caerwent",
+        "latintoponym": "Venta Silirum",
+        "moderncountry": "United Kingdom"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           -2.766307,
+           51.612173,
+           25
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"tomen-y-murAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Tomen y Mur",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 52,
+          "exterior-minor": 46,
+          "arena-major": 35,
+          "arena-minor": 28,
+          "source": "Golvin"
+         },
+        "label": "Tomen y Mur",
+        "moderncountry": "United Kingdom"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           -3.923500,
+           52.931893,
+           295
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"thaenaeAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Thaenae",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Second Century",
+        "created" : 125,
+        "capacity" : 8700,
+        "dimensions": {
+            "exterior-major": 90,
+            "exterior-minor": 61,
+            "arena-major": 62,
+            "arena-minor": 33,
+            "source": "Bomgardner"
+        },
+        "chronogroup": "Republican",
+        "golvinID": "71",
+        "label": "Thaenae",
+        "moderncountry": "Tunisia"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           10.673126,
+           34.655481,
+           7
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"sbeitlaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Sbeitla",
+        "buildingtype": "amphitheater",
+        "created" : 160,
+        "capacity" : 6500,
+        "chronogroup": "Second Century",
+        "dimensions": {
+           "exterior-major": 72,
+           "exterior-minor": 60,
+           "arena-major": 47,
+           "arena-minor": 37,
+           "source": "Bomgardner"
+        },
+        "golvinid": "113",
+        "label": "Sbeitla",
+        "latintoponym": "Sufetula",
+        "moderncountry": "Tunisia"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           9.114582,
+           35.243617,
+           556
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"thevesteAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Theveste",
+        "buildingtype": "amphitheater",
+        "capacity" : 9400,
+        "chronogroup": "Flavian",
+        "comment": "Enlarged in late 3rd century.",
+        "dimensions": {
+           "exterior-major": 83,
+           "exterior-minor": 70,
+           "arena-major": 52.8,
+           "arena-minor": 39.5,
+           "source": "Bomgardner"
+        },
+        "label": "Theveste",
+        "moderncountry": "Algeria"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           8.123809,
+           35.401171,
+           877
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"trierAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Trier",
+        "buildingtype": "amphitheater",
+        "created" : 100,
+        "capacity" : 20000,
+        "chronogroup":"Second Century",
+        "dimensions": {
+          "exterior-major": 100,
+          "exterior-minor": 79,
+          "arena-major": 70.54,
+          "arena-minor": 48.92,
+          "source": "Golvin"
+         },
+        "hypogeum": true,
+        "label": "Trier",
+        "moderncountry": "Germany",
+        "youtube": ["https://www.youtube.com/watch?v=WYOvPyCntiY","https://www.youtube.com/watch?v=kOv5vx9S0z8","https://www.youtube.com/watch?v=dl9PAgQuSNs"],
+        "wisonpopulation": 10000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           6.649088,
+           49.748052,
+           168
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"susaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Susa",
+        "chronogroup": "Imperial",
+        "created" : -20,
+        "buildingtype": "amphitheater",
+        "dimensions": {
+          "exterior-major": 60,
+          "exterior-minor": 52,
+          "arena-major": 44,
+          "arena-minor": 36,
+          "source": "Golvin"
+         },
+        "golvinid": "15",
+        "hypogeum": false,
+        "label": "Susa",
+        "latintoponym": "Segusium",
+        "moderncountry": "Italy"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           7.044970,
+           45.133185,
+           546
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"ivreaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Ivrea",
+        "latinName": "Eporedia",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Ivrea",
+        "moderncountry": "Italy" 
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           7.887734,
+           45.467767,
+           240
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"bararusAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Bararus",
+        "buildingtype": "amphitheater",
+        "capacity": 12000,
+        "chronogroup": "Severan",
+        "comment": "Unfinished? Considered the last North African amphitheater.",
+        "created": 220,
+        "dimensions": {
+           "exterior-major": 98,
+           "exterior-minor": 73.5,
+           "arena-major": 63.75,
+           "arena-minor": 37.5,
+           "source": "Bomgardner"
+           },
+        "label": "Bararus",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/324673"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           10.791226,
+           35.211828,
+           68
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"castraAlbanaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Castra Albana",
+        "amphitheatrum": "http://amphi-theatrum.de/1567.html",
+        "buildingtype": "amphitheater",
+        "capacity": 20000,
+        "created": 212,
+        "chronogroup": "Severan",
+        "dimensions": {
+           "exterior-major": 116.5,
+           "exterior-minor": 94,
+           "arena-major": 67.5,
+           "arena-minor": 45
+        },
+        "emperor": "Septimius Severus",
+        "exclude": true,
+        "golvinID": "190",
+        "label": "Albana",
+        "military": true,
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/422885"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           12.665010,
+           41.732637,
+           454
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"sophiaAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Sophia",
+        "buildingtype": "amphitheater",
+        "capacity": 20000,
+        "created": 284,
+        "chronogroup": "Post-Severan",
+        "dimensions": {
+           "arena-major": 60.5,
+           "arena-minor": 43,
+           "source": "http://en.wikipedia.org/wiki/Amphitheatre_of_Serdica"
+        },
+        "emperor": "Diocletian",
+        "exclude": true,
+        "label": "Sophia",
+        "lastuse": 425,
+        "latintoponyn": "Ulpia Serdica",
+        "moderncountry": "Bulgaria"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           23.328650,
+           42.697178,
+           554
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"ptolemaisAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Ptolemais",
+        "buildingtype": "amphitheater",
+        "capacity": 16000,
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 89,
+          "exterior-minor": 86,
+          "arena-major": 47.5,
+          "arena-minor": 44.5,
+          "source": "Golvin"
+        },
+        "label": "Ptolemais",
+        "moderncountry": "Libya",
+        "wilsonpopulation": 30000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           20.945728,
+           32.707953,
+           12
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"toulouseAmphitheater",
+      "properties":{
+        "title":"Amphitheater at Toulouse",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "created": 50,
+        "dimensions": {
+          "exterior-major": 111,
+          "exterior-minor": 101,
+          "arena-major": 59,
+          "arena-minor": 49,
+          "source": "Golvin"
+         },
+        "label": "Toulouse",
+        "moderncountry": "France"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           1.397664,
+           43.614808,
+           149 
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"caparraAmphitheater",
+      "properties":{
+        "title": "Amphitheater at Caparra",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions":{
+          "arena-major": 30,
+          "arena-minor": 19
+         },
+        "label": "Caparra",
+        "latintoponym": "Municipium Flavium Caparense",
+        "moderncountry": "Spain"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            -6.100049,
+            40.164159,
+            405
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"cordobaAmphitheater",
+      "properties":{
+        "title": "Amphitheater at Cordoba",
+        "buildingtype": "amphitheater",
+        "chronogroup": "First Century",
+        "comment": "Discovered in 2003.",
+        "label": "Cordoba",
+        "latingtoponym": "Colonia Patricia",
+        "moderncountry": "Spain",
+        "pleiades": "http://pleiades.stoa.org/places/256128",
+        "wikimapia": "http://wikimapia.org/1560328/Roman-amphitheater"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -4.788888,
+          37.884183,
+          125
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"lillebonnAmphitheater",
+      "properties":{
+        "title": "Amphitheater at Lillebonne",
+        "buildingtype": "amphitheater",
+        "chronogroup": "First Century",
+        "capacity": 7245,
+        "dimensions": {
+          "exterior-major": 78,
+          "exterior-minor": 75,
+          "arena-major": 48,
+          "arena-minor": 45,
+          "source": "Golvin"
+         },
+        "golvinid": "19",
+        "label": "Lillebonne",
+        "latintoponym": "Iuliobona",
+        "moderncountry": "France"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          0.536724,
+          49.517759,
+          19
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"besanconAmphitheater",
+      "properties":{
+        "title": "Amphitheater at Besançon",
+        "amphitheatrum": "http://amphi-theatrum.de/1551.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Second Century",
+        "label": "Besançon",
+        "latintoponym": "Vesontio",
+        "moderncountry": "France",
+        "wilsonpopulation": 8000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          6.015942,
+          47.239027,
+          246
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"limogesAmphitheater",
+      "properties":{
+        "title": "Amphitheater at Limoges",
+        "amphitheatrum": "http://amphi-theatrum.de/1549.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Second Century",
+        "label": "Limoges",
+        "latintoponym": "Augustoritum",
+        "moderncountry": "France"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           1.251841,
+           45.830474,
+           304
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"poitiersAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Poitiers",
+        "amphitheatrum": "http://amphi-theatrum.de/1381.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions":{
+          "exterior-major": 108,
+          "exterior-minor": 88
+        },
+        "label": "Poitiers",
+        "latintoponym": "Limonum Pictonum",
+        "moderncountry": "France"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           0.339589,
+           46.578150,
+           119
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"reimsAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Reims",
+        "amphitheatrum": "http://amphi-theatrum.de/1394.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Reims",
+        "latintoponym": "Durocortorum",
+        "moderncountry": "France"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           4.018775,
+           49.261265,
+           80
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"rodezAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Rodez",
+        "amphitheatrum": "http://amphi-theatrum.de/1484.html",
+        "buildingtype": "amphitheater",
+        "capacity": 15000,
+        "chronogroup": "Imperial",
+        "golvinid": "22",
+        "label": "Rodez",
+        "latintoponym": "Segodonum",
+        "moderncountry": "France"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           2.571162,
+           44.353698,
+           611
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"milanAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Milan",
+        "amphitheatrum": "http://amphi-theatrum.de/1523.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "First Century",
+        "dimensions": {
+          "exterior-major": 155,
+          "exterior-minor": 125,
+          "arena-major": 74,
+          "arena-minor": 44,
+          "source": "Golvin"
+         },
+        "label": "Milan",
+        "latintoponym": "Mediolanum",
+        "moderncountry": "Italy"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           9.178518,
+           45.456898,
+           116
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"aquileiaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Aquileia",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "comment": "Location approximate",
+        "label": "Aquileia",
+        "latintoponym": "Aquileia",
+        "moderncountry": "Italy"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           13.370713,
+           45.768239,
+           2
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"paduaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Padua",
+        "amphitheatrum": "http://amphi-theatrum.de/1399.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Julio-Claudian",
+        "dimensions": {
+           "exterior-major": 102.5,
+           "exterior-minor": 65.5,
+           "arena-major": 76.4,
+           "arena-minor": 39.5
+        },
+        "golvinid": "90",
+        "label": "Padua",
+        "latintoponym": "Patavia",
+        "moderncountry": "Italy"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           11.879039,
+           45.411483,
+           17
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"lecceAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Lecce",
+        "amphitheatrum": "http://amphi-theatrum.de/1389.html",
+        "buildingtype": "amphitheater",
+        "capacity": 25000,
+        "chronogroup": "Imperial",
+        "dimensions": {
+           "exterior-major": 101.9,
+           "exterior-minor": 83,
+           "arena-major": 53.1,
+           "arena-minor": 34.2,
+           "source": "Golvin"
+        },
+        "label": "Lecce",
+        "latintoponym": "Lupiae",
+        "moderncountry": "Italy",
+        "wikipedia": "http://it.wikipedia.org/wiki/Anfiteatro_romano_di_Lecce"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           18.172733,
+           40.352463,
+           51
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"terminiImereseAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Termini Imerese",
+        "amphitheatrum": "http://amphi-theatrum.de/1555.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Flavian",
+        "comment": "Location approximate.",
+        "dimensions": {
+          "exterior-major": 98,
+          "exterior-minor": 75,
+          "arena-major": 53,
+          "arena-minor": 30
+        },
+        "label": "Termini",
+        "latintoponym": "Thermae Himerae",
+        "moderncountry": "Italy",
+        "wilsonpopulation": 8000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           13.695186,
+           37.983696,
+           76
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"sanBenedettoDeiMarsiAmphitheater",
+      "properties": {
+        "title": "Amphitheater at San Benedetto dei Marsi",
+        "amphitheatrum": "http://amphi-theatrum.de/1601.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "San Benedetto",
+        "latintoponym": "Marruvium",
+        "moderncountry": "Italy"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+             13.627505,
+             42.006504,
+             683
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"monteleoneAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Monteleone",
+        "amphitheatrum": "http://amphi-theatrum.de/1504.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Monteleone",
+        "latintoponym": "Trebula Mutuesca",
+        "moderncountry": "Italy"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+             12.867528,
+             42.228444,
+             495
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"bolsenaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Bolsena",
+        "amphitheatrum": "http://amphi-theatrum.de/1554.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Flavian",
+        "label": "Bolsena",
+        "latintoponym": "Volsinii Novi",
+        "moderncountry": "Italy"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           11.990158,
+           42.650243,
+           417
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"anconaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Ancona",
+        "amphitheatrum": "http://amphi-theatrum.de/1396.html",
+        "buildingtype": "amphitheater",
+        "capacity": 10000,
+        "chronogroup": "Julio-Claudian",
+        "dimensions": {
+          "exterior-major": 111,
+          "exterior-minor": 97,
+          "arena-major": 67,
+          "arena-minor": 53
+         },
+        "label": "Ancona",
+        "latintoponym": "Ancona",
+        "moderncountry": "Italy",
+        "wiki": "http://it.wikipedia.org/wiki/Anfiteatro_romano_di_Ancona"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           13.511791,
+           43.624604,
+           54
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"ascoliPicenoAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Ascoli Picenum",
+        "amphitheatrum": "http://amphi-theatrum.de/1518.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Ascoli",
+        "latintoponym": "Ascolum Picenum",
+        "moderncountry": "Italy"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           13.570767,
+           42.855655,
+           157
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"beneventoAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Benevento",
+        "amphitheatrum": "http://amphi-theatrum.de/1776.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Republican",
+        "label": "Benevento",
+        "latintoponym": "Beneventum",
+        "moderncountry": "Italy"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           14.781523,
+           41.130009,
+           166
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"calviRisortaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Calvi Risorta",
+        "amphitheatrum": "http://amphi-theatrum.de/1462.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Republican",
+        "label": "Calvi Risorto",
+        "latintoponym": "Cales",
+        "moderncountry": "Italy"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           14.137993,
+           41.202429,
+           89
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"sanVittorinoAmphitheater",
+      "properties": {
+        "title": "Amphitheater at San Vittorino",
+        "amphitheatrum": "http://amphi-theatrum.de/1557.html",
+        "buildingtype": "amphitheater",
+        "capacity": 20000,
+        "chronogroup": "First Century",
+        "dimensions": {
+          "exterior-major": 90,
+          "exterior-minor": 68,
+          "arena-major": 64,
+          "arena-minor": 42,
+          "source": "Golvin"
+        },
+        "label": "San Vittorino",
+        "latintoponym": "Amiternum",
+        "moderncountry": "Italy"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           13.306027,
+           42.400531,
+           672
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"beziersAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Béziers",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Béziers",
+        "latintoponym": "Baeterrae",
+        "moderncountry": "France",
+        "visibility": "street-plan",
+        "wilsonpopulation": 8000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           3.214026,
+           43.339589,
+           56
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"agenAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Agen",
+        "amphitheatrum": "http://amphi-theatrum.de/1552.html",
+        "buildingtype": "amphitheater",
+        "capacity": 15000,
+        "chronogroup": "Imperial",
+        "created": 215,
+        "label": "Agen",
+        "moderncountry": "France",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           0.622122,
+           44.206545,
+           52
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"narbonneAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Narbonne",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Flavian",
+        "dimensions":{"arena-major":75,"arena-minor":46.6,"exterior-major":121.6,"exterior-minor":93.2},
+        "label": "Narbonne",
+        "moderncountry": "France",
+        "visibility": "none",
+        "wilsonpopulation": 20000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           3.010181,
+           43.184873,
+           14
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"amiensAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Amiens",
+        "amphitheatrum": "http://amphi-theatrum.de/1384.html",
+        "buildingtype": "amphitheater",
+        "capactiy": 15000,
+        "chronogroup": "Second Century",
+        "golvin-id": "102",
+        "label": "Amiens",
+        "moderncountry": "France",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           2.293485,
+           49.894400,
+           32
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"meauxAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Meaux",
+        "amphitheatrum": "http://amphi-theatrum.de/2416.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Meaux",
+        "latintoponym": "Iatinum Fixtinnum",
+        "moderncountry": "France",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           2.883491,
+           48.970006,
+           50
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"chartresAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Chartres",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Chartres",
+        "latintoponym": "Autricum",
+        "moderncountry": "France",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           1.489260,
+           48.450069,
+           140
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"senlisAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Senlis",
+        "amphitheatrum": "http://amphi-theatrum.de/1483.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "First Century",
+        "dimensions": {
+          "exterior-major": 90,
+          "exterior-minor": 83,
+          "arena-major": 41.5,
+          "arena-minor": 34.45,
+          "source": "Golvin"
+         },
+        "label": "Senlis",
+        "latintoponym": "Augustomagus",
+        "moderncountry": "France",
+        "visibility": "good",
+        "wikipedia": "http://fr.wikipedia.org/wiki/Arènes_de_Senlis"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           2.575376,
+           49.205169,
+           64
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"toursAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Tours",
+        "amphitheatrum": "http://amphi-theatrum.de/1383.html",
+        "buildingtype": "amphitheater",
+        "capacity": 34000,
+        "chronogroup": "Hadrianic",
+        "comment": "Large capacity based on recent work as well described in Wikipedia.",
+        "dimensions": {
+            "exterior-major": 156,
+            "exterior-minor": 134,
+            "arena-major": 68,
+            "arena-minor": 50,
+            "source": "http://fr.wikipedia.org/wiki/Amphithéâtre_de_Tours"
+        },
+        "golvinID": "54",
+        "label": "Tours",
+        "lastuse": 350,
+        "latintoponym": "Caesarodunum Turonum",
+        "moderncountry": "France",
+        "visibility": "good",
+        "wikipedia": "http://fr.wikipedia.org/wiki/Amphithéâtre_de_Tours"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           0.696233,
+           47.395342,
+           59
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"caistorStEdmundAmphitheater",
+      "properties": {
+        "amphitheatrum": "http://amphi-theatrum.de/1986.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Caistor St. Edmund",
+        "latintoponym": "Venta Icenorum",
+        "moderncountry": "United Kingdom",
+        "title": "Amphitheater at Caistor Saint Edmund",
+        "visibility": "none",
+        "webpage": "http://www.norfarchtrust.org.uk/caistor"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+           1.288445,
+           52.579764,
+           7
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"capuaRepublicanAmphitheater",
+      "properties": {
+        "title": "Republican Amphitheater at Capua",
+        "amphitheatrum": "http://amphi-theatrum.de/2081.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Republican",
+        "label": "Capua I",
+        "latintoponym": "Capua",
+        "moderncountry": "Italy",
+        "visibility": "partial",
+        "welch-id": "2"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+             14.250309,
+            41.084593,
+            37
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"capuaImperialAmphitheater",
+      "properties": {
+        "title": "Imperial Amphitheater at Capua",
+        "amphitheatrum": "http://amphi-theatrum.de/2082.html",
+        "buildingtype": "amphitheater",
+        "capacity": 47000,
+        "chronogroup": "Flavian",
+        "dimensions": {
+          "exterior-major": 165,
+          "exterior-minor": 135,
+          "arena-major": 76.12,
+          "arena-minor": 45.83,
+          "source": "Bomgardner"
+         },
+        "hypogeum": true,
+        "label": "Capua II",
+        "latintoponym": "Capua",
+        "moderncountry": "Italy",
+        "visibility": "partial",
+        "youtube": ["https://www.youtube.com/watch?v=8q86tToFDwI","https://www.youtube.com/watch?v=93yf8t-lKGI"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+              14.250089,
+              41.085935,
+              34
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"liternoAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Literno",
+        "amphitheatrum": "http://amphi-theatrum.de/1862.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Republican",
+        "comment": "Location is incorrect. Said to be south of city wall.",
+        "label": "Literno",
+        "latintoponym": "Liternum",
+        "moderncountry": "Italy",
+        "visibility": "none",
+        "welch-id": "3"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+              14.030400,
+              40.920949,
+              9
+        ],
+        "source":"http://maps.google.com/"
+        }
+      },{
+      "type":"Feature",
+      "id":"noleAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Nole",
+        "amphitheatrum": "http://amphi-theatrum.de/1594.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Republican",
+        "label": "Nole",
+        "latintoponym": "Nola",
+        "moderncountry": "Italy",
+        "visibility": "partial",
+        "welch-id": "13"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+              14.520540,
+              40.927702,
+              35
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"silchesterAmphitheater",
+      "properties": {
+        "amphitheatrum": "http://amphi-theatrum.de/1493.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 80,
+          "exterior-minor": 70,
+          "arena-major": 49,
+          "arena-minor": 40,
+          "source": "Golvin"
+         },
+        "label": "Silchester",
+        "latintoponym": "Calleva Atrebatum",
+        "moderncountry": "United Kingdom",
+        "title": "Amphitheater at Silchester",
+        "visibility": "partial",
+        "youtube": ["https://www.youtube.com/watch?v=ScpzLOmZEXs"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                  -1.075470,
+                  51.358881,
+                  91
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"dorchesterAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Dorchester / Maumbury Henge",
+        "amphitheatrum": "http://amphi-theatrum.de/1491.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 80,
+          "exterior-minor": 77,
+          "arena-major": 58,
+          "arena-minor": 47,
+          "source": "Golvin"
+         },
+        "label": "Maumbury",
+        "latintoponym": "Durnovaria",
+        "moderncountry": "United Kingdom",
+        "visibility": "partial",
+        "website": "http://www.maumburyrings.co.uk",
+        "youtube": ["https://www.youtube.com/watch?v=ScpzLOmZEXs"]
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                  -2.440246,
+                  50.708044,
+                  78
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"bragaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Braga",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Braga",
+        "latintoponym": "Bracara Augusta",
+        "moderncountry": "Portugal",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                  -8.430075,
+                  41.546669,
+                  175
+                  
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"sisapoAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Sisapo",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Sisapo",
+        "moderncountry": "Spain",
+        "visibility": "partial"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                  -4.516667,
+                  38.645833,
+                  659
+
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"leonAmphitheater",
+      "properties": {
+        "title": "Amphitheater at León",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "León",
+        "moderncountry": "Spain",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                  -5.566944,
+                  42.598889,
+                  846
+
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"autunAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Autun",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Autun",
+        "latintoponym": "Augustodunum",
+        "moderncountry": "France",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                  4.310856,
+                  46.953003,
+                  317
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"xantenAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Xanten",
+        "amphitheatrum": "http://amphi-theatrum.de/1450.html",
+        "buildingtype": "amphitheater",
+        "capacity": 10000,
+        "chronogroup": "Imperial",
+        "dimensions": {
+           "exterior-major": 96.5,
+           "exterior-minor": 87,
+           "arena-major": 58.5,
+           "arena-minor": 49,
+           "source": "Golvin"
+        },
+        "golvinid": "167",
+        "label": "Xanten",
+        "latintoponym": "Colonia Ulpia Traiana",
+        "moderncountry": "Germany",
+        "see": "https://3dwarehouse.sketchup.com/model.html?id=16596dabb2ebd0469b2513a62f433bae",
+        "visibility": "good",
+        "wilsonpopulation": 10000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                6.451386,
+                51.667172,
+                21
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"arnsburgAmphitheater",
+      "properties": {
+        "amphitheatrum": "http://amphi-theatrum.de/1896.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Arnsburg",
+        "moderncountry": "Germany",
+        "title": "Amphitheater at Arnsburg",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                8.787954,
+                50.485657,
+                163
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"ierapetraAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Ierapetra",
+        "amphitheatrum": "http://amphi-theatrum.de/2128.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Ierapetra",
+        "moderncountry": "Greece",
+        "see": "https://www.academia.edu/1557389/Rediscovering_the_small_theatre_and_amphitheatre_of_ancient_Ierapytna_SE_Crete_",
+        "visibility": "partial"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                25.745132,
+                35.011385,
+                4
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"kunzingAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Künzing",
+        "amphitheatrum": "http://amphi-theatrum.de/1876.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Künzing",
+        "latintoponym": "Quintana",
+        "moderncountry": "Germany",
+        "primarymaterial": "wood",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                13.082821,
+                48.667088,
+                308
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"noceraSuperioreAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Nocera Superiore",
+        "amphitheatrum": "http://amphi-theatrum.de/1515.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 125,
+          "exterior-minor": 102,
+          "arena-major": 58,
+          "arena-minor": 34,
+          "source": "Golvin"
+         },
+        "label": "Nocera",
+        "latintoponym": "Nuceria Alfaterna",
+        "moderncountry": "Italy",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                14.657022,
+                40.745750,
+                50
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"bobadelaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Bobadela",
+        "amphitheatrum": "http://amphi-theatrum.de/1975.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Bobadela",
+        "moderncountry": "Portugal",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                -7.893572,
+                40.361088,
+                383
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"sopronAmphitheater",
+      "properties": {
+        "amphitheatrum": "http://amphi-theatrum.de/1975.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "moderncountry": "Hungary",
+        "label": "Sopron",
+        "latintoponym": "Scarabantia",
+        "title": "Amphitheater at Sopron",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                16.589397,
+                47.692813,
+                283
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"nyonAmphitheater",
+      "properties": {
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Nyon",
+        "latintoponym": "Colonia Iulia Equestris",
+        "moderncountry": "Switzerland",
+        "title": "Amphitheater at Nyon",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                6.241301,
+                46.383464,
+                391
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"bernAmphitheater",
+      "properties": {
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Bern",
+        "latintoponym": "Bremodorum",
+        "moderncountry": "Switzerland",
+        "title": "Amphitheater at Bern",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+                7.451179,
+                46.975715,
+                547
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"dambachAmphitheater",
+      "properties": {
+        "title": "Amphitheater at “Dambach”",
+        "amphitheatrum": "http://amphi-theatrum.de/1792.html",
+        "buildingtype": "amphitheater",
+        "certainty": "uncertain",
+        "certainty-qualifier": "function",
+        "chronogroup": "Imperial",
+        "label": "Dambach",
+        "military": true,
+        "moderncountry": "Germany",
+        "see": "http://www.deutsche-limeskommission.de/fileadmin/dlk/images/dlk/pdfs/Der_Limes_3_2009_2.pdf",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               10.583180,
+               49.104033,
+               463
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"burnumAmphitheater",
+      "properties": {
+        "amphitheatrum": "http://amphi-theatrum.de/1878.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Burnum",
+        "moderncountry": "Croatia",
+        "title": "Amphitheater at Burnum",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               16.018169,
+               44.019098,
+               250
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"gleisdorfAmphitheater",
+      "properties": {
+        "amphitheatrum": "http://amphi-theatrum.de/2424.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Gleisdorf",
+        "moderncountry": "Austria",
+        "see": "https://www.academia.edu/804203/Amphitheater_in_Noricum",
+        "title": "Amphitheater at Gleisdorf",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               15.707727,
+               47.111055,
+               365
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"skikdaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Skikda",
+        "amphitheatrum": "http://amphi-theatrum.de/1505.html",
+        "buildingtype": "amphitheater",
+        "capacity": 8000,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 77.3,
+          "exterior-minor": 58.8,
+          "arena-major": 57,
+          "arena-minor": 38.5,
+          "source": "Bomgardner"
+        },
+        "chronogroup": "Imperial",
+        "label": "Skikda",
+        "latintoponym": "Rusicade",
+        "moderncountry": "Algeria",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               6.913830,
+               36.876413,
+               38
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"bostraAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Bosra",
+        "amphitheatrum": "http://amphi-theatrum.de/2002.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Bosra",
+        "latintoponym": "Nova Trajana Bostra",
+        "moderncountry": "Syria",
+        "visibility": "partial",
+        "wilsonpopulation": 10000
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               36.479844,
+               32.517923,
+               845
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"palmyraAmphitheater",
+      "properties": {
+        "title": "Possible Amphitheater at Palmyra",
+        "buildingtype": "amphitheater",
+        "certainty": "uncertain",
+        "certainty-qualifier": "presence",
+        "chronogroup": "Imperial",
+        "label": "Palmyra",
+        "moderncountry": "Syria",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               38.273763,
+               34.553789,
+               408
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"stMarcelAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Saint Marcel",
+        "amphitheatrum": "http://amphi-theatrum.de/1618.html",
+        "buildingtype": "amphitheater",
+        "certainty": "uncertain",
+        "certainty-qualifier": "location",
+        "chronogroup": "Imperial",
+        "label": "St. Marcel",
+        "latintoponym": "Argentomagus",
+        "moderncountry": "France",
+        "see": "http://www.persee.fr/web/revues/home/prescript/article/galia_0016-4119_1968_num_26_2_2505",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               1.518328,
+               46.601549,
+               150
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"metzAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Metz",
+        "amphitheatrum": "http://amphi-theatrum.de/1395.html",
+        "buildingtype": "amphitheater",
+        "capacity": 30000,
+        "certainty": "uncertain",
+        "certainty-qualifier": "location",
+        "chronogroup": "Late1stEarly2nd",
+        "dimensions": {
+           "exterior-major": 148,
+           "exterior-minor": 125,
+           "source": "http://www.inrap.fr/preventive-archaeology/Events/Last-discoveries/p-1355-lg1-Excavation-of-the-amphitheatre-quarter-in-Metz.htm"
+        },
+        "label": "Metz",
+        "last-use": 300,
+        "moderncountry": "France",
+        "see": "http://www.inrap.fr/preventive-archaeology/Events/Last-discoveries/p-1355-lg1-Excavation-of-the-amphitheatre-quarter-in-Metz.htm",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               6.181932,
+               49.107645,
+               171
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"grandHalfAmphitheater",
+      "properties": {
+        "title": "Half Amphitheater at Grand",
+        "buildingtype": "gallo-roman-amphitheater",
+        "capacity": 17000,
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 179,
+          "arena-major": 50,
+          "arena-minor": 41
+         },
+        "label": "Grand",
+        "moderncountry": "France",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               5.49096,
+               48.385217,
+               371
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"albegnaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Albegna",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Albegna",
+        "latintoponym": "Albingaunum",
+        "moderncountry": "Italy",
+        "visibility": "partial"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               8.21089894,
+               44.043708,
+               34
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"aquinoAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Aquino",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Aquino",
+        "latintoponym": "Aquinum",
+        "moderncountry": "Italy",
+        "visibility": "partial"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+              13.691338,
+              41.494690,
+              111              
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"bourgesAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Bourges",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "comment": "Dimensions very approximate on the basis of modern street plan.",
+        "dimensions": {
+          "exterior-major": 108,
+          "exterior-minor": 70
+         },
+        "label": "Bourges",
+        "latintoponym": "Avaricum",
+        "moderncountry": "France",
+        "visibility": "street-plan"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+              2.390815,
+              47.084496,
+              133
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"chassenonAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Chassenon",
+        "buildingtype": "gallo-roman-amphitheater",
+        "chronogroup": "Imperial",
+        "comment": "No longer extant and structure may have been a theater. Dimensions from 1844 publication.",
+        "dimensions": {
+          "arena-major": 60,
+          "arena-minor": 40
+         },
+        "label": "Chassenon",
+        "latintoponym": "Cassinomagus",
+        "moderncountry": "France",
+        "see": "http://www.amis-chassenon.org/72+lamphitheatre-de-chassenon.html", 
+        "visibility": "poor"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               0.768913,
+               45.850749,
+               217
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"drevantAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Drevant",
+        "buildingtype": "gallo-roman-amphitheater",
+        "chronogroup": "Imperial",
+        "comment": "Arena oval is almost complete so very a near a “full” amphitheater.",
+        "dimensions": {
+          "exterior-major": 56,
+          "arena-major": 25
+         },
+        "label": "Drevant",
+        "latintoponym": "Derventum",
+        "moderncountry": "France",
+        "see": "http://commons.wikimedia.org/wiki/File:Drevant_Amphitheatre_Gallo-Romain.JPG",
+        "visibility": "poor"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               2.522625,
+               46.693079,
+               164
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"seressiAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Seressi",
+        "buildingtype": "amphitheater",
+        "capacity": 7200,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 76,
+          "exterior-minor": 65.2,
+          "arena-major": 51.5,
+          "arena-minor": 40.7,
+          "source": "Bomgardner"
+         },
+        "label": "Seressi",
+        "latintoponym": "Seressi",
+        "moderncountry": "Tunisia",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               9.775766,
+               36.163510,
+               471
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"chemtouAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Chemtou",
+        "buildingtype": "amphitheater",
+        "capacity": 6500,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 61,
+          "exterior-minor": 52,
+          "arena-major": 30,
+          "arena-minor": 21
+         },
+        "golvinid": "67",
+        "label": "Chemtou",
+        "latintoponym": "Simmithu",
+        "moderncountry": "Tunisia",
+        "visibility": "poor"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               8.580552,
+               36.490426,
+               171
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"bekaltaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Bekalta",
+        "buildingtype": "amphitheater",
+        "capacity": 4400,
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 80,
+          "exterior-minor": 58,
+          "arena-major": 67,
+          "arena-minor": 43,
+          "source": "Bomgardner"
+         },
+        "golvinid": "185",
+        "label": "Bekalta",
+        "latintoponym": "Thapsus",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/324827",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               11.042371,
+               35.619149,
+               3
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"sidiBouArkoubAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Sidi bou Arkoub",
+        "buildingtype": "amphitheater",
+        "capacity": 3200,
+        "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 56,
+          "exterior-minor": 38,
+          "arena-major": 38,
+          "arena-minor": 22
+         },
+        "label": "Sidi bou Arkoub",
+        "latintoponym": "Thimisua",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/315211",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               9.319260,
+               36.310778,
+               277
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"genzanoPrivateAmphitheater",
+      "properties": {
+        "title": "Private Amphitheater at Genzano",
+        "buildingtype": "amphitheater",
+        "capacity": 1300,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 61,
+          "exterior-minor": 40
+         },
+        "label": "Genzano",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/422838",
+        "private": true,
+        "see": "http://www.fastionline.org/record_view.php?fst_cd=AIAC_2694",
+        "visibility": "partial"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               12.696433,
+               41.692860,
+               370
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"ainHedjahAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Ain Hedjah",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1312.html",
+        "buildingtype": "amphitheater",
+        "capacity": 3000,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 57,
+          "exterior-minor": 42,
+          "arena-major": 43,
+          "arena-minor": 28,
+          "source": "Bomgardner"
+         },
+        "golvinid": "64",
+        "label": "Ain Hedjah",
+        "latintoponym": "Agbia",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/314857",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               9.230632,
+               36.391031,
+               412
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"uticaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Utica",
+        "amphitheatrum": "http://www.amphi-theatrum.de/2503.html",
+        "buildingtype": "amphitheater",
+        "capacity": 17100,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 118,
+          "exterior-minor": 98,
+          "arena-major": 80,
+          "arena-minor": 60,
+          "source": "Bomgardner" 
+         },
+        "golvinid": "61",
+        "label": "Utica",
+        "latintoponym": "Utica",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/315248",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               10.057188,
+               37.052472,
+               29
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"tebourbaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Thuburbo Minus",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1341.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Second Century",
+        "golvinid": "69",
+        "label": "Thuburbo Minus",
+        "latintoponym": "Thuburbo Minus",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/315219",
+        "visibility": "poor"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               9.835436,
+               36.827708,
+               43
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"hencherElKasbatAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Henchir el Kasbat",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1340.html",
+        "buildingtype": "amphitheater",
+        "capacity": 7500,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 74,
+          "exterior-minor": 61,
+          "arena-major": 46,
+          "arena-minor": 33,
+          "source": "Bomgardner"
+         },
+        "golvinid": "121",
+        "label": "Thuburbo Maius",
+        "latintoponym": "Thuburbo Maius",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/315220",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               9.905668,
+               36.398153,
+               201 
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"espejoAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Espejo",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Julius Caesar",
+        "label": "Espejo",
+        "latintoponym": "Ucubi",
+        "moderncountry": "Spain",
+        "visibility": "poor"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+               -4.554198,
+               37.683989,
+               352
+        ],
+        "source":"http://imperium.ahlfeldt.se/places/24373.html"
+      }
+    },{
+      "type":"Feature",
+      "id":"hencherZembraAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Henchir Zembra",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1346.html",
+        "buildingtype": "amphitheater",
+        "capacity": 5400,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 69,
+          "exterior-minor": 53,
+          "arena-major": 48,
+          "arena-minor": 32,
+          "source": "Bomgardner"
+         },
+        "golvinid": "70",
+        "label": "Ulissipara",
+        "latintoponym": "Ulissipara",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/324839",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+              10.441193,
+              35.958583,
+              21
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"botriaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Botria",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1311.html",
+        "buildingtype": "amphitheater",
+        "capacity": 11600,
+        "chronogroup": "Second Century",
+        "dimensions": {
+          "exterior-major": 90,
+          "exterior-minor": 86,
+          "arena-major": 58,
+          "arena-minor": 54,
+          "source": "Bomgardner"
+         },
+        "golvinid": "118",
+        "label": "Acholla",
+        "latintoponym": "Acholla",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/324653",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+             11.018944,
+             35.075962,
+             2 
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"tipasaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Tipasa",
+        "buildingtype": "amphitheater",
+        "capacity": 8300,
+        "chronogroup": "Late Second Century",
+        "dimensions": {
+          "exterior-major": 77,
+          "exterior-minor":55 ,
+          "arena-major": 57,
+          "arena-minor": 35
+         },
+        "golvinid": "130",
+        "label": "Tipasa",
+        "lastuse": 400,
+        "latintoponym": "Tipasentium",
+        "moderncountry": "Algeria",
+        "pleiades": "http://pleiades.stoa.org/places/295363",
+        "romansites": "http://www.romansites.com/anfiteatri/tipasa_tipasentium.htm",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+             2.445456,
+             36.593152,
+             16
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"bullaRegiaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Bulla Regia",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1314.html",
+        "buildingtype": "amphitheater",
+        "capacity": 8300,
+        "chronogroup": "Late Second Century",
+        "comment": "Location approximate.",
+        "dimensions": {
+          "exterior-major": 75,
+          "exterior-minor": 66,
+          "arena-major": 34,
+          "arena-minor": 30,
+          "source": "Bomgardner"
+         },
+        "golvinid": "117",
+        "label": "Bulla Regia",
+        "latintoponym": "Bulla Regia",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/314912",
+        "visibility": "poor"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+             8.762598,
+             36.564169,
+             227
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"pupputAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Pupput",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1326.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "comment": "So far, available information is incomplete. Site as proxy for location.",
+        "dimensions": {
+          "arena-major": 45,
+          "arena-minor": 36,
+          "source": "Bomgardner"
+         },
+        "label": "Pupput",
+        "latintoponym": "Pupput",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/315121",
+        "visibility": "poor"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+             10.5626,
+             36.3929,
+             4
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"siccaVeneriaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Sicca Veneria",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1329.html",
+        "buildingtype": "amphitheater",
+        "capacity": 11300,
+        "chronogroup": "Imperial",
+        "comment": "Not located. Near casbah.",
+        "dimensions": {
+          "exterior-major": 100,
+          "exterior-minor": 80,
+          "arena-major": 70,
+          "arena-minor": 50,
+          "source": "Bomgardner"
+         },
+        "label": "Sicca Veneria",
+        "latintoponym": "Sicca Veneria",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/315152",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+            8.715302,
+            36.18536115302,
+            748 
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"thibariAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Thibari",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1337.html",
+        "buildingtype": "amphitheater",
+        "capacity": 6300,
+        "chronogroup": "Imperial",
+        "comment": "Not located.",
+        "dimensions": {
+          "exterior-major": 61.2,
+          "exterior-minor": 51.5,
+          "arena-major": 30.8,
+          "arena-minor": 21,
+          "source": "Bomgardner"
+         },
+        "golvinid": "62",
+        "label": "Thibari",
+        "latintoponym": "Thibari",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/315201",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          9.083712,
+          36.504836,
+          282
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"portusOvalStructure",
+      "properties": {
+        "title": "Oval Structure at Portus",
+        "buildingtype": "oval-structure",
+        "capacity": 2000,
+        "chronogroup": "Second Century",
+        "comment": "Not certainly an Amphitheater.",
+        "label": "Portus Oval Structure",
+        "latintoponym": "Portus",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/423012",
+        "private": true,
+        "see": ["http://www.sciencedaily.com/releases/2009/09/090930194337.htm","http://timesonline.typepad.com/dons_life/2009/10/the-luxury-amphitheatre-at-portus.html"],
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+             12.258090,
+             41.781816,
+             2
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"montbouyGallRomanAmphitheater",
+      "properties": {
+        "title": "Gallo-Roman Amphitheater at Montbouy",
+        "buildingtype": "gallo-roman-amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+           "arena-major": 48,
+           "arena-minor": 31
+        },
+        "label": "Montbouy",
+        "moderncountry": "France",
+        "pleiades": "http://pleiades.stoa.org/places/138468",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+             2.819017,
+             47.872860,
+             122
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"statiliusTaurusAmphitheater",
+      "properties": {
+        "title": "Amphitheater of Statilius Taurus",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Augustan",
+        "created": -24,
+        "label": "Statilius Taurus",
+        "last-use": 64,
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/423025",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+              12.469869,
+              41.899614,
+              22
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"hisaryaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Hisarya",
+        "amphitheatrum": "http://www.amphi-theatrum.de/2003.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "label": "Hisarya",
+        "latintoponym": "Diocletianopolis",
+        "moderncountry": "Bulgaria",
+        "pleiades": "http://pleiades.stoa.org/places/216792",
+        "visibility": "good"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+              24.703104,
+              42.500071,
+              362
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"mesarafeltaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Mesarfelta",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1446.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Second Century",
+        "comment": "Specific location not known.",
+        "label": "Mesarfelta",
+        "latintoponym": "Mesareflta",
+        "moderncountry": "Algeria",
+        "pleiades": "http://pleiades.stoa.org/places/334592",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+              5.592835,
+              35.036203,
+              271
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"tigavaCastraAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Tigava Castra",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1498.html",
+        "buildingtype": "amphitheater",
+        "capacity": 2300,
+        "chronogroup": "Second Century",
+        "comment": "Specific location not known.",
+        "dimensions": {
+          "extmajor": 56,
+          "extminor": 37,
+          "arenamajor": 44,
+          "arenaminor": 26,
+          "source": "Bomgardner"
+        },
+        "golvinid": "46",
+        "label": "Tigava Castra",
+        "latintoponym": "Tigava Castra",
+        "moderncountry": "Algeria",
+        "pleiades": "http://pleiades.stoa.org/places/295357",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+              1.651389,
+              36.23195,
+              151
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"carpisAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Carpis",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1316.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "comment": "Specific location not known.",
+        "golvinid": "65",
+        "label": "Carpis",
+        "latintoponym": "Carpis",
+        "moderncountry": "Tunisia",
+        "pleiades": "http://pleiades.stoa.org/places/314920",
+        "visibility": "none"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+             10.557673,
+             36.760727,
+             29
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"altinumAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Altinum",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+           "exterior-major": 143,
+           "exterior-minor": 103,
+           "arena-major": 80,
+           "arena-minor": 58
+        },
+        "label": "Altinum",
+        "latintoponym": "Altinum",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/314920",
+        "see": "http://hdl.handle.net/10.1126/science.1174206",
+        "visibility": "none" },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+             12.399911,
+             45.548996,
+             1
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"augustaBagiennorumAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Augusta Benniorum",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Julio-Claudian",
+        "dimensions": {
+           "exterior-major": 104,
+           "exterior-minor": 78,
+           "source": "Golvin"
+        },
+        "label": "Augusta Bagiennorum",
+        "latintoponym": "Augusta Bagiennorum",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/383578",
+        "see": ["http://www.piemonte.beniculturali.it/index.php/en/i-luoghi-della-cultura/aree-archeologiche/augusta-bagiennorum",
+           "http://cipa.icomos.org/fileadmin/template/doc/ATHENS/FP025.pdf"],
+        "vici": "http://vici.org/vici/4208",
+        "visibility": "partial" },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+                7.850310,
+                44.556438,
+                340
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"aostaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Aosta",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Julio-Claudian",
+        "dimensions": {
+           "exterior-major": 150,
+           "exterior-minor": 115,
+           "source": "http://maps.google.com/"
+        },
+        "label": "Aosta",
+        "latintoponym": "Augusta Praetoria",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/383579",
+        "vici": "http://vici.org/vici/4209",
+        "visibility": "street plan" },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+               7.323481,
+               45.740914,
+               595
+        ],  
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"faleriiNoviAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Falerii Novi",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1545.html",
+        "bibliography": "http://dx.doi.org/10.1017/S0068246200000799",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Augustan",
+        "citywall": "outside",
+        "dimensions": {
+           "exterior-major": 88,
+           "exterior-minor": 66.4,
+           "arena-major": 54.3,
+           "arena-minor": 32.7
+        },
+        "golvinid": "146",
+        "label": "Falerii Novi",
+        "latintoponym": "Falerii Novi",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/413125",
+        "rockcut": true,
+        "visibility": "good"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+               12.361043,
+               42.302681,
+               198
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"riminiAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Rimini",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1404.html",
+        "buildingtype": "amphitheater",
+        "capacity": 20000,
+        "chronogroup": "Hadrianic",
+        "citywalls": "inside",
+        "comment": "Date on the basis of coins of Hadrian found in foundations.",
+        "dimensions": {
+           "exterior-major": 117.72,
+           "exterior-minor": 88.08,
+           "arena-major": 73.76,
+           "arena-minor": 42.52
+        },
+        "golvinid": "172",
+        "label": "Rimini",
+        "latintoponym": "Ariminum",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/393379",
+        "vici": "http://vici.org/vici/4205",
+        "visibility": "good"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+               12.575144,
+               44.060057,
+               5
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"imolaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Imola",
+        "bibliography": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0006%3Aalphabetic+letter%3DF%3Aentry+group%3D2%3Aentry%3Dforum-cornelii",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "comment": "Briefly mentioned in PECS via Perseus, with dimensions. Said to have been covered.",
+        "dimensions": {
+           "exterior-major": 108,
+           "exterior-minor": 81,
+           "arena-major": 67,
+           "arena-minor": 40
+        },
+        "label": "Imola",
+        "latintoponym": "Forum Cornelii",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/393424",
+        "visibility": "none"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+                 11.711992,
+                 44.353673,
+                 53
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"venosaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Venosa",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1517.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+           "exterior-major": 90,
+           "exterior-minor": 66,
+           "arena-major": 46,
+           "arena-minor": 37
+        },
+        "label": "Venosa",
+        "latintoponym": "Venusia",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/393424",
+        "visibility": "none"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+               15.826303,
+               40.969693,
+               402
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"teramoAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Teramo",
+        "amphitheatrum": "http://www.amphi-theatrum.de/1406.html",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+           "exterior-major": 73.93,
+           "exterior-minor": 56.16
+        },
+        "label": "Teramo",
+        "latintoponym": "Interamnia Praetuttiorum",
+        "moderncountry": "Italy",
+        "pleiades": "http://pleiades.stoa.org/places/413179",
+        "visibility": "partial"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+              13.703278,    
+              42.658183,
+              273
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"velleiaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Velleia",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Julio-Claudian",
+        "chronocertainty": "possible",
+        "dimensions": {
+           "exterior-major": 54.85,
+           "exterior-minor": 44.1,
+           "arena-major": 37,
+           "arena-minor": 25.5,
+           "source": "Golvin"
+        },
+        "golvinid": "14",
+        "hypogeum": true,
+        "label": "Velleia",
+        "latintoponym": "Veleia",
+        "moderncountry": "Italy",
+        "visibility": "good"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+             9.723475,              
+             44.785084,
+             476
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"ordonaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Ordona",
+        "buildingtype": "amphitheater",
+        "chronogroup": "First Century",
+        "chronocertainty": "possible",
+        "dimensions": {
+           "exterior-major": 74.5,
+           "exterior-minor": 59.4,
+           "arena-major": 44.6,
+           "arena-minor": 28.4,
+           "source": "Golvin"
+        },
+        "golvinid": "26",
+        "label": "Ordona",
+        "latintoponym": "Herdonae",
+        "moderncountry": "Italy",
+        "province": "Apulia",
+        "regio": "II",
+        "visibility": "good"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+             15.6231,
+             41.3105,
+             127
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"bevanaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Bevagna",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dimensions": {
+           "exterior-major": 80,
+           "exterior-minor": 53,
+           "arena-major": 44,
+           "arena-minor": 24,
+           "source": "Golvin"
+        },
+        "golvinid": "282",
+        "label": "Bevagna",
+        "latintoponym": "Mevania",
+        "moderncountry": "Italy",
+        "see": "http://penelope.uchicago.edu/Thayer/E/Gazetteer/Places/Europe/Italy/Umbria/Perugia/Bevagna/Bevagna/Roman/amphitheatre.html",
+        "visibility": "poor"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+             12.615587,
+             42.936903,
+             215
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"minturnaeAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Minturno",
+        "buildingtype": "amphitheater",
+        "chronogroup": "First Century",
+        "dimensions": {
+           "exterior-major": 130
+        },
+        "label": "Minturno",
+        "latintoponym": "Minturnae",
+        "moderncountry": "Italy",
+        "visibility": "poor"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+             13.763859,
+             41.241734,
+             10
+        ],
+        "source":"http://maps.google.com/"
+       }
+      },{
+      "type":"Feature",
+      "id":"sinuessaAmphitheater",
+      "properties": {
+        "title": "Amphitheater at Sinuessa",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "comment": "Probably not precisely located.",
+        "dimensions": {
+           "exterior-major": 80,
+           "exterior-minor": 45,
+           "source": "Golvin"
+        },
+        "label": "Sinuessa",
+        "latintoponym": "Sinuessa",
+        "moderncountry": "Italy",
+        "see": "http://www.signaromanorum.org/archives/8236",
+        "visibility": "none"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+             13.846372, 
+             41.153584,
+             5
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"aphrodisiasAmphitheater",
+      "properties": {
+        "title": "Late Roman Amphitheater at Aphrodisas",
+       "bibliography": "http://jstor.org/stable/506401",
+        "buildingtype": "amphitheater-in-stadium",
+        "chronogroup": "Fourth Century",
+        "comment": "Inserted into east end of pre-existing stadium.",
+        "dimensions": {
+           "arena-major": 59,
+           "arena-minor": 30,
+           "source": "http://maps.google.com",
+           "comment": "Arena not regular oval. Measurements intended as a useful approximation."
+        },
+        "exclude": true,
+        "label": "Aphrodisias",
+        "latintoponym": "Aphrodisias",
+        "moderncountry": "Turkey",
+        "visibility": "good"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+             28.723061,
+             37.712553,
+             526
+        ],
+        "source":"http://maps.google.com/"
+      }
+    }
+  ]
+}
