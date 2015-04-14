@@ -1,0 +1,123 @@
+---
+title: Examples of Expanding the Orbis Network out from Rome
+output:
+  html_document
+---
+
+## Introduction
+
+A few examples of calculating graph distance from Rome according to http://orbis.stanford.edu . Data from http://purl.stanford.edu/mn425tz9757 .
+
+Adapted from code and comments developed in [NYU/ISAW's](http://isaw.nyu.edu) "Mapping and Data  Visualization" Spring 2015 seminar.
+
+
+## Load some libraries
+
+```{r libraries, message=FALSE, warning=FALSE}
+#load libraries
+library(curl)
+library(igraph)
+```
+
+## Load data and make graph
+```{r data, message = FALSE, warning=FALSE}
+# cawd is an R package of "Collected Ancient World Data"
+# http://github.com/sfsheath/cawd
+library(cawd) 
+
+#subsetting two columns from orbis_nodes. otherwise the NA x,y's get in the way.
+temp.df <- orbis.nodes[,c("id","label")]
+
+#setting the network
+o.nw  <- graph.data.frame(orbis.edges, vertices=temp.df, directed=TRUE)
+
+# this now plot()able but it's so big that it's too messy to be useful
+```
+
+## Calculate shortest paths to Rome
+```{r calculate, message=FALSE, warning=FALSE}
+#finding the shortest paths referring to Roma, by expenses, and assigning to a new object
+shortest.paths(o.nw,V(o.nw)[V(o.nw)$label == "Roma"], weights = E(o.nw)$expense) -> o.nw.torome
+
+
+o.nw <- set.vertex.attribute(o.nw, "torome", index = V(o.nw), value = o.nw.torome)
+```
+
+## Divide into equal fiftieths (or choose your number)
+```{r quartiles}
+# first print it
+quantile(V(o.nw)$torome, probs = 1:50/50)
+
+# now keep it for future use
+quantile(V(o.nw)$torome, probs = 1:50/50) -> breaks
+
+```
+
+## Now subgraph by various values of torome
+This could be turned into a trivial function but I just copy-and-paste for clarity. For now...
+
+In all of the following examples, the V() function, which lists verteces in an igraph graph, is used to select verteces accoring to their "distance" from Rome accoring to the Orbis graph.
+
+Note that I am just increasing the index into 'breaks[]'.
+
+### Very, very "close"
+```{r one, message=FALSE, warning=FALSE}
+
+tmp.nw <- subgraph(o.nw, v = V(o.nw)[torome <= breaks[1]])
+
+plot(tmp.nw,
+     edge.arrow.size = 0,
+     vertex.label.cex = .6
+     )
+```
+
+### Very "close"
+```{r two, message=FALSE, warning=FALSE}
+
+tmp.nw <- subgraph(o.nw, v = V(o.nw)[torome <= breaks[2]])
+
+plot(tmp.nw,
+     edge.arrow.size = 0,
+     vertex.label.cex = .6
+     )
+```
+
+### "close", now with label color = 'red'
+```{r three, message=FALSE, warning=FALSE}
+
+tmp.nw <- subgraph(o.nw, v = V(o.nw)[torome <= breaks[3]])
+
+plot(tmp.nw,
+     edge.arrow.size = 0,
+     vertex.label.cex = .6,
+     vertex.label.color = 'red'
+     )
+```
+
+### Getting messy so smaller vertex.size...
+```{r four, message=FALSE, warning=FALSE}
+
+tmp.nw <- subgraph(o.nw, v = V(o.nw)[torome <= breaks[5]])
+
+plot(tmp.nw,
+     edge.arrow.size = 0,
+     vertex.label.cex = .6,
+     vertex.size = 2
+     )
+```
+
+### Last one, the closest 20%...
+```{r five, message=FALSE, warning=FALSE}
+
+tmp.nw <- subgraph(o.nw, v = V(o.nw)[torome <= breaks[10]])
+
+plot(tmp.nw,
+     edge.arrow.size = 0,
+     vertex.label.cex = .6,
+     vertex.size = 2
+     )
+```
+
+
+## Next up, turning these into maps...
+

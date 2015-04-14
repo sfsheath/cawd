@@ -1,0 +1,89 @@
+---
+title: "Using Orbis to Identify Amphitheaters Close to Rome"
+output:
+  html_document:
+    pandoc_args: [
+      "+RTS", "-K64m",
+      "-RTS"
+    ]
+---
+
+## Introduction
+
+Currently, this map is intended to get students thinking. It consists of the following layers:
+
+ * The basemap is Johan Åhlfeldt's "Imperium" map as made for his [Digital Atlas of the Roman Empire](http://dare.ht.lu.se). The URL pattern for accessing those tiles is <http://pelagios.dme.ait.ac.at/tilesets/imperium//{z}/{x}/{y}.png>
+ * The Rome boundary is courtesy of [UNC's Ancient World Mapping Center](http://awmc.unc.edu/).
+ * Sites in the Stanford Orbis model of Roman connectivity are then plotted according to their supplied latitude and longitude. That data is available at http://purl.stanford.edu/mn425tz9757 . The sites in 90th percentile of closeness to Rome as calculated using the igraph R function shortest.paths() are colored in blue. Those farther away are in red.
+ * The convex hull of the closest sites is plotted. It was calculated using the gConvexHull() function from the rgeos package.
+ * That convex hull is used to identify the Roman amphitheaters that lie within it. The over() function in the sp package handles that. These amphitheaters are then plotted in green.
+ 
+Because this is a student assignment, I have not shared the code. But I will. Or rather, the class will make a joint RPub document exploring variations on this theme. That document will ECHO the code as usual.
+
+## Map of Amphitheaters "Close" to Rome as Defined by the Stanford Orbis Model of Connectivity in the Roman World
+
+```{r map, warning=FALSE, message=FALSE}
+#load libraries
+library(curl)
+library(leaflet)
+library(igraph)
+library(rgeos)
+library(sp)
+
+#load data sets
+orbis_edges <-read.csv(curl("https://stacks.stanford.edu/file/druid:mn425tz9757/orbis_edges_0514.csv"),head=TRUE)
+orbis_nodes<-read.csv(curl("https://stacks.stanford.edu/file/druid:mn425tz9757/orbis_nodes_0514.csv"),head=TRUE)
+
+#subsetting two columns from orbis_nodes
+temp.df <- orbis_nodes[,c("id","label")]
+
+#setting the network
+o.nw  <- graph.data.frame(orbis_edges, vertices=temp.df, directed=TRUE)
+
+#add the x and y back in. with the NA's set to 0
+set.vertex.attribute(o.nw,name = "x", index = as.character(orbis_nodes$id), value = orbis_nodes$x) -> o.nw
+set.vertex.attribute(o.nw,name = "y", index = as.character(orbis_nodes$id), value = orbis_nodes$y) -> o.nw
+
+set.vertex.attribute(o.nw,"x",index = V(o.nw)[is.na(x)], 0) -> o.nw
+set.vertex.attribute(o.nw,"y",index = V(o.nw)[is.na(y)], 0) -> o.nw
+
+#finding the shortest paths referring to Roma, by expenses, and assigning to a new object
+shortest.paths(o.nw,V(o.nw)[label == "Roma"], weights = E(o.nw)$expense) -> o.nw.torome
+o.nw <- set.vertex.attribute(o.nw, "torome", index = V(o.nw), value = o.nw.torome)
+
+#new dataframe that has two columns: the label (name of place) and the distance to Rome
+data.frame(label = V(o.nw)$label, torome = V(o.nw)$torome) -> tmp.df
+
+quantile(V(o.nw)$torome, probs = 0:30/30)[4] -> q.num
+
+V(o.nw)$label[V(o.nw)$torome >= q.num] -> o.above.q
+data.frame(label = o.above.q) -> o.above.q
+merge(o.above.q,o.nodes, by.x = "label", by.y = "label") -> o.above.q
+o.above.q <- o.above.q[!is.na(o.above.q$x),]
+o.above.q.sp <- o.above.q
+coordinates(o.above.q.sp) <- ~ y + x
+proj4string(o.above.q.sp) <- CRS("+proj=longlat +datum=WGS84")
+
+V(o.nw)$label[V(o.nw)$torome < q.num] -> o.below.q
+data.frame(label = o.below.q) -> o.below.q
+merge(o.below.q,o.nodes, by.x = "label", by.y = "label") -> o.below.q
+o.below.q <- o.below.q[!is.na(o.below.q$x),]
+o.below.q.sp <- o.below.q[o.below.q$x > 0,]
+coordinates(o.below.q.sp) <- ~ y + x
+proj4string(o.below.q.sp)=CRS("+proj=longlat +datum=WGS84")
+
+
+gConvexHull(o.below.q.sp) -> o.below.hull.sp
+proj4string(o.below.hull.sp)=CRS("+proj=longlat +datum=WGS84")
+sp::over(ramphs.sp,o.below.hull.sp) -> these.ramphs
+proj4string(these.ramphs)=CRS("+proj=longlat +datum=WGS84")
+ramphs.sp[!is.na(these.ramphs),] -> these.ramphs.sp
+
+leaflet() %>% addTiles(urlTemplate = "http://pelagios.dme.ait.ac.at/tilesets/imperium//{z}/{x}/{y}.png",
+                       attribution = "Digital Atlas Roman Empire", tileOptions(opacity= .3))  %>%
+  addPolygons(data = awmc.roman.empire.200.sp, color = 'black', fillOpacity = .05, stroke = F, ) %>%
+  addPolygons(data = o.below.hull.sp, color = 'red', fillOpacity = .1, stroke = F) %>%
+  addCircleMarkers(data = o.above.q.sp, color = "red", popup =o.above.q.sp$label, radius = 1) %>%
+  addCircleMarkers(data = o.below.q.sp, popup =o.below.q.sp$label, radius = 1) %>%
+  addCircleMarkers(data = these.ramphs.sp, color = "green", popup = these.ramphs.sp$label, radius = 1) 
+```

@@ -5,7 +5,6 @@ require(jsonlite)
 require(sp)
 require(spatstat)
 
-
 jamphs <- fromJSON("./inst/extdata/roman-amphitheaters.geojson")
 
 #jamphs <- jsonlite::fromJSON("~/Documents/roman-amphitheaters/roman-amphitheaters.geojson")
