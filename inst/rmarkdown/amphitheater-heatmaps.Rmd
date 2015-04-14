@@ -1,0 +1,94 @@
+---
+title: "Roman Amphitheater Heatmaps"
+output: html_document
+---
+Two ways to make "heatmaps" of the distributioin of Roman Amphitheaters.
+
+```{r libraries, warning=F, message=FALSE}
+library(curl)
+library(ggplot2)
+library(raster)
+library(rgdal)
+library(RColorBrewer)
+library(rgl)
+library(sp)
+library(spatstat)
+```
+
+```{r awmc, warning=F, message=FALSE}
+# this will load four maps from http://awmc.unc.edu/ .
+# It's a cheap way of getting those and I really should make a package
+load(curl("https://gist.githubusercontent.com/sfsheath/51b4565d843d9a057a43/raw/awmc.RData"))
+
+#plot Roman empire to confirm load
+par(mai=c(0,0,0,0))
+plot(awmc.roman.empire.200.sp)
+
+# but that's not a very nice projection when done in plot, so...
+plot(spTransform(awmc.roman.empire.200.sp, CRS("+init=epsg:3857")))
+```
+
+```{r ramphsdata, message=FALSE, warning=FALSE}
+# load amphitheater data
+ramphs <- read.csv(curl("https://gist.githubusercontent.com/sfsheath/4324b4505f1952b930ba/raw/f89e55ed6a73e17832f48192bfd89d1d055d5285/roman-amphitheaters.csv"))
+ramphs.sp <- ramphs
+coordinates(ramphs.sp) <- ~longitude+latitude
+proj4string(ramphs.sp)=CRS("+proj=longlat +datum=WGS84")
+
+```
+
+```{r ggplot2, message=FALSE, warning=FALSE}
+# ggplot2 makes nice heatmaps and its coord_map() handles WGS84 by default
+
+#first convert to form ggplot2 likes
+fortify(awmc.roman.empire.200.sp) -> awmc.roman.empire.200.gg
+
+# the stat_density2d() call is what makes the heatmap
+ggplot(ramphs, aes(x = longitude, y = latitude))  +
+  coord_map() +
+  stat_density2d(aes(fill = ..level..), alpha=0.5, geom="polygon") +
+  scale_fill_gradientn(colours=rev(brewer.pal(7,"Spectral"))) +
+  geom_path(data=awmc.roman.empire.200.gg,aes(x=long, y=lat,group=group), colour="black") +
+  geom_point(alpha = .5, colour = 'red')
+```
+
+```{r spatstat, message=FALSE, warning=FALSE}
+# we can also use spatstat to make the heat map
+
+# yes, I could calculate these bounds
+longitudeExtent <- c(-9, 44)
+latitudeExtent <- c(31, 56)
+
+# first make a spatstat ppp object with a rectangular owin (that's the limits of the point pattern)
+tmp.ppp <- as.ppp(dplyr::select(ramphs, longitude,latitude),owin(longitudeExtent,latitudeExtent))
+
+# expand owin for analysis by calculating the convex hull of the amphitheaters.
+# but expand it a little bit so heat map doesn't cut off too much
+
+tmp.hull <- spatstat::convexhull(tmp.ppp)
+# while we're at it, plot the hull
+par(mai=c(0,0,0,0)) # do I really have to repeat this?
+plot(awmc.roman.empire.200.sp)
+plot(tmp.hull, add=T)
+
+tmp.owin <- expand.owin(tmp.hull, distance = .8)
+
+# so now we can make ramphs.ppp with a decent owin
+ramphs.ppp <- as.ppp(dplyr::select(ramphs, longitude,latitude, imputed.capacities),W = tmp.owin)
+
+# make a grid of the density weighted by the imputed capacity
+# but right now, the imputed capacity is way too fancy a term
+# i'm just filling in 10K for when I don't have that info
+density <- density(ramphs.ppp, weights = ramphs$imputed.capacities)
+raster(density) -> r
+plot(r)
+plot(awmc.roman.empire.200.sp, add = T)
+
+# and in 3d sort of
+persp(r,phi = 30,
+      theta = -30,
+      expand = .25,
+      border = NA,
+      shade = .6) # yeah, needs a color scheme. i'll return to that...
+```
+

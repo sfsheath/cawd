@@ -9,16 +9,12 @@ output:
 ---
 
 ## Introduction
-
-Currently, this map is intended to get students thinking. It consists of the following layers:
-
  * The basemap is Johan Åhlfeldt's "Imperium" map as made for his [Digital Atlas of the Roman Empire](http://dare.ht.lu.se). The URL pattern for accessing those tiles is <http://pelagios.dme.ait.ac.at/tilesets/imperium//{z}/{x}/{y}.png>
  * The Rome boundary is courtesy of [UNC's Ancient World Mapping Center](http://awmc.unc.edu/).
  * Sites in the Stanford Orbis model of Roman connectivity are then plotted according to their supplied latitude and longitude. That data is available at http://purl.stanford.edu/mn425tz9757 . The sites in 90th percentile of closeness to Rome as calculated using the igraph R function shortest.paths() are colored in blue. Those farther away are in red.
  * The convex hull of the closest sites is plotted. It was calculated using the gConvexHull() function from the rgeos package.
  * That convex hull is used to identify the Roman amphitheaters that lie within it. The over() function in the sp package handles that. These amphitheaters are then plotted in green.
  
-Because this is a student assignment, I have not shared the code. But I will. Or rather, the class will make a joint RPub document exploring variations on this theme. That document will ECHO the code as usual.
 
 ## Map of Amphitheaters "Close" to Rome as Defined by the Stanford Orbis Model of Connectivity in the Roman World
 
@@ -31,18 +27,14 @@ library(rgeos)
 library(sp)
 
 #load data sets
-orbis_edges <-read.csv(curl("https://stacks.stanford.edu/file/druid:mn425tz9757/orbis_edges_0514.csv"),head=TRUE)
-orbis_nodes<-read.csv(curl("https://stacks.stanford.edu/file/druid:mn425tz9757/orbis_nodes_0514.csv"),head=TRUE)
-
-#subsetting two columns from orbis_nodes
-temp.df <- orbis_nodes[,c("id","label")]
+library(cawd)
 
 #setting the network
-o.nw  <- graph.data.frame(orbis_edges, vertices=temp.df, directed=TRUE)
+o.nw  <- graph.data.frame(orbis.edges, vertices=orbis.nodes, directed=TRUE)
 
 #add the x and y back in. with the NA's set to 0
-set.vertex.attribute(o.nw,name = "x", index = as.character(orbis_nodes$id), value = orbis_nodes$x) -> o.nw
-set.vertex.attribute(o.nw,name = "y", index = as.character(orbis_nodes$id), value = orbis_nodes$y) -> o.nw
+set.vertex.attribute(o.nw,name = "x", index = as.character(orbis.nodes$id), value = orbis_nodes$x) -> o.nw
+set.vertex.attribute(o.nw,name = "y", index = as.character(orbis.nodes$id), value = orbis_nodes$y) -> o.nw
 
 set.vertex.attribute(o.nw,"x",index = V(o.nw)[is.na(x)], 0) -> o.nw
 set.vertex.attribute(o.nw,"y",index = V(o.nw)[is.na(y)], 0) -> o.nw
