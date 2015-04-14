@@ -1,0 +1,92 @@
+---
+title: "Calculating and Using Distances between Roman Amphitheaters"
+output: html_document
+---
+A quick demo of calcuating distances between points and then working with that data. Makes it through thinking of distance pairs as a network. Feel free to fork and improve.
+```{r wholething, warning=FALSE, message= F}
+# libraries
+library(curl)
+library(ggplot2)
+library(igraph)
+library(sp)
+library(tidyr)
+
+# load amphitheater data
+library(cawd)
+
+#generate distances of all amphitheaters to all other amphitheaters
+ramphs.dists <- spDists(ramphs.sp,ramphs.sp,longlat = TRUE)
+
+# this is in the form of a matrix
+#print the distance between the Dura and Arles Amphitheaters
+ramphs.dists[1,2]
+
+# but let's use names
+colnames(ramphs.dists) <- ramphs$id
+rownames(ramphs.dists) <- ramphs$id
+
+# now print distane between Arles Amphitheater and Lyon Amphitheater
+ramphs.dists["arlesAmphitheater", "lyonAmphitheater"]
+
+# we also have useless info that amphitheaters are 0Km from themselves
+ramphs.dists["arlesAmphitheater", "arlesAmphitheater"]
+
+# Would be nice to have a d.f in the form from,to,km
+as.data.frame(ramphs.dists) -> ramphs.dists.df
+
+#add column of names, in anticipation of using gather()
+cbind(from = ramphs$id,ramphs.dists.df) -> ramphs.dists.df
+
+gather(ramphs.dists.df, to, km, 2:dim(ramphs.dists.df)[2]) -> ramphs.dists.df
+
+# data now in nice columns but...
+# we still have the 0Km rows.
+head(ramphs.dists.df)
+
+#set phasers to kill...
+ramphs.dists.df[ramphs.dists.df$km > 0,] -> ramphs.dists.df
+
+# yay, they're gone
+head(ramphs.dists.df)
+
+# printing pairs is wordier than using the matrix
+ramphs.dists.df$km[ramphs.dists.df$from == 'arlesAmphitheater' & ramphs.dists.df$to == 'lyonAmphitheater']
+# we record both directions, that's probably not a problem but do keep it in mind
+ramphs.dists.df$km[ramphs.dists.df$from == 'lyonAmphitheater' & ramphs.dists.df$to == 'arlesAmphitheater']
+
+#reasonably straigtforward to find closest neighbor (target for improvement)
+ramphs.dists.df[ramphs.dists.df$from == "duraEuroposAmphitheater",] -> tmp.df
+as.character(tmp.df$to[which.min(tmp.df$km)]) # avoid extra factor output w/as.character()
+
+# and note that we can think of this df as edges of a network
+graph.data.frame(ramphs.dists.df, directed = TRUE) -> ramphs.dists.nw
+
+# let's see groups of amphitheaters close to each other
+subgraph.edges(ramphs.dists.nw, eids = E(ramphs.dists.nw)[km < 99]) -> close.amphitheaters.nw
+close.amphitheaters.nw
+par(mai = c(0,0,0,0))
+plot(close.amphitheaters.nw,
+     edge.arrow.size = 0,
+     vertex.size = 2,
+     vertex.label.cex = .3)
+
+# now let's look for "close" amphitheaters with high network degree.
+# those are deeply integrated into dense groupings.
+
+degree(close.amphitheaters.nw) -> tmp.nw
+
+set.vertex.attribute(close.amphitheaters.nw,
+                     name = "degree",
+                     index = V(close.amphitheaters.nw),
+                     value = tmp.nw) -> close.amphitheaters.nw
+
+summary(V(close.amphitheaters.nw)$degree)
+
+# top quartile
+summary(V(close.amphitheaters.nw)$degree)[5]
+
+# print the top quartile
+V(close.amphitheaters.nw)[degree >= summary(V(close.amphitheaters.nw)$degree)[5]]
+# next up, exploring where those are (Italy, anyone?)
+```
+
