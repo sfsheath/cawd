@@ -52,7 +52,7 @@ orbis.nodes$is.port = ifelse(orbis.nodes$is.port == 't', TRUE, FALSE)
 # these are nodes that appear in the orbis.edges data loaded below but which are not available in the API
 orbis.nodes <- rbind(orbis.nodes,data.frame(id = 50038,title = "x",latitude = 36.039,longitude = 34.534,pleiades = "",contributor = "", is.port = F,size.rank = 6))
 orbis.nodes <- rbind(orbis.nodes,data.frame(id = 50317,title = "Portus",latitude = 41.78,longitude = 12.258,pleiades = "", contributor = "", is.port = T, size.rank = 8))
-orbis.nodes <- rbind(orbis.nodes,data.frame(id = 50457,title = "",latitude = 0,longitude = 0,pleiades = "",contributor = "", is.port = F,size.rank = 0))
+orbis.nodes <- rbind(orbis.nodes,data.frame(id = 50457,title = "Aufidus",latitude = 41.36,longitude = 16.21,pleiades = "442485",contributor = "", is.port = F,size.rank = 0))
 orbis.nodes <- rbind(orbis.nodes,data.frame(id = 50522,title = "",latitude = 0,longitude = 0,pleiades = "",contributor = "", is.port = F,size.rank = 0))
 orbis.nodes <- rbind(orbis.nodes,data.frame(id = 50572,title = "",latitude = 0,longitude = 0,pleiades = "",contributor = "", is.port = F,size.rank = 0))
 orbis.nodes <- rbind(orbis.nodes,data.frame(id = 50721,title = "",latitude = 0,longitude = 0,pleiades = "",contributor = "", is.port = F,size.rank = 0))
@@ -91,6 +91,27 @@ orbis.nodes <- rbind(orbis.nodes,data.frame(id = 50771,title = "",latitude = 0,l
 orbis.nodes <- rbind(orbis.nodes,data.frame(id = 50772,title = "",latitude = 0,longitude = 0,pleiades = "",contributor = "", is.port = F,size.rank = 0))
 orbis.nodes <- rbind(orbis.nodes,data.frame(id = 50773,title = "",latitude = 0,longitude = 0,pleiades = "",contributor = "", is.port = F,size.rank = 0))
 orbis.nodes <- rbind(orbis.nodes,data.frame(id = 50774,title = "",latitude = 0,longitude = 0,pleiades = "",contributor = "", is.port = F,size.rank = 0))
+
+# A number of the lat/long pairs in the API data are missing (so zeroed on collection), reversed or otherwise incorrect. Fix these:
+orbis.nodes$latitude[orbis.nodes$title == "Amorgos"] <- 36.83 # reversed
+orbis.nodes$longitude[orbis.nodes$title == "Amorgos"] <- 25.9
+
+orbis.nodes$latitude[orbis.nodes$title == "Anaphe"] <- 36.34982 # reversed
+orbis.nodes$longitude[orbis.nodes$title == "Anaphe"] <- 25.85407
+
+orbis.nodes$latitude[orbis.nodes$title == "Andros"] <- 37.85  # reversed
+orbis.nodes$longitude[orbis.nodes$title == "Andros"] <- 24.86
+
+orbis.nodes$latitude[orbis.nodes$title == "Berenice"] <- 23.91  # reversed
+orbis.nodes$longitude[orbis.nodes$title == "Berenice"] <- 35.474
+
+orbis.nodes$latitude[orbis.nodes$title == "Isthmia"] <- 37.91573 # reversed and incorrect (wrong side of canal). ll from google maps click
+orbis.nodes$longitude[orbis.nodes$title == "Isthmia"] <- 22.993024
+
+orbis.nodes$latitude[orbis.nodes$title == "Tenos"] <- 37.553 # reversed
+orbis.nodes$longitude[orbis.nodes$title == "Tenos"] <- 25.116
+
+# That's not the whole list so getting to 'done' will be a process.
 
 # the following code, when uncommented,  will load from the API. But that only provides road and river connections
 #orbis.edges <- data.frame(source = vector(), target = vector(), type = vector(), cost = vector() )

@@ -6,13 +6,13 @@
 \title{Stanford Orbis Model of Roman Connectivity: Edges}
 \format{A data frame (needs info on columns)}
 \source{
-\url{http://orbis.stanford.edu}
+\url{http://purl.stanford.edu/mn425tz9757}
 }
 \usage{
 orbis.edges
 }
 \description{
-Stanford Orbis Model of Roman Connectivity: Edges
+Data available under a CC-By license.
 }
 \keyword{datasets}
 

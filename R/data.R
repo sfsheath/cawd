@@ -21,13 +21,17 @@
 "awmc.senatorial.sp"
 #' Stanford Orbis Model of Roman Connectivity: Edges
 #'
+#' Data available under a CC-By license.
+#'
 #' @format A data frame (needs info on columns) 
-#' @source \url{http://orbis.stanford.edu}
+#' @source \url{http://purl.stanford.edu/mn425tz9757}
 "orbis.edges"
 #' Stanford Orbis Model of Roman Connectivity: Nodes
 #'
+#' The API is public but does not give an explicit license.
+#'
 #' @format A data frame (needs info on columns) 
-#' @source \url{http://orbis.stanford.edu}
+#' @source \url{http://orbis.stanford.edu/api}
 "orbis.nodes"
 #' Oxford Roman Economy Project: Quarries.
 #' 

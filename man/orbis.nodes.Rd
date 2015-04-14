@@ -6,13 +6,13 @@
 \title{Stanford Orbis Model of Roman Connectivity: Nodes}
 \format{A data frame (needs info on columns)}
 \source{
-\url{http://orbis.stanford.edu}
+\url{http://orbis.stanford.edu/api}
 }
 \usage{
 orbis.nodes
 }
 \description{
-Stanford Orbis Model of Roman Connectivity: Nodes
+The API is public but does not give an explicit license.
 }
 \keyword{datasets}
 
