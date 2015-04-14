@@ -25,11 +25,11 @@ library(igraph)
 # http://github.com/sfsheath/cawd
 library(cawd) 
 
-#subsetting two columns from orbis_nodes. otherwise the NA x,y's get in the way.
-temp.df <- orbis.nodes[,c("id","label")]
+# igraph like a 'label' column
+orbis.nodes$label <- orbis.nodes$title
 
 #setting the network
-o.nw  <- graph.data.frame(orbis.edges, vertices=temp.df, directed=TRUE)
+o.nw  <- graph.data.frame(orbis.edges, vertices=orbis.nodes, directed=TRUE)
 
 # this now plot()able but it's so big that it's too messy to be useful
 ```
@@ -37,7 +37,7 @@ o.nw  <- graph.data.frame(orbis.edges, vertices=temp.df, directed=TRUE)
 ## Calculate shortest paths to Rome
 ```{r calculate, message=FALSE, warning=FALSE}
 #finding the shortest paths referring to Roma, by expenses, and assigning to a new object
-shortest.paths(o.nw,V(o.nw)[V(o.nw)$label == "Roma"], weights = E(o.nw)$expense) -> o.nw.torome
+shortest.paths(o.nw,V(o.nw)[V(o.nw)$title == "Roma"], weights = E(o.nw)$expense) -> o.nw.torome
 
 
 o.nw <- set.vertex.attribute(o.nw, "torome", index = V(o.nw), value = o.nw.torome)

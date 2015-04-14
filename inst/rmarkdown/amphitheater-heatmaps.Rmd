@@ -15,10 +15,9 @@ library(sp)
 library(spatstat)
 ```
 
-```{r awmc, warning=F, message=FALSE}
-# this will load four maps from http://awmc.unc.edu/ .
-# It's a cheap way of getting those and I really should make a package
-load(curl("https://gist.githubusercontent.com/sfsheath/51b4565d843d9a057a43/raw/awmc.RData"))
+```{r cawd, warning=F, message=FALSE}
+# See http://
+library(cawd)
 
 #plot Roman empire to confirm load
 par(mai=c(0,0,0,0))
@@ -26,14 +25,6 @@ plot(awmc.roman.empire.200.sp)
 
 # but that's not a very nice projection when done in plot, so...
 plot(spTransform(awmc.roman.empire.200.sp, CRS("+init=epsg:3857")))
-```
-
-```{r ramphsdata, message=FALSE, warning=FALSE}
-# load amphitheater data
-ramphs <- read.csv(curl("https://gist.githubusercontent.com/sfsheath/4324b4505f1952b930ba/raw/f89e55ed6a73e17832f48192bfd89d1d055d5285/roman-amphitheaters.csv"))
-ramphs.sp <- ramphs
-coordinates(ramphs.sp) <- ~longitude+latitude
-proj4string(ramphs.sp)=CRS("+proj=longlat +datum=WGS84")
 
 ```
 
