@@ -5,6 +5,27 @@
 #' @format SP object
 #' @source \url{http://awmc.unc.edu}
 "awmc.persian.extent.sp"
+#' AWMC Map of Roman Senatorial Provinces.
+#'
+#' Available from the Ancient World Mapping Center under an CC-BY-NC License 
+#'
+#' @format SP object
+#' @source \url{http://awmc.unc.edu}
+"awmc.roman.senatorial.sp"
+#' AWMC Map of Roman Territory in 60 BC.
+#'
+#' Available from the Ancient World Mapping Center under an CC-BY-NC License 
+#'
+#' @format SP object
+#' @source \url{http://awmc.unc.edu}
+"awmc.roman.territory.60bc.sp"
+#' AWMC Map of Roman Empire in 117 AD.
+#'
+#' Available from the Ancient World Mapping Center under an CC-BY-NC License 
+#'
+#' @format SP object
+#' @source \url{http://awmc.unc.edu}
+"awmc.roman.empire.117.sp"
 #' AWMC Map of Roman Empire in 200 AD.
 #'
 #' Available from the Ancient World Mapping Center under an CC-BY-NC License 
