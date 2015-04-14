@@ -50,10 +50,10 @@ quantile(V(o.nw)$torome, probs = 0:30/30)[4] -> q.num
 
 V(o.nw)$title[V(o.nw)$torome >= q.num] -> o.above.q
 data.frame(title = o.above.q) -> o.above.q
-merge(o.above.q,o.nodes, by.x = "label", by.y = "label") -> o.above.q
-o.above.q <- o.above.q[!is.na(o.above.q$x),]
+merge(o.above.q,orbis.nodes, by.x = "title", by.y = "title") -> o.above.q
+#o.above.q <- o.above.q[!is.na(o.above.q$x),]
 o.above.q.sp <- o.above.q
-coordinates(o.above.q.sp) <- ~ y + x
+coordinates(o.above.q.sp) <- ~ longitude + latitude
 proj4string(o.above.q.sp) <- CRS("+proj=longlat +datum=WGS84")
 
 V(o.nw)$label[V(o.nw)$torome < q.num] -> o.below.q
