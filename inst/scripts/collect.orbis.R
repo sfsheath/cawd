@@ -44,8 +44,8 @@ orbis.nodes <- data.frame(id = tmp.o.id,
                           stringsAsFactors = FALSE)
 
 orbis.nodes$id <- as.integer(orbis.nodes$id)
-orbis.nodes$latitude <- as.integer(orbis.nodes$latitude)
-orbis.nodes$longitude <- as.integer(orbis.nodes$longitude)
+orbis.nodes$latitude <- as.double(orbis.nodes$latitude)
+orbis.nodes$longitude <- as.double(orbis.nodes$longitude)
 orbis.nodes$size.rank <- as.integer(orbis.nodes$size.rank)
 orbis.nodes$is.port = ifelse(orbis.nodes$is.port == 't', TRUE, FALSE)
 

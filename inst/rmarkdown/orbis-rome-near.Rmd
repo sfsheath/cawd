@@ -33,23 +33,23 @@ library(cawd)
 o.nw  <- graph.data.frame(orbis.edges, vertices=orbis.nodes, directed=TRUE)
 
 #add the x and y back in. with the NA's set to 0
-set.vertex.attribute(o.nw,name = "x", index = as.character(orbis.nodes$id), value = orbis_nodes$x) -> o.nw
-set.vertex.attribute(o.nw,name = "y", index = as.character(orbis.nodes$id), value = orbis_nodes$y) -> o.nw
+#set.vertex.attribute(o.nw,name = "x", index = as.character(orbis.nodes$id), value = orbis.nodes$x) -> o.nw
+#set.vertex.attribute(o.nw,name = "y", index = as.character(orbis.nodes$id), value = orbis.nodes$y) -> o.nw
 
-set.vertex.attribute(o.nw,"x",index = V(o.nw)[is.na(x)], 0) -> o.nw
-set.vertex.attribute(o.nw,"y",index = V(o.nw)[is.na(y)], 0) -> o.nw
+#set.vertex.attribute(o.nw,"x",index = V(o.nw)[is.na(x)], 0) -> o.nw
+#set.vertex.attribute(o.nw,"y",index = V(o.nw)[is.na(y)], 0) -> o.nw
 
 #finding the shortest paths referring to Roma, by expenses, and assigning to a new object
-shortest.paths(o.nw,V(o.nw)[label == "Roma"], weights = E(o.nw)$expense) -> o.nw.torome
+shortest.paths(o.nw,V(o.nw)[title == "Roma"], weights = E(o.nw)$expense) -> o.nw.torome
 o.nw <- set.vertex.attribute(o.nw, "torome", index = V(o.nw), value = o.nw.torome)
 
 #new dataframe that has two columns: the label (name of place) and the distance to Rome
-data.frame(label = V(o.nw)$label, torome = V(o.nw)$torome) -> tmp.df
+data.frame(label = V(o.nw)$title, torome = V(o.nw)$torome) -> tmp.df
 
 quantile(V(o.nw)$torome, probs = 0:30/30)[4] -> q.num
 
-V(o.nw)$label[V(o.nw)$torome >= q.num] -> o.above.q
-data.frame(label = o.above.q) -> o.above.q
+V(o.nw)$title[V(o.nw)$torome >= q.num] -> o.above.q
+data.frame(title = o.above.q) -> o.above.q
 merge(o.above.q,o.nodes, by.x = "label", by.y = "label") -> o.above.q
 o.above.q <- o.above.q[!is.na(o.above.q$x),]
 o.above.q.sp <- o.above.q
