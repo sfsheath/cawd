@@ -102,7 +102,7 @@ orbis.nodes$longitude[orbis.nodes$title == "Anaphe"] <- 25.85407
 orbis.nodes$latitude[orbis.nodes$title == "Andros"] <- 37.85  # reversed
 orbis.nodes$longitude[orbis.nodes$title == "Andros"] <- 24.86
 
-orbis.nodes$latitude[orbis.nodes$title == "Berenice"] <- 32.116667, 20.066667  # from wikipedia
+orbis.nodes$latitude[orbis.nodes$title == "Berenice"] <- 32.116667  # from wikipedia
 orbis.nodes$longitude[orbis.nodes$title == "Berenice"] <-  20.066667
 
 orbis.nodes$latitude[orbis.nodes$title == "Isthmia"] <- 37.91573 # reversed and incorrect (wrong side of canal). ll from google maps click
