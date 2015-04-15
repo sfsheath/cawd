@@ -2197,7 +2197,16 @@
       "properties":{
         "title":"Amphitheater at London",
         "buildingtype": "amphitheater",
-        "chronogroup": "Imperial",
+        "capacity": 6500,
+        "created": 70,
+        "chronogroup": "Flavian",
+        "dimensions": {
+          "exterior-major": 100,
+          "exterior-minor": 85,
+          "arena-major": 60,
+          "arena-minor": 40,
+          "source": "http://archive.museumoflondon.org.uk/Londinium/Today/vizrom/06+amphitheatre.htm"
+        },
         "label": "London",
         "latintoponym": "Londinium",
         "moderncountry": "United Kingdom",
@@ -4230,7 +4239,9 @@
       "properties": {
         "amphitheatrum": "http://amphi-theatrum.de/1493.html",
         "buildingtype": "amphitheater",
+        "capacity": 6000,
         "chronogroup": "Second Century",
+        "comment": "See http://www.heritagedaily.com/2014/02/8-roman-ampitheatres-in-britain/101973",
         "dimensions": {
           "exterior-major": 80,
           "exterior-minor": 70,
