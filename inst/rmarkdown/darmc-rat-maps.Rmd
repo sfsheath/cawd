@@ -1,0 +1,33 @@
+---
+title: "Heatmap of Archaeologically Attested Rat Remains (AD 1-500)"
+output: html_document
+---
+Data from http://darmc.harvard.edu/icb/icb.do?keyword=k40248&pageid=icb.page601659 as loaded into http://github.com/sfsheath/cawd .
+
+
+```{r libraries, warning=F, message=FALSE}
+library(ggplot2)
+library(RColorBrewer)
+library(sp)
+```
+
+```{r cawd, warning=F, message=FALSE}
+# See http://github.com/sfsheath/cawd
+library(cawd)
+```
+
+```{r ggplot2, message=FALSE, warning=FALSE}
+# ggplot2 makes nice heatmaps and its coord_map() handles WGS84 by default
+
+#first convert roman outline to form ggplot2 likes
+fortify(awmc.roman.empire.200.sp) -> awmc.roman.empire.200.gg
+
+# the stat_density2d() call is what makes the heatmap
+ggplot(as.data.frame(darmc.rats.1to500.sp[darmc.rats.1to500.sp$latitude > 0,]), aes(x = longitude, y = latitude))  +
+  coord_map() +
+  stat_density2d(aes(fill = ..level..), alpha=0.5, geom="polygon") +
+  scale_fill_gradientn(colours=rev(brewer.pal(7,"Spectral"))) +
+  geom_path(data=awmc.roman.empire.200.gg,aes(x=long, y=lat,group=group), colour="black") +
+  geom_point(alpha = .5, colour = 'red')
+```
+
