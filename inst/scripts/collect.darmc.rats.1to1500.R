@@ -7,8 +7,8 @@ library(rgdal)
 
 shapefile <- readShapeSpatial('~/Documents/darmc/rats_release.shp')
 proj4string(shapefile) <- CRS("+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=6378137 +b=6378137 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs")
-darmc.rats.1to500.sp <- spTransform(shapefile, CRS("+proj=longlat +datum=WGS84"))
-names(darmc.rats.1to500.sp) <- c("title",
+darmc.rats.1to1500.sp <- spTransform(shapefile, CRS("+proj=longlat +datum=WGS84"))
+names(darmc.rats.1to1500.sp) <- c("title",
                                  "latitude","longitude",
                                  "Q_GEO",
                                  "start.date","end.date",
@@ -17,7 +17,7 @@ names(darmc.rats.1to500.sp) <- c("title",
                                  "Q_CONTEXT",
                                  "comment",
                                  "bibliographic.citation")
-use_data(darmc.rats.1to500.sp, overwrite = T)
+use_data(darmc.rats.1to1500.sp, overwrite = T)
 
 rm(shapefile)
 

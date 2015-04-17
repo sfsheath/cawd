@@ -1,0 +1,21 @@
+---
+title: "Marginal Histograms"
+output: html_document
+---
+
+Code adapted from http://www.r-bloggers.com/ggextra-r-package-for-adding-marginal-histograms-to-ggplot2/ 
+
+```{r, warning=FALSE, message=FALSE }
+
+#libraries
+library(ggplot2)
+library(ggExtra)
+
+# data
+library(cawd) # See http://github.com/sfsheath/cawd
+
+
+# create a ggplot2 scatterplot of exterior dimensions of Roman amphitheaters (meters)
+p <- ggplot(ramphs, aes(ext.major, ext.minor)) + geom_point() + theme_classic()
+# add marginal histograms
+ggExtra::ggMarginal(p, type = "histogram")

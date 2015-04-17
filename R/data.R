@@ -48,7 +48,21 @@
 #'
 #' @format SP object
 #' @source \url{http://darmc.harvard.edu/icb/icb.do?keyword=k40248&pageid=icb.page601659}
-"darmc.rats.1to500.sp"
+"darmc.rats.1to1500.sp"
+#' DARMC Shipwrekcs 
+#'
+#' Digital Atlas of Roman and Medieval Civilization data on shipwrecks. Available under a CC-BY-NC-SA license. See source for details.
+#'
+#' @format data.frame
+#' @source \url{http://darmc.harvard.edu/icb/icb.do?keyword=k40248&pageid=icb.page601659}
+"darmc.shipwrecks"
+#' DARMC Shipwrekcs (SP) 
+#'
+#' Digital Atlas of Roman and Medieval Civilization data on shipwrecks as an sp object. Available under a CC-BY-NC-SA license. See source for details.
+#'
+#' @format SP Object
+#' @source \url{http://darmc.harvard.edu/icb/icb.do?keyword=k40248&pageid=icb.page601659}
+"darmc.shipwrecks.sp"
 #' Stanford Orbis Model of Roman Connectivity: Edges
 #'
 #' Data available under a CC-By license.
