@@ -63,6 +63,20 @@
 #' @format SP Object
 #' @source \url{http://darmc.harvard.edu/icb/icb.do?keyword=k40248&pageid=icb.page601659}
 "darmc.shipwrecks.sp"
+#' Nomisma.org: Greek Mints
+#'
+#' Data available under a CC-By license. All mints said by Nomisma to be "part of" Greek numismatics are included. Meaning this is a modern term indicating disciplinary practice, not a description of ancient cultrual affinity.
+#'
+#' @format A data frame (needs info on columns)
+#' @source \url{http://nomisma.org/}
+"nomisma.greek.mints"
+#' Nomisma.org: Greek Mints (sp)
+#'
+#' Data available under a CC-By license. All mints said by Nomisma to be "part of" Greek numismatics are included. Meaning this is a modern term indicating disciplinary practice, not a description of ancient cultrual affinity.
+#'
+#' @format SP Object (needs info on columns)
+#' @source \url{http://nomisma.org/}
+"nomisma.greek.mints.sp"
 #' Stanford Orbis Model of Roman Connectivity: Edges
 #'
 #' Data available under a CC-By license.
