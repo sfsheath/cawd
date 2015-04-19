@@ -65,18 +65,46 @@
 "darmc.shipwrecks.sp"
 #' Nomisma.org: Greek Mints
 #'
-#' Data available under a CC-By license. All mints said by Nomisma to be "part of" Greek numismatics are included. Meaning this is a modern term indicating disciplinary practice, not a description of ancient cultrual affinity.
+#' Data available under a CC-By license. All mints said by Nomisma to be "part of" Greek numismatics are included. Meaning this is a modern term indicating disciplinary practice, not a description of ancient cultural affinity.
 #'
 #' @format A data frame (needs info on columns)
 #' @source \url{http://nomisma.org/}
 "nomisma.greek.mints"
 #' Nomisma.org: Greek Mints (sp)
 #'
-#' Data available under a CC-By license. All mints said by Nomisma to be "part of" Greek numismatics are included. Meaning this is a modern term indicating disciplinary practice, not a description of ancient cultrual affinity.
+#' Data available under a CC-By license. All mints said by Nomisma to be "part of" Greek numismatics are included. Meaning this is a modern term indicating disciplinary practice, not a description of ancient cultural affinity.
 #'
 #' @format SP Object (needs info on columns)
 #' @source \url{http://nomisma.org/}
 "nomisma.greek.mints.sp"
+#' Nomisma.org: Roman Mints
+#'
+#' Data available under a CC-By license. All mints said by Nomisma to be "part of" Roman numismatics are included. Meaning this is a modern term indicating disciplinary practice, not a description of ancient poltical circumstances.
+#'
+#' @format A data frame (needs info on columns)
+#' @source \url{http://nomisma.org/}
+"nomisma.roman.mints"
+#' Nomisma.org: Roman Mints (sp)
+#'
+#' Data available under a CC-By license. All mints said by Nomisma to be "part of" Roman numismatics are included. Meaning this is a modern term indicating disciplinary practice, not a description of ancient political circumstances.
+#'
+#' @format SP Object (needs info on columns)
+#' @source \url{http://nomisma.org/}
+"nomisma.roman.mints.sp"
+#' Nomisma.org: Roman Provincial Mints (Incomplete)
+#'
+#' Data available under a CC-By license. All mints said by Nomisma to be "part of" Roman numismatics are included. Meaning this is a modern term indicating disciplinary practice, not a description of ancient politcal circumstances.
+#'
+#' @format A data frame (needs info on columns)
+#' @source \url{http://nomisma.org/}
+"nomisma.roman.provincial.mints"
+#' Nomisma.org: Roman Provincial Mints (sp) (Incomplete)
+#'
+#' Data available under a CC-By license. All mints said by Nomisma to be "part of" Roman numismatics are included. Meaning this is a modern term indicating disciplinary practice, not a description of ancient political circumstances.
+#'
+#' @format SP Object (needs info on columns)
+#' @source \url{http://nomisma.org/}
+"nomisma.roman.provincial.mints.sp"
 #' Stanford Orbis Model of Roman Connectivity: Edges
 #'
 #' Data available under a CC-By license.

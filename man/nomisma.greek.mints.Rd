@@ -12,7 +12,7 @@
 nomisma.greek.mints
 }
 \description{
-Data available under a CC-By license. All mints said by Nomisma to be "part of" Greek numismatics are included. Meaning this is a modern term indicating disciplinary practice, not a description of ancient cultrual affinity.
+Data available under a CC-By license. All mints said by Nomisma to be "part of" Greek numismatics are included. Meaning this is a modern term indicating disciplinary practice, not a description of ancient cultural affinity.
 }
 \keyword{datasets}
 
