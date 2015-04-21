@@ -330,7 +330,8 @@ qplot(cumsum(imputed.capacity),
        theme(axis.text=element_text(size=14, color = "red")) +
       xlab("Cumulative Imputed Seating Capacity") +
       ylab("Number of Nearer than 99Km Neighbors (Degree)")
-  
+
+kable(ramphs.by.degree[ramphs.by.degree$degree > 15,c("id","degree")])
 
 ```
 
