@@ -214,6 +214,7 @@
           "exterior-minor": 75.8
         },
         "emperor": "Caracalla",
+        "exclude": true,
         "golvinID": "189",
         "label": "Amph. Castrense",
         "moderncountry": "Italy",

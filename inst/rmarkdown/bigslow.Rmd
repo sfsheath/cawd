@@ -480,12 +480,18 @@ weighted.deciles(myQv,myWv,
 ![alt text](http://upload.wikimedia.org/wikipedia/commons/0/03/Pompeian_mural_depicting_the_Amphitheatre_riots.jpg)
 http://upload.wikimedia.org/wikipedia/commons/0/03/Pompeian_mural_depicting_the_Amphitheatre_riots.jpg
 
-## Blatant Eye Candy?
+## Some Eye Candy?
 <iframe width="560" height="315" src="https://www.youtube.com/embed/im-W7W_rsVQ" frameborder="0" allowfullscreen>
 </iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wmeeF84vitg" frameborder="0" allowfullscreen>
 </iframe>
+
+Though this is useful (student work):
+
+http://www.willjfield.com/blog/2015/03/03/randomizing-with-r/
+
+
 
 
 
