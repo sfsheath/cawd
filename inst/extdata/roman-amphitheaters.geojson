@@ -149,6 +149,7 @@
         "buildingtype": "practice-arena",
         "chronogroup": "Imperial",
         "created":81,
+        "exlude": true,
         "label": "Ludus Magnus",
         "pleiades": "http://pleiades.stoa.org/places/423025",
         "moderncountry": "Italy",
@@ -716,6 +717,7 @@
         "title":"Ludus at Carnuntum",
         "buildingtype": "practice-arena",
         "chronogroup": "Imperial",
+        "exclude": true,
         "label": "Carnuntum Ludus",
         "moderncountry": "Austria",
         "pleiades": "http://pleiades.stoa.org/places/128376",
@@ -3295,6 +3297,7 @@
            "arena-minor": 37.5,
            "source": "Bomgardner"
            },
+        "exclude": true,
         "label": "Bararus",
         "moderncountry": "Tunisia",
         "pleiades": "http://pleiades.stoa.org/places/324673"
@@ -4649,6 +4652,13 @@
         "amphitheatrum": "http://amphi-theatrum.de/1878.html",
         "buildingtype": "amphitheater",
         "chronogroup": "Imperial",
+        "dimensions": {
+           "exterior-major": 80,
+           "exterior-minor": 65,
+           "arena-major": 43,
+           "arena-minor": 32,
+           "source": "http://maps.google.com"
+        },
         "label": "Burnum",
         "moderncountry": "Croatia",
         "title": "Amphitheater at Burnum",
@@ -5484,6 +5494,7 @@
         "capacity": 2000,
         "chronogroup": "Second Century",
         "comment": "Not certainly an Amphitheater.",
+        "exclude": true,
         "label": "Portus Oval Structure",
         "latintoponym": "Portus",
         "moderncountry": "Italy",

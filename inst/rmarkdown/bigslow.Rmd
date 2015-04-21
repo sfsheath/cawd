@@ -1,6 +1,6 @@
 ---
 title: "When Big Data Slows Down"
-author: "Sebastian Heath"
+author: "Sebastian Heath <sebastian.heath@nyu.edu>"
 subtitle: Digital Humanities and the Study of Roman Amphitheaters
 output: slidy_presentation
 ---
@@ -38,6 +38,8 @@ http://commons.wikimedia.org/wiki/File:Colosseum_II.jpg
 <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Colosseum_II.jpg/1280px-Colosseum_II.jpg" style="max-width:100%"/>
 
 ## Amphitheaters around the Empire
+Roman Empire Outline: http://awmc.unc.edu/
+
 ```{r openingmap, echo = F, warning=F, message=F, fig.width= 10}
 
 fortify(awmc.roman.empire.200.sp) -> awmc.roman.empire.200.gg
@@ -59,8 +61,13 @@ ggplot(ramphs, aes(x = longitude, y = latitude))  +
 > - [George Box: "Essentially, all models are wrong, but some are useful."](http://en.wikiquote.org/wiki/George_E._P._Box)
 > - Big Data?
 > - For this evening: Visualization, Network Analysis, and the Open-Source Tools that support these approaches.
-> - And data sharing. http://github.com/sfsheath/roman-amphitheaters & http://github.com/sfsheath/cawd
-> - I am also sharing this presenatation itself. http://sebastianheath.com/cawd/inst/rmarkdown/bigslow.html ([source](http://sebastianheath.com/cawd/inst/rmarkdown/bigslow.Rmd) )
+> - Big data for pre-contemporary societies is hard as our subjects aren't generating information about themselves. As in, they don't tweet.
+> - Another theme: http://github.com/sfsheath/roman-amphitheaters & http://github.com/sfsheath/cawd
+> - I am also sharing this presenatation itself. http://sebastianheath.com/cawd/inst/rmarkdown/bigslow.html ([Rmarkdown source](http://github.com/sfsheath/cawd/inst/rmarkdown/bigslow.Rmd) )
+> - By sharing the source I mean to evoke "Reproducible Research"
+> - And the parts that are original are available under a Creative Commons Attribution license.
+> - One last thing: This is the first time I've used RMarkdown to author slides so let's see what happens...
+
 ## Many sizes
 ```{r indexplot, echo = F, message=F, warning=FALSE}
 
@@ -74,19 +81,24 @@ p <- ggplot(df, aes(x = ext.index, y = ext.major)) + geom_point() + xlab(label =
 ggExtra::ggMarginal(p, type = "histogram", margins = "y")
 ```
 
+## RStudio
+http://www.r-project.org & http://rstudio.org
+
+<img src="https://dl.dropboxusercontent.com/u/17002562/RStudioScreeSchot.png" style="max-width:100%"/>
+
 ## Media Rich (Google)
-Assisi in Italy (Maximum dimension not known?)
+Assisi in Italy (Maximum dimension not known? Arena 65 x 38 Meters)
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d668.8757564217854!2d12.620453999999999!3d43.071076999999995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDA0JzE1LjkiTiAxMsKwMzcnMTMuNiJF!5e1!3m2!1sen!2sus!4v1429578175799" width="800" height="650" frameborder="0" style="border:0"></iframe>
 
 ## Media Rich (Google)
-Carsulae in Italy
+Carsulae in Italy (84 x 62 Meters)
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2694.270030616559!2d12.559678900000012!3d42.639424900000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDM4JzIxLjkiTiAxMsKwMzMnMzQuOCJF!5e1!3m2!1sen!2sus!4v1429577201529" width="800" height="650" frameborder="0" style="border:0">
 </iframe>
 
 ## Gladiators, Beast Hunts and Executions
-### The Zliten (Libya) Mosaic
+### The Zliten (Libya) Mosaic (C. 2nd Century AD?)
 http://upload.wikimedia.org/wikipedia/commons/8/8d/Bestiarii.jpg
 
 <a href="http://upload.wikimedia.org/wikipedia/commons/8/8d/Bestiarii.jpg">
@@ -101,26 +113,24 @@ http://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Circus_Leptis_Magna_Lib
 mjs_plot(ramphs[ramphs$type == 'amphitheater',], x=ext.major, y=ext.minor) %>% mjs_point()
 ```
 
-##Spatial History
-R. White. <i><a href="http://web.stanford.edu/group/spatialhistory/cgi-bin/site/pub.php?id=29">What is Spatial History?</a></i>
-Spatial History Lab: Working paper; Submitted 1 February 2010;
-
-> <span style="color:black">Paragraph 36 (emphasis author): “One of the important points that I want to make about visualizations, spatial relations, and spatial history is something that I did not fully understand until I started doing this work and which I have had a hard time communicating fully to my colleagues: visualization and spatial history are not about producing illustrations or maps to communicate things that you have discovered by other means. **It is a means of doing research**; it generates questions that might otherwise go unasked, it reveals historical relations that might otherwise go unnoticed, and it undermines, or substantiates, stories upon which we build our own versions of the past.”</span>
-
-
-
 
 ## "Media Rich" (Nimes)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/c384XQlnINo" frameborder="0" allowfullscreen>
 </iframe>
 
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Arena_of_Nimes_2_HDR.jpg/1280px-Arena_of_Nimes_2_HDR.jpg" style="max-width: 40%" />
+
+http://commons.wikimedia.org/wiki/File:Arena_of_Nimes_2_HDR.jpg
+
 ## "Media Rich" (Nimes)
 
-![Nimes](http://www.acta-archeo.com/html/images/acta/002-GLAD-NIMES.jpg)
+<img src="http://www.acta-archeo.com/html/images/acta/002-GLAD-NIMES.jpg" style="max-width:100%"/>
 
 ## "Media Rich" (Trier)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WYOvPyCntiY" frameborder="0" allowfullscreen>
 </iframe>
+
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/95/RomanEmpire_117_recoloured_2.svg/1024px-RomanEmpire_117_recoloured_2.svg.png" style="max-width:40%"/>
 
 ## Public Information
 http://www.maumburyrings.co.uk or "Peak Amphitheater"
@@ -130,6 +140,13 @@ http://www.maumburyrings.co.uk or "Peak Amphitheater"
 
 ## How many amphitheater seats were there?
 ```{r imputeseats,message = F, warning = F}
+
+ramphs.all <- ramphs
+ramphs.all.sp <- ramphs.sp
+
+ramphs <- ramphs[ramphs$include,]
+ramphs.sp <- ramphs.sp[ramphs.sp$include,]
+  
 ramphs$imputed.capacity <- NA
 ramphs$imputed.capacity[!(is.na(ramphs$capacity))] <- ramphs[!(is.na(ramphs$capacity)),]$capacity
 
@@ -187,6 +204,12 @@ plot(ramphs.sp, pch = 16, cex = .5, col = 'red', add = T)
 ```
 
 
+##Spatial History
+R. White. <i><a href="http://web.stanford.edu/group/spatialhistory/cgi-bin/site/pub.php?id=29">What is Spatial History?</a></i>
+Spatial History Lab: Working paper; Submitted 1 February 2010;
+
+> <span style="color:black">Paragraph 36 (emphasis author): “One of the important points that I want to make about visualizations, spatial relations, and spatial history is something that I did not fully understand until I started doing this work and which I have had a hard time communicating fully to my colleagues: visualization and spatial history are not about producing illustrations or maps to communicate things that you have discovered by other means. **It is a means of doing research**; it generates questions that might otherwise go unasked, it reveals historical relations that might otherwise go unnoticed, and it undermines, or substantiates, stories upon which we build our own versions of the past.”</span>
+
 ## Calculating Distances
 Who should know how to do this?
 ```{r dists}
@@ -234,6 +257,18 @@ plot(close.amphitheaters.nw,
      vertex.label.cex = .3)
 ```
 
+## Bigger Labels
+```{r, echo=FALSE}
+
+# let's see groups of amphitheaters close to each other
+subgraph.edges(ramphs.dists.nw, eids = E(ramphs.dists.nw)[km < 99]) -> close.amphitheaters.nw
+par(mai = c(0,0,0,0))
+plot(close.amphitheaters.nw,
+     edge.arrow.size = 0,
+     vertex.size = 2,
+     vertex.label.cex = 1)
+```
+
 ## Degree
 ```{r, echo=FALSE}
 # now let's look for "close" amphitheaters with high network degree.
@@ -246,6 +281,8 @@ set.vertex.attribute(close.amphitheaters.nw,
                      index = V(close.amphitheaters.nw),
                      value = tmp.nw) -> close.amphitheaters.nw
 ```
+http://www.slideshare.net/gcheliotis/social-network-analysis-3273045
+
 <img src="http://image.slidesharecdn.com/socialnetworkanalysis-100225055227-phpapp02/95/social-network-analysis-19-638.jpg?cb=1385589877"/>
 ```{r, echo=FALSE}
 #
@@ -298,6 +335,8 @@ qplot(cumsum(imputed.capacity),
 ```
 
 ## Distance to Road
+
+http://darmc.harvard.edu/
 ```{r, echo = F, fig.width=10}
 gDistance(spTransform(ramphs.sp, CRS("+init=epsg:3857")),spTransform(darmc.roman.roads.major.sp, CRS("+init=epsg:3857")), byid = T) -> ramphs.distance.to.road
 
@@ -441,8 +480,11 @@ weighted.deciles(myQv,myWv,
 ![alt text](http://upload.wikimedia.org/wikipedia/commons/0/03/Pompeian_mural_depicting_the_Amphitheatre_riots.jpg)
 http://upload.wikimedia.org/wikipedia/commons/0/03/Pompeian_mural_depicting_the_Amphitheatre_riots.jpg
 
-## Eye Candy
+## Blatant Eye Candy?
 <iframe width="560" height="315" src="https://www.youtube.com/embed/im-W7W_rsVQ" frameborder="0" allowfullscreen>
+</iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wmeeF84vitg" frameborder="0" allowfullscreen>
 </iframe>
 
 
