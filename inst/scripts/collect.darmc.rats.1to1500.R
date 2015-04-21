@@ -19,5 +19,13 @@ names(darmc.rats.1to1500.sp) <- c("title",
                                  "bibliographic.citation")
 use_data(darmc.rats.1to1500.sp, overwrite = T)
 
+
+shapefile <- readShapeSpatial('~/Documents/darmc/roman_roads_v2008.shp')
+proj4string(shapefile) <- '+proj=lcc +lat_1=43.0 +lat_2=62.0 +lat_0=30 +lon_0=10 +x_0=0 +y_0=0 +ellps=intl  +units=m +no_defs'
+darmc.roman.roads.sp <- spTransform(shapefile, CRS("+proj=longlat +datum=WGS84"))
+darmc.roman.road.major.sp <- darmc.roman.roads.sp[darmc.roman.roads.sp$CLASS == "Major Road",]
+
+use_data(darm.roman.roads.major.sp, overwrite = T)
+
 rm(shapefile)
 
