@@ -1132,12 +1132,14 @@
       "properties":{
         "title":"Amphitheater at Paris",
         "buildingtype": "gallo-roman-amphitheater",
-        "chronogroup": "Imperial",
+        "capacity": 15000,
+        "chronogroup": "Flavian",
         "label": "Paris",
         "latintoponym": "Lutetia Parisiorum",
         "pleiades": "http://pleiades.stoa.org/places/109126",
         "moderncountry": "France",
         "wilsonpopulation": 8000,
+        "wikipedia": "http://en.wikipedia.org/wiki/Arènes_de_Lutèce",
         "youtube": ["https://www.youtube.com/watch?v=DStHFfxd_qo"]
       },
       "geometry":{
@@ -1269,6 +1271,13 @@
         "amphitheatrum": "http://amphi-theatrum.de/1461.html",
         "buildingtype": "amphitheater",
         "chronogroup": "Republican",
+        "dimensions": {
+          "exterior-major": 108,
+          "exterior-minor": 70,
+          "arena-major": 62.5,
+          "arena-minor": 35,
+          "source": "http:maps.google.com"
+        },
         "label": "Abella",
         "latintoponym": "Abella",
         "moderncountry": "Italy",
@@ -1380,8 +1389,9 @@
       "id":"gennesAmphitheater",
       "properties":{
         "title":"Amphitheater at Gennes",
-        "buildingtype": "amphitheater",
-        "chronogroup": "Imperial",
+        "buildingtype": "gallo-roman-amphitheater",
+        "capacity": 5000,
+        "chronogroup": "Second Century",
         "label": "Gennes",
         "moderncountry": "France",
         "pleiades": "http://pleiades.stoa.org/places/138371"
@@ -1525,7 +1535,8 @@
         "chronogroup": "Imperial",
         "label": "Carthago Nova",
         "moderncountry": "Spain",
-        "pleiades": "http://pleiades.stoa.org/places/265849"
+        "pleiades": "http://pleiades.stoa.org/places/265849",
+        "visibility": "none"
       },
       "geometry":{
         "type":"Point",
@@ -1570,6 +1581,13 @@
         "title":"Amphitheater at Carsulae",
         "buildingtype": "amphitheater",
         "chronogroup": "Imperial",
+        "dimensions": {
+          "exterior-major": 84,
+          "exterior-minor": 62,
+          "arena-major": 55,
+          "arena-minor": 41,
+          "source": "http://maps.google.com"
+        },
         "label": "Carsulae",
         "moderncountry": "Italy",
         "pleiades": "http://pleiades.stoa.org/places/413065",
@@ -1578,9 +1596,9 @@
       "geometry":{
         "type":"Point",
         "coordinates":[
-          12.5596789,
-          42.6394249,
-          440
+          12.559681,
+          42.639432,
+          438
         ]
       }
     },
@@ -2364,6 +2382,11 @@
         "title":"Amphitheater at Assisi",
         "buildingtype": "amphitheater",
         "chronogroup": "Imperial",
+        "dimensions":{
+          "arena-major": 65,
+          "arena-minor": 38,
+          "source": "http://maps.google.com" 
+        },
         "label": "Assisi",
         "latintoponym": "Asisium",
         "moderncountry": "Italy",

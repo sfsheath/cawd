@@ -92,7 +92,7 @@ ramphs$kmeans.cluster.neighbors <- kmeans(dplyr::select(ramphs,latitude, longitu
 
 # impute capacities
 
-ramphs$imputed.capacities <- ifelse(is.na(ramphs$capacity),10000,ramphs$capacity)
+ramphs$imputed.capacity <- ifelse(is.na(ramphs$capacity),10000,ramphs$capacity)
 
 # temporary spatial.dataframe
 X.sp <- ramphs
@@ -116,9 +116,10 @@ tmp.ppp <- as.ppp(dplyr::select(ramphs, longitude,latitude),owin(longitudeExtent
 #expand owin for analysis
 tmp.owin <- expand.owin(spatstat::convexhull(tmp.ppp), distance = .8)
 
-ramphs.ppp <- as.ppp(dplyr::select(ramphs, longitude,latitude, imputed.capacities),W = tmp.owin)
+ramphs.ppp <- as.ppp(dplyr::select(ramphs, longitude,latitude, imputed.capacity),W = tmp.owin)
 
-
+use_data(ramphs, overwrite = T)
+use_data(ramphs.sp, overwrite = T)
 
 
 # cleanup

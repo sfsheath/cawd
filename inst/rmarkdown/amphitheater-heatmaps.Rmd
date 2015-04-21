@@ -34,13 +34,30 @@ plot(spTransform(awmc.roman.empire.200.sp, CRS("+init=epsg:3857")))
 #first convert to form ggplot2 likes
 fortify(awmc.roman.empire.200.sp) -> awmc.roman.empire.200.gg
 
+# do a little imputation to create missing data
+ramphs$imputed.capacities <- NA
+ramphs$imputed.capacities[!(is.na(ramphs$capacity))] <- ramphs[!(is.na(ramphs$capacity)),]$capacity
+
+lm.imp.1 <- lm ( capacity ~ latitude +
+                   ext.major + ext.minor + arena.major +
+                   arena.minor + arena.major:ext.minor + arena.minor * ext.minor,
+                data=ramphs )
+
+pred.1 <- predict (lm.imp.1, ramphs)
+ramphs$imputed.capacities <- ifelse (is.na(ramphs$capacity), pred.1, ramphs$capacity)
+ramphs$imputed.capacities[is.na(ramphs$imputed.capacities)] <- 5000
+
+
 # the stat_density2d() call is what makes the heatmap
 ggplot(ramphs, aes(x = longitude, y = latitude))  +
   coord_map() +
-  stat_density2d(aes(fill = ..level..), alpha=0.5, geom="polygon") +
-  scale_fill_gradientn(colours=rev(brewer.pal(7,"Spectral"))) +
-  geom_path(data=awmc.roman.empire.200.gg,aes(x=long, y=lat,group=group), colour="black") +
-  geom_point(alpha = .5, colour = 'red')
+  geom_polygon(data=awmc.roman.empire.200.gg,aes(x=long, y=lat,group=group), colour="purple", fill = "purple", alpha = .5) +
+  geom_density2d(aes(fill = ..level..),kernel = "cosine",) +
+  geom_point( colour = 'black', size = 2) +
+  geom_point(aes(size = capacity), colour = 'red') +
+  scale_fill_gradientn(colours=rev(brewer.pal(7,"Spectral")))   +
+  theme_bw() +
+  geom_tile
 ```
 
 ```{r spatstat, message=FALSE, warning=FALSE}
@@ -72,6 +89,7 @@ ramphs.ppp <- as.ppp(dplyr::select(ramphs, longitude,latitude, imputed.capacitie
 # i'm just filling in 10K for when I don't have that info
 density <- density(ramphs.ppp, weights = ramphs$imputed.capacities)
 raster(density) -> r
+projection(r) <- CRS("+proj=longlat +datum=WGS84")
 plot(r)
 plot(awmc.roman.empire.200.sp, add = T)
 
