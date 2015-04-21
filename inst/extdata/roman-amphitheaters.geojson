@@ -149,7 +149,7 @@
         "buildingtype": "practice-arena",
         "chronogroup": "Imperial",
         "created":81,
-        "exlude": true,
+        "exclude": true,
         "label": "Ludus Magnus",
         "pleiades": "http://pleiades.stoa.org/places/423025",
         "moderncountry": "Italy",
