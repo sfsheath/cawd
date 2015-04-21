@@ -1,0 +1,449 @@
+---
+title: "When Big Data Slows Down"
+author: "Sebastian Heath"
+subtitle: Digital Humanities and the Study of Roman Amphitheaters
+output: slidy_presentation
+---
+##
+
+http://commons.wikimedia.org/wiki/File:RomanEmpire_117_recoloured_2.svg
+
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/95/RomanEmpire_117_recoloured_2.svg/1024px-RomanEmpire_117_recoloured_2.svg.png" style="max-width:100%"/>
+
+```{r library, echo =F, warning=F, message=FALSE}
+library(curl)
+library(dplyr)
+library(ggplot2)
+library(ggthemes)
+library(Hmisc)
+library(igraph)
+library(knitr)
+library(metricsgraphics)
+library(networkD3)
+library(raster)
+library(rgdal)
+library(rgeos)
+library(RColorBrewer)
+library(rgl)
+library(sp)
+library(spatstat)
+library(tidyr)
+
+
+library(cawd)
+```
+
+## Colosseum
+http://commons.wikimedia.org/wiki/File:Colosseum_II.jpg
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Colosseum_II.jpg/1280px-Colosseum_II.jpg" style="max-width:100%"/>
+
+## Amphitheaters around the Empire
+```{r openingmap, echo = F, warning=F, message=F, fig.width= 10}
+
+fortify(awmc.roman.empire.200.sp) -> awmc.roman.empire.200.gg
+
+ggplot(ramphs, aes(x = longitude, y = latitude))  +
+  coord_map() +
+  geom_polygon(data=awmc.roman.empire.200.gg,aes(x=long, y=lat,group=group), colour="purple", fill = "purple", alpha = .5) +
+  stat_density2d(aes(fill = ..level.., alpha = ..level..),kernel = "cosine", geom = 'polygon') +
+  geom_point( colour = 'black', size = 2) +
+  geom_point(aes(size = ext.major), colour = 'red') +
+  scale_fill_gradientn(colours=rev(brewer.pal(7,"Spectral")))   +
+  theme_bw() + theme(legend.position="none")
+
+```
+
+## Pause for Themes, Terms and Questions
+> - What is Digital Humanities?
+> - ~“The use of computers to analyze and present digital represenatations of human activity.”??
+> - [George Box: "Essentially, all models are wrong, but some are useful."](http://en.wikiquote.org/wiki/George_E._P._Box)
+> - Big Data?
+> - For this evening: Visualization, Network Analysis, and the Open-Source Tools that support these approaches.
+> - And data sharing. http://github.com/sfsheath/roman-amphitheaters & http://github.com/sfsheath/cawd
+> - I am also sharing this presenatation itself. http://sebastianheath.com/cawd/inst/rmarkdown/bigslow.html ([source](http://sebastianheath.com/cawd/inst/rmarkdown/bigslow.Rmd) )
+## Many sizes
+```{r indexplot, echo = F, message=F, warning=FALSE}
+
+df = data.frame(ext.index = seq_along(ramphs$ext.major[!is.na(ramphs$ext.major)]), 
+                ext.major = sort(ramphs[!is.na(ramphs$ext.major),]$ext.major)) 
+
+p <- ggplot(df, aes(x = ext.index, y = ext.major)) + geom_point() + xlab(label = "") +
+  ylab(label = "Exterior Dimension (Meters)") +
+  theme_bw()
+
+ggExtra::ggMarginal(p, type = "histogram", margins = "y")
+```
+
+## Media Rich (Google)
+Assisi in Italy (Maximum dimension not known?)
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d668.8757564217854!2d12.620453999999999!3d43.071076999999995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDA0JzE1LjkiTiAxMsKwMzcnMTMuNiJF!5e1!3m2!1sen!2sus!4v1429578175799" width="800" height="650" frameborder="0" style="border:0"></iframe>
+
+## Media Rich (Google)
+Carsulae in Italy
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2694.270030616559!2d12.559678900000012!3d42.639424900000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDM4JzIxLjkiTiAxMsKwMzMnMzQuOCJF!5e1!3m2!1sen!2sus!4v1429577201529" width="800" height="650" frameborder="0" style="border:0">
+</iframe>
+
+## Gladiators, Beast Hunts and Executions
+### The Zliten (Libya) Mosaic
+http://upload.wikimedia.org/wikipedia/commons/8/8d/Bestiarii.jpg
+
+<a href="http://upload.wikimedia.org/wikipedia/commons/8/8d/Bestiarii.jpg">
+<img src="http://upload.wikimedia.org/wikipedia/commons/8/8d/Bestiarii.jpg" style="max-height:500px"/>
+</a>
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Circus_Leptis_Magna_Libya.JPG/1024px-Circus_Leptis_Magna_Libya.JPG" style="max-width:60%"/>
+
+http://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Circus_Leptis_Magna_Libya.JPG/1024px-Circus_Leptis_Magna_Libya.JPG
+
+## Many sizes... but not all shapes
+```{r extscatter, echo=FALSE, }
+mjs_plot(ramphs[ramphs$type == 'amphitheater',], x=ext.major, y=ext.minor) %>% mjs_point()
+```
+
+##Spatial History
+R. White. <i><a href="http://web.stanford.edu/group/spatialhistory/cgi-bin/site/pub.php?id=29">What is Spatial History?</a></i>
+Spatial History Lab: Working paper; Submitted 1 February 2010;
+
+> <span style="color:black">Paragraph 36 (emphasis author): “One of the important points that I want to make about visualizations, spatial relations, and spatial history is something that I did not fully understand until I started doing this work and which I have had a hard time communicating fully to my colleagues: visualization and spatial history are not about producing illustrations or maps to communicate things that you have discovered by other means. **It is a means of doing research**; it generates questions that might otherwise go unasked, it reveals historical relations that might otherwise go unnoticed, and it undermines, or substantiates, stories upon which we build our own versions of the past.”</span>
+
+
+
+
+## "Media Rich" (Nimes)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/c384XQlnINo" frameborder="0" allowfullscreen>
+</iframe>
+
+## "Media Rich" (Nimes)
+
+![Nimes](http://www.acta-archeo.com/html/images/acta/002-GLAD-NIMES.jpg)
+
+## "Media Rich" (Trier)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WYOvPyCntiY" frameborder="0" allowfullscreen>
+</iframe>
+
+## Public Information
+http://www.maumburyrings.co.uk or "Peak Amphitheater"
+<iframe width="100%" height="700px" src="http://www.maumburyrings.co.uk">
+</iframe>
+
+
+## How many amphitheater seats were there?
+```{r imputeseats,message = F, warning = F}
+ramphs$imputed.capacity <- NA
+ramphs$imputed.capacity[!(is.na(ramphs$capacity))] <- ramphs[!(is.na(ramphs$capacity)),]$capacity
+
+lm.imp.1 <- lm ( capacity ~ latitude +
+                   ext.major + ext.minor + arena.major +
+                   arena.minor + arena.major:ext.minor + arena.minor * ext.minor,
+                data=ramphs )
+
+pred.1 <- predict (lm.imp.1, ramphs)
+ramphs$imputed.capacity <- ifelse (is.na(ramphs$capacity), pred.1, ramphs$capacity)
+
+lm(capacity ~ ext.major, ramphs[(ramphs$ext.major < 120) & (ramphs$ext.major > 50),]) -> lm.ext.major
+ramphs$imputed.capacity[(!is.na(ramphs$ext.major)) & (is.na(ramphs$imputed.capacity))] <- ramphs$ext.major[(!is.na(ramphs$ext.major)) & (is.na(ramphs$imputed.capacity))] * lm.ext.major$coefficients[2]
+
+length(ramphs$imputed.capacity[is.na(ramphs$imputed.capacity)])
+
+ramphs$imputed.capacity[is.na(ramphs$imputed.capacity)] <- 5000
+
+sum(ramphs$imputed.capacity)
+```
+With many thanks to [Katie Anderson of NYU Libaries Data Services](http://guides.nyu.edu/content.php?pid=552472&sid=4553711) who is in no way responsible for my (mis?)use of her work.
+
+## Where are the amphitheaters seats?
+```{r spatstat, echo = F, message=FALSE, warning=FALSE}
+# we can also use spatstat to make the heat map
+
+# yes, I could calculate these bounds
+longitudeExtent <- c(-9, 44)
+latitudeExtent <- c(31, 56)
+
+# first make a spatstat ppp object with a rectangular owin (that's the limits of the point pattern)
+tmp.ppp <- as.ppp(dplyr::select(ramphs, longitude,latitude),owin(longitudeExtent,latitudeExtent))
+
+# expand owin for analysis by calculating the convex hull of the amphitheaters.
+# but expand it a little bit so heat map doesn't cut off too much
+
+tmp.hull <- spatstat::convexhull(tmp.ppp)
+# while we're at it, plot the hull
+#par(mai=c(0,0,0,0)) # do I really have to repeat this?
+
+tmp.owin <- expand.owin(tmp.hull, distance = .8)
+
+# so now we can make ramphs.ppp with a decent owin
+ramphs.ppp <- as.ppp(dplyr::select(ramphs, longitude,latitude, imputed.capacity),W = tmp.owin)
+
+# make a grid of the density weighted by the imputed capacity
+# but right now, the imputed capacity is way too fancy a term
+# i'm just filling in 10K for when I don't have that info
+density <- density(ramphs.ppp, weights = ramphs$imputed.capacity)
+raster(density) -> r
+projection(r) <- CRS("+proj=longlat +datum=WGS84")
+plot(r, legend = F)
+plot(awmc.roman.empire.200.sp, add = T)
+plot(ramphs.sp, pch = 16, cex = .5, col = 'red', add = T)
+```
+
+
+## Calculating Distances
+Who should know how to do this?
+```{r dists}
+#generate distances of all amphitheaters to all other amphitheaters
+ramphs.dists <- spDists(ramphs.sp,ramphs.sp,longlat = TRUE)
+
+# but let's use names
+colnames(ramphs.dists) <- ramphs$id
+rownames(ramphs.dists) <- ramphs$id
+
+# Would be nice to have a d.f in the form from,to,km
+as.data.frame(ramphs.dists) -> ramphs.dists.df
+
+#add column of names, in anticipation of using gather()
+cbind(from = ramphs$id,ramphs.dists.df) -> ramphs.dists.df
+
+gather(ramphs.dists.df, to, km, 2:dim(ramphs.dists.df)[2]) -> ramphs.dists.df
+
+# data now in nice columns but...
+# we still have the 0Km rows.
+#set phasers to kill...
+ramphs.dists.df[ramphs.dists.df$km > 0,] -> ramphs.dists.df
+```
+## The Data
+```{r, echo=FALSE}
+kable(head(ramphs.dists.df, n = 100))
+```
+
+## Amphitheaters Closer <= 80 Km.
+```{r, echo=FALSE}
+kable(head(ramphs.dists.df[ramphs.dists.df$km <= 80,], n = 100))
+```
+
+## As a Network
+```{r, echo=FALSE}
+# and note that we can think of this df as edges of a network
+graph.data.frame(ramphs.dists.df, directed = TRUE) -> ramphs.dists.nw
+
+# let's see groups of amphitheaters close to each other
+subgraph.edges(ramphs.dists.nw, eids = E(ramphs.dists.nw)[km < 99]) -> close.amphitheaters.nw
+par(mai = c(0,0,0,0))
+plot(close.amphitheaters.nw,
+     edge.arrow.size = 0,
+     vertex.size = 2,
+     vertex.label.cex = .3)
+```
+
+## Degree
+```{r, echo=FALSE}
+# now let's look for "close" amphitheaters with high network degree.
+# those are deeply integrated into dense groupings.
+
+degree(close.amphitheaters.nw) -> tmp.nw
+
+set.vertex.attribute(close.amphitheaters.nw,
+                     name = "degree",
+                     index = V(close.amphitheaters.nw),
+                     value = tmp.nw) -> close.amphitheaters.nw
+```
+<img src="http://image.slidesharecdn.com/socialnetworkanalysis-100225055227-phpapp02/95/social-network-analysis-19-638.jpg?cb=1385589877"/>
+```{r, echo=FALSE}
+#
+summary(V(close.amphitheaters.nw)$degree/2)
+```
+
+
+## High Degree
+```{r}
+# print the top quartile
+V(close.amphitheaters.nw)[degree >= summary(V(close.amphitheaters.nw)$degree/2)[5]]
+```
+
+## Mapping Degree
+
+```{r, echo = F }
+vertex.attributes(close.amphitheaters.nw) -> tmp.list
+ramphs.degree <- data.frame(id = tmp.list$name, degree = tmp.list$degree)
+ramphs.degree$degree <- ramphs.degree$degree / 2
+merge(ramphs, ramphs.degree, all.x = T) -> ramphs.degree.merged
+
+ramphs.degree.merged$degree[is.na(ramphs.degree.merged$degree)] <- 0
+
+#coordinates(ramphs.degree.sp) <- ~longitude + latitude
+#proj4string(ramphs.degree.sp) <- CRS("+proj=longlat +datum=WGS84")
+
+ggplot(ramphs.degree.merged, aes(x = longitude, y = latitude))  +
+  coord_map() +
+  geom_polygon(data=awmc.roman.empire.200.gg,aes(x=long, y=lat,group=group), colour="purple", fill = "purple", alpha = .5) +
+  geom_point( colour = 'black', size = 1) +
+  geom_point(aes(size = degree), colour = "red") +
+  scale_fill_gradientn(colours=rev(brewer.pal(7,"Spectral")))   +
+  theme_bw() + theme(legend.position="none")
+
+```
+
+## Plotting Degree
+```{r, echo = F, message=FALSE, warning=FALSE}
+ramphs.degree.merged[order(ramphs.degree.merged$degree),] -> ramphs.by.degree
+
+qplot(cumsum(imputed.capacity),
+      degree , size = imputed.capacity, color = mod.country,
+      data = ramphs.by.degree) +
+      theme_hc(bgcolor = "darkunica")  + theme(legend.position="none") +
+       theme(axis.text=element_text(size=14, color = "red")) +
+      xlab("Cumulative Imputed Seating Capacity") +
+      ylab("Number of Nearer than 99Km Neighbors (Degree)")
+  
+
+```
+
+## Distance to Road
+```{r, echo = F, fig.width=10}
+gDistance(spTransform(ramphs.sp, CRS("+init=epsg:3857")),spTransform(darmc.roman.roads.major.sp, CRS("+init=epsg:3857")), byid = T) -> ramphs.distance.to.road
+
+ramphs$distance.to.road <- apply(ramphs.distance.to.road,2,min)
+
+fortify(darmc.roman.roads.major.sp) -> darmc.roman.roads.major.gg
+
+ggplot(ramphs, aes(x = longitude, y = latitude))  +
+  coord_map() +
+  geom_polygon(data=awmc.roman.empire.200.gg,aes(x=long, y=lat,group=group), colour="purple", fill = "purple", alpha = .5) +
+  geom_path(data=darmc.roman.roads.major.gg,aes(x=long, y=lat,group=group), colour="brown", alpha = .5) +
+  geom_point( colour = 'black', size = .5) +
+  geom_point(aes(colour = distance.to.road), size = 3) +
+  scale_fill_gradientn(colours=rev(brewer.pal(11,"Spectral")))   +
+  theme_bw() + theme(legend.position="none")
+```
+
+## Counting Seats Near Roads
+
+```{r deciles, echo=FALSE, message=FALSE, warning=FALSE}
+weighted.deciles <- function(Qv,
+                             Wv,
+                             decile.title,
+                             decile.xlab,
+                             decile.ylab,
+                             scale.name) {
+  
+# clear the plot window
+
+Qsv <- cut(Qv, breaks = wtd.quantile(Qv, weights = Wv, probs = 0:10/10), include.lowest=TRUE, labels=FALSE)
+  
+
+
+# calculate max() and min() values for  quartiles. These will be labels on chart
+
+one.label = paste(round(min(Qv[Qsv == 1]), digit = 2),
+                  "-",
+                  round(max(Qv[Qsv == 1]), digit =2),
+                  " (",round(sum(Wv[Qsv <= 1])),")")
+
+two.label = paste(round(min(Qv[Qsv == 2]), digit = 2),
+                  "-",
+                  round(max(Qv[Qsv == 2]), digit =2),
+                  " (",round(sum(Wv[Qsv <= 2])),")")
+
+three.label = paste(round(min(Qv[Qsv == 3]), digit = 2),
+                    "-",
+                    round(max(Qv[Qsv == 3]), digit =2),
+                  " (",round(sum(Wv[Qsv <= 3])),")")
+
+four.label = paste(round(min(Qv[Qsv == 4]), digit = 2),
+                   "-",
+                   round(max(Qv[Qsv == 4]), digit =2),
+                  " (",round(sum(Wv[Qsv <= 4])),")")
+
+five.label = paste(round(min(Qv[Qsv == 5]), digit = 2),
+                   "-",
+                   round(max(Qv[Qsv == 5]), digit =2),
+                  " (",round(sum(Wv[Qsv <= 5])),")")
+
+six.label = paste(round(min(Qv[Qsv == 6]), digit = 2),
+                  "-",
+                  round(max(Qv[Qsv == 6]), digit =2),
+                  " (",round(sum(Wv[Qsv <= 6])),")")
+
+seven.label = paste(round(min(Qv[Qsv == 7]), digit = 2),
+                    "-",
+                    round(max(Qv[Qsv == 7]), digit =2),
+                  " (",round(sum(Wv[Qsv <= 7])),")")
+
+eight.label = paste(round(min(Qv[Qsv == 8]), digit = 2),
+              "-",
+              round(max(Qv[Qsv == 8]), digit =2),
+                  " (",round(sum(Wv[Qsv <= 8])),")")
+
+nine.label = paste(round(min(Qv[Qsv == 9]), digit = 2),
+                    "-",
+                    round(max(Qv[Qsv == 9]), digit =2),
+                  " (",round(sum(Wv[Qsv <= 9])),")")
+
+ten.label = paste(round(min(Qv[Qsv == 10]), digit = 2),
+                   "-",
+                   round(max(Qv[Qsv == 10]), digit =2),
+                  " (",round(sum(Wv[Qsv <= 10])),")")
+
+data <- data.frame(Qv,Wv,Qsv)
+
+# title <- ""
+# subtitle <- ""
+
+
+# adjust geom_jitter position and alpha to make points easier to see.
+
+ggplot(data,
+       aes(x = factor(Qsv),
+           y = Wv, color = Qv)) +
+  geom_jitter(
+              position = position_jitter(width = .15),
+              size = 4,
+              alpha = .6) + 
+  # geom_text(label = ifelse(ramphs$capacity >= 30000, as.character(ramphs$label),""), hjust = .4, vjust = -1, color = "black") +
+  theme(legend.text=element_text(size=15),
+        axis.text=element_text(size=9, colour = "black")) +
+  xlab(decile.xlab) +
+  ylab(decile.ylab) +
+  scale_colour_gradientn(name = scale.name,colours=rev(rainbow(4))) +
+  scale_x_discrete(labels = c(one.label,two.label,three.label, four.label,five.label,six.label,seven.label, eight.label, nine.label, ten.label)) +
+  ggtitle(decile.title) + 
+  theme(plot.title = element_text(lineheight=2, face="bold")) +
+  coord_flip()
+}
+
+myQv <- ramphs$distance.to.road/1000
+myWv <- ramphs$imputed.capacity
+
+weighted.deciles(myQv,myWv,
+                 "Imputed Capacities by Distance to a DARMC Major Roman Road",
+                 "Km to DARMC Major Road",
+                 "Imputed Capacity",
+                 "Distance (km)")
+
+```
+
+## Seats Near "Major" Cities
+
+```{r, echo = F, warning=FALSE, message=FALSE}
+
+myQv <- ramphs$nearest.orbis9
+myWv <- ramphs$imputed.capacity
+
+weighted.deciles(myQv,myWv,
+                 "Imputed Capacities by Distance Highly-Ranked Roman City (>9 out of 10)",
+                 "Imputed Capacity",
+                 "Km to DARMC Major Road",
+                 "Distance (km)")
+
+```
+
+
+## ... and Riots
+![alt text](http://upload.wikimedia.org/wikipedia/commons/0/03/Pompeian_mural_depicting_the_Amphitheatre_riots.jpg)
+http://upload.wikimedia.org/wikipedia/commons/0/03/Pompeian_mural_depicting_the_Amphitheatre_riots.jpg
+
+## Eye Candy
+<iframe width="560" height="315" src="https://www.youtube.com/embed/im-W7W_rsVQ" frameborder="0" allowfullscreen>
+</iframe>
+
+
+
