@@ -6078,6 +6078,86 @@
         ],
         "source":"http://maps.google.com/"
       }
+    },{
+      "type":"Feature",
+      "id":"djerbaAmphitheater",
+      "properties": {
+        "title": "Djerba Amphitheater",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "comment": "As confirmed by A. Rabinowitz. Pending bibliography check, ext. major approximate.",
+        "dimensions": {
+           "exterior-major": 68,
+           "source":"http://maps.google.com"
+        },
+        "dare": "http://dare.ht.lu.se/places/24704",
+        "label": "Djerba",
+        "latintoponym": "Meninge",
+        "moderncountry": "Tunisia",
+        "visibility": "fair"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+              10.913907,
+              33.685822,
+              1
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"zagaroloLudus",
+      "properties": {
+        "title": "Zagarolo Ludus",
+        "buildingtype": "ludus",
+        "chronogroup": "Imperial",
+        "dare": "http://dare.ht.lu.se/places/24338",
+        "dimensions": {
+           "exterior-major": 40,
+           "source": "http://maps.google.com"
+        },
+        "exclude": true,
+        "label": "Zagarolo",
+        "moderncountry": "Italy",
+        "visibility": "good"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+              12.819255,
+              41.858402,
+              1
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"tusculumAmphitheater",
+      "properties": {
+        "title": "Tusculum Amphitheater",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Second Century",
+        "dare": "http://dare.ht.lu.se/places/24338",
+        "dimensions": {
+           "exterior-major": 80,
+           "exterior-minor": 53,
+           "source": "https://books.google.com/books?id=pu4hAwAAQBAJ&pg=PA515&lpg=PA515&dq=tusculum+amphitheater&source=bl&ots=Ocg0iNNaB0&sig=hoFrW1XvAeJ7kP0xH4xVHbAI3GM&hl=en&sa=X&ei=9Fs4VePJLomJsQTNw4CoBw&ved=0CDUQ6AEwBQ#v=onepage&q=tusculum%20amphitheater&f=false"
+        },
+        "label": "Tusculum",
+        "moderncountry": "Italy",
+        "visibility": "none"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+              12.702103,
+              41.798372,
+              582
+        ],
+        "source":"http://maps.google.com/"
+      }
     }
+
   ]
 }
