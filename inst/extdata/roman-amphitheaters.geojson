@@ -6202,5 +6202,91 @@
         "source":"http://maps.google.com/"
       }
     }
+  ],
+  "roman-amphitheater-chronogroups":[
+    {
+        "chronogroup": "Republican",
+        "earliest_start_date": -80,
+        "start_date": -70,
+        "end_date": -31,
+        "latest_end_date": -27
+    },
+    {
+        "chronogroup": "Julius Caesar",
+        "start_date": -49,
+        "end_date": -44
+    },
+    {
+        "chronogroup": "Augustan",
+        "earliest_start_date": -31,
+        "start_date": -27,
+        "end_date": 14
+    },
+    {
+        "chronogroup": "Julio-Claudian",
+        "earliest_start_date": -31,
+        "start_date": -27,
+        "end_date": 68
+    },
+    {
+        "chronogroup": "Neronian",
+        "start_date": 54,
+        "end_date": 68
+    },
+    {
+        "chronogroup": "Flavian",
+        "start_date": 69,
+        "end_date": 96
+    },
+    {
+        "chronogroup": "First Century",
+        "start_date": 1,
+        "end_date": 100
+    },
+    {
+        "chronogroup": "Late1stEarly2nd",
+        "earliest_start_date": 50,
+        "start_date": 75,
+        "end_date": 125,
+        "latest_end_date": 150
+    },
+    {
+        "chronogroup": "Hadrianic",
+        "start_date": 117,
+        "end_date": 138
+    },
+    {
+        "chronogroup": "Second Century",
+        "start_date": 101,
+        "end_date": 200
+    },
+    {
+        "chronogroup": "Late Second Century",
+        "start_date": 150,
+        "end_date": 199
+    },
+    {
+        "chronogroup": "Severan",
+        "start_date": 193,
+        "end_date": 235
+    },
+    {
+        "chronogroup": "Post-Severan",
+        "start_date": 235,
+        "end_date": 280,
+        "latest_end_date": 300
+    },
+    {
+        "chronogroup": "Fourth Century",
+        "start_date": 300,
+        "end_date": 350
+    },
+    {
+        "chronogroup": "Imperial",
+        "start_date": 50,
+        "end_date": 280,
+        "latest_end_date": 325,
+        "comment": "End is time by which amphitheaters are no longer being built."
+    }
   ]
 }

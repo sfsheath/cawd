@@ -123,7 +123,8 @@ use_data(ramphs.sp, overwrite = T)
 
 # cleanup
 rm(X.sp)
-rm(jamphs)
 
-
-
+# make periods
+ramphs.chrono.grps <- jamphs$`roman-amphitheater-chronogroups`
+names(ramphs.chrono.grps) <- c("title", "earliest.start.date", "start.date", "end.date", "latest.end.date","comment")
+use_data(ramphs.chrono.grps, overwrite = T)

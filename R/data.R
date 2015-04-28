@@ -126,3 +126,10 @@
 #' @format A data frame (needs info on columns)
 #' @source \url{http://github.com/sfsheath/roman-amphitheaters}
 "ramphs"
+#' Roman Amphitheaters: Chronological Groups.
+#'
+#' Provides start dates and end dates for the chronological groups in the chrono.grp column of the ramphs object. merge() can be used to combine the two objects.
+#'
+#' @format A data frame (needs info on columns)
+#' @source \url{http://github.com/sfsheath/roman-amphitheaters}
+"ramphs.chrono.grps"
