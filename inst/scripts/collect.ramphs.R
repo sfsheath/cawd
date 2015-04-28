@@ -1,3 +1,4 @@
+require(cawd)
 require(devtools)
 require(plyr)
 require(dplyr) # recommended to load plyr first
@@ -6,8 +7,6 @@ require(sp)
 require(spatstat)
 
 jamphs <- fromJSON("./inst/extdata/roman-amphitheaters.geojson")
-
-#jamphs <- jsonlite::fromJSON("~/Documents/roman-amphitheaters/roman-amphitheaters.geojson")
 
 ramphs = data.frame(jamphs$features$id,
                     jamphs$features$properties$title,
@@ -18,7 +17,7 @@ ramphs = data.frame(jamphs$features$id,
                     jamphs$features$properties$moderncountry,
                     jamphs$features$properties$chronogroup,
                     jamphs$features$properties$created,
-                    jamphs$features$properties$`last-use`,
+                    jamphs$features$properties$lastuse$date,
                     jamphs$features$properties$wilsonpopulation,
                     jamphs$features$properties$wikipedia,
                     jamphs$features$properties$pleiades,

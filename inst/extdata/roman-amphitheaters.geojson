@@ -31,7 +31,6 @@
     "title":{"@id":"dcterms:title"},
     "wikipedia":{"@id":"rdfs:seeAlso","@type":"@id"}
   },
-
   "type":"FeatureCollection",
   "@id":"http://purl.org/roman-amphitheaters/",
   "see": ["http://en.wikipedia.org/wiki/Roman_amphitheatre","http://en.wikipedia.org/wiki/List_of_Roman_amphitheatres"],
@@ -70,8 +69,7 @@
           223
         ]
       }
-    },
-    {
+    },{
       "type":"Feature",
       "id":"arlesAmphitheater",
       "properties":{
@@ -106,8 +104,7 @@
           21
         ]
       }
-    },
-    {
+    },{
       "type":"Feature",
       "id":"lyonAmphitheater",
       "properties":{
@@ -163,8 +160,7 @@
           22
         ]
       }
-    },
-    {
+    },{
       "type":"Feature",
       "id":"romeFlavianAmphitheater",
       "properties":{
@@ -182,7 +178,7 @@
            },
         "emperor": "Vespasian",
         "label": "Colosseum",
-        "last-use": 523,
+        "lastuse": {"date": 523, "source": "Letter of Theoderic to Flavius Anicius Maximus (Cassiordorus, Variae V.42)"},
         "pleiades": "http://pleiades.stoa.org/places/423025",
         "moderncountry": "Italy",
         "see":"http://pleiades.stoa.org/places/285857974/centerpoint-of-amphitheatrum-flavium",
@@ -198,8 +194,7 @@
           22
         ]
       }
-    },
-    {
+    },{
       "type":"Feature",
       "id":"romeAmphitheatrumCastrense",
       "properties":{
@@ -246,7 +241,7 @@
           "arena-minor": 38
          },
         "label": "Eleutheropolis",
-        "last-use": 363,
+        "lastuse": {"date": 363, "comment": "Need a reference but end of use attributed to 363 earthquake."},
         "moderncountry": "Israel",
         "pleiades": "http://pleiades.stoa.org/places/687854",
         "youtube": ["https://www.youtube.com/watch?v=bA6YNf8ZwlI"]
@@ -278,7 +273,7 @@
          },
         "exclude": true,
         "label": "Pompeii",
-        "last-use":79,
+        "lastuse":{"date":79, "comment": "Last use dated to eruption of Vesuvius that covered the town."},
         "moderncountry": "Italy",
         "pleiades": "http://pleiades.stoa.org/places/433032",
         "see":["https://3dwarehouse.sketchup.com/model.html?redirect=1&mid=6971b010096197d8dfd89dd71a555b12","http://pleiades.stoa.org/places/433032/amphitheater-of-pompeii"],
@@ -3362,7 +3357,7 @@
         "emperor": "Diocletian",
         "exclude": true,
         "label": "Sophia",
-        "lastuse": 425,
+        "lastuse": {"date": 425, "comment": "Reference to a Minerva article is given in Wikipedia entry."},
         "latintoponyn": "Ulpia Serdica",
         "moderncountry": "Bulgaria"
       },
@@ -4120,7 +4115,7 @@
         },
         "golvinID": "54",
         "label": "Tours",
-        "lastuse": 350,
+        "lastuse": {"date": 350, "comment": "The wikipedia article is of high quality so is currently the source for this date."},
         "latintoponym": "Caesarodunum Turonum",
         "moderncountry": "France",
         "visibility": "good",
@@ -4299,7 +4294,7 @@
         "title": "Amphitheater at Dorchester / Maumbury Henge",
         "amphitheatrum": "http://amphi-theatrum.de/1491.html",
         "buildingtype": "amphitheater",
-        "chronogroup": "Second Century",
+        "chronogroup": "First Century",
         "dimensions": {
           "exterior-major": 80,
           "exterior-minor": 77,
@@ -4308,6 +4303,7 @@
           "source": "Golvin"
          },
         "label": "Maumbury",
+        "lastuse": {"date":150, "comment": "See the website but a better reference needed."},
         "latintoponym": "Durnovaria",
         "moderncountry": "United Kingdom",
         "visibility": "partial",
@@ -4814,7 +4810,7 @@
            "source": "http://www.inrap.fr/preventive-archaeology/Events/Last-discoveries/p-1355-lg1-Excavation-of-the-amphitheatre-quarter-in-Metz.htm"
         },
         "label": "Metz",
-        "last-use": 300,
+        "lastuse": {"date":300, "comment": "See cited online article."},
         "moderncountry": "France",
         "see": "http://www.inrap.fr/preventive-archaeology/Events/Last-discoveries/p-1355-lg1-Excavation-of-the-amphitheatre-quarter-in-Metz.htm",
         "visibility": "none"
@@ -5343,7 +5339,7 @@
          },
         "golvinid": "130",
         "label": "Tipasa",
-        "lastuse": 400,
+        "lastuse": {"date":400,"source": "Bomgardner: 156"},
         "latintoponym": "Tipasentium",
         "moderncountry": "Algeria",
         "pleiades": "http://pleiades.stoa.org/places/295363",
@@ -5547,7 +5543,7 @@
         "chronogroup": "Augustan",
         "created": -24,
         "label": "Statilius Taurus",
-        "last-use": 64,
+        "lastuse": {"date":64, "comment": "Destroyed in AD 64 fire."},
         "moderncountry": "Italy",
         "pleiades": "http://pleiades.stoa.org/places/423025",
         "visibility": "none"
@@ -6157,7 +6153,54 @@
         ],
         "source":"http://maps.google.com/"
       }
+    },{
+      "type":"Feature",
+      "id":"forumNovumAmphitheater",
+      "properties": {
+        "title": "Forum Novum Amphitheater",
+        "bibliography": "https://archive.is/TzNZV",
+        "buildingtype": "amphitheater",
+        "chronogroup": "First Century",
+        "lastuse": {"date": 225, "comment": "As indicated in bibliography."},
+        "dare": "http://dare.ht.lu.se/places/23997",
+        "dimensions": {
+           "arena-major": 45,
+           "arena-minor": 25
+        },
+        "label": "Forum Novum",
+        "moderncountry": "Italy",
+        "visibility": "none"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+              12.603363,
+              42.329875,
+              137
+        ],
+        "source":"http://maps.google.com/"
+      }
+    },{
+      "type":"Feature",
+      "id":"todiAmphitheater",
+      "properties": {
+        "title": "Todi Amphitheater",
+        "buildingtype": "amphitheater",
+        "chronogroup": "Imperial",
+        "dare": "http://dare.ht.lu.se/places/24329",
+        "label": "Todi",
+        "moderncountry": "Italy",
+        "visibility": "street plan"
+         },
+        "geometry":{
+          "type":"Point",
+          "coordinates":[
+              12.413528,
+              42.778653,
+              330
+        ],
+        "source":"http://maps.google.com/"
+      }
     }
-
   ]
 }
