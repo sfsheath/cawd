@@ -6,7 +6,7 @@ require(jsonlite)
 require(sp)
 require(spatstat)
 
-jamphs <- fromJSON("./inst/extdata/roman-amphitheaters.geojson")
+jamphs <- fromJSON("https://raw.githubusercontent.com/sfsheath/roman-amphitheaters/master/roman-amphitheaters.geojson")
 
 ramphs = data.frame(jamphs$features$id,
                     jamphs$features$properties$title,
@@ -18,7 +18,6 @@ ramphs = data.frame(jamphs$features$id,
                     jamphs$features$properties$chronogroup,
                     jamphs$features$properties$created,
                     jamphs$features$properties$lastuse$date,
-                    jamphs$features$properties$wilsonpopulation,
                     jamphs$features$properties$wikipedia,
                     jamphs$features$properties$pleiades,
                     jamphs$features$properties$dimensions$`exterior-major`,
@@ -29,7 +28,7 @@ ramphs = data.frame(jamphs$features$id,
                     )
 names(ramphs) <- c("id","title","label","type","private",
                    "capacity","mod.country","chrono.grp","created","last.use",
-                   "city.population","wikipedia","pleiades",
+                   "wikipedia","pleiades",
                    "ext.major","ext.minor","arena.major","arena.minor",
                    "include")
 
