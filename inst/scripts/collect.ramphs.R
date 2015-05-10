@@ -7,13 +7,15 @@ require(sp)
 require(spatstat)
 
 jamphs <- fromJSON("https://raw.githubusercontent.com/sfsheath/roman-amphitheaters/master/roman-amphitheaters.geojson")
+#jamphs <- fromJSON("~/Documents/roman-amphitheaters/roman-amphitheaters.geojson")
+
 
 ramphs = data.frame(jamphs$features$id,
                     jamphs$features$properties$title,
                     jamphs$features$properties$label,
                     jamphs$features$properties$buildingtype,
                     jamphs$features$properties$private,
-                    jamphs$features$properties$capacity,
+                    jamphs$features$properties$capacity$quantity,
                     jamphs$features$properties$moderncountry,
                     jamphs$features$properties$chronogroup,
                     jamphs$features$properties$created,

@@ -4,12 +4,16 @@
 #'
 weighted.deciles <- function(Qv,
                              Wv,
-                             decile.title,
-                             decile.xlab,
-                             decile.ylab,
-                             scale.name) {
+                             decile.title = "",
+                             decile.xlab = "",
+                             decile.ylab = "",
+                             scale.name = "") {
 
   # clear the plot window
+
+  require(ggplot2)
+  require(Hmisc)
+
 
   Qsv <- cut(Qv, breaks = wtd.quantile(Qv, weights = Wv, probs = 0:10/10), include.lowest=TRUE, labels=FALSE)
 
