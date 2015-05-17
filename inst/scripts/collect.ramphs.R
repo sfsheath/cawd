@@ -6,8 +6,8 @@ require(jsonlite)
 require(sp)
 require(spatstat)
 
-jamphs <- fromJSON("https://raw.githubusercontent.com/sfsheath/roman-amphitheaters/master/roman-amphitheaters.geojson")
-#jamphs <- fromJSON("~/Documents/roman-amphitheaters/roman-amphitheaters.geojson")
+#jamphs <- fromJSON("https://raw.githubusercontent.com/sfsheath/roman-amphitheaters/master/roman-amphitheaters.geojson")
+jamphs <- fromJSON("~/Documents/roman-amphitheaters/roman-amphitheaters.geojson")
 
 
 ramphs = data.frame(jamphs$features$id,
