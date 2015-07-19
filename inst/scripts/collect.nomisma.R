@@ -29,7 +29,7 @@ SELECT  ?title ?uri ?latitude ?longitude ?pleiades WHERE {
  dcterms:isPartOf nm:greek_numismatics ;
  skos:prefLabel ?title;
  geo:location ?loc .
- OPTIONAL {?uri skos:relatedMatch ?pleiades}
+ OPTIONAL {?uri skos:closeMatch ?pleiades}
  ?loc geo:lat ?latitude ;
  geo:long ?longitude  .
  FILTER (langMatches(lang(?title), "en") && regex(str(?pleiades), "pleiades.stoa.org" ))
@@ -71,7 +71,7 @@ sparql.response <- SPARQL(url = url, ns = ns,
                           dcterms:isPartOf nm:roman_numismatics ;
                           skos:prefLabel ?title;
                           geo:location ?loc .
-                          OPTIONAL {?uri skos:relatedMatch ?pleiades}
+                          OPTIONAL {?uri skos:closeMatch ?pleiades}
                           ?loc geo:lat ?latitude ;
                           geo:long ?longitude  .
                           FILTER (langMatches(lang(?title), "en") && regex(str(?pleiades), "pleiades.stoa.org" ))
@@ -112,7 +112,7 @@ sparql.response <- SPARQL(url = url, ns = ns,
                           dcterms:isPartOf nm:roman_provincial_numismatics ;
                           skos:prefLabel ?title;
                           geo:location ?loc .
-                          OPTIONAL {?uri skos:relatedMatch ?pleiades}
+                          OPTIONAL {?uri skos:closeMatch ?pleiades}
                           ?loc geo:lat ?latitude ;
                           geo:long ?longitude  .
                           FILTER (langMatches(lang(?title), "en") && regex(str(?pleiades), "pleiades.stoa.org" ))
