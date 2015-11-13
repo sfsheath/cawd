@@ -51,7 +51,7 @@ ramphs <- join(ramphs,plyr::count(ramphs,"chrono.grp"))
 names(ramphs)[names(ramphs) == 'freq'] <- 'freq.chrono.grp'
 ramphs$chrono.grp <- ordered(reorder(ramphs$chrono.grp,ramphs$freq.chrono.grp))
 ramphs$chrono.grp <- ordered(ramphs$chrono.grp,c("Republican",
-                              "Julius Caesar",
+                              "Caesarean",
                               "Augustan",
                               "Julio-Claudian",
                               "Neronian",
