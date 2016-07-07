@@ -14,6 +14,7 @@ ramphs = data.frame(jamphs$features$id,
                     jamphs$features$properties$title,
                     jamphs$features$properties$label,
                     jamphs$features$properties$buildingtype,
+                    jamphs$features$properties$certainty,
                     jamphs$features$properties$private,
                     jamphs$features$properties$capacity$quantity,
                     jamphs$features$properties$moderncountry,
@@ -29,7 +30,7 @@ ramphs = data.frame(jamphs$features$id,
                     is.na(jamphs$features$properties$exclude), # switch semantics to include == T rather than exclude
                     stringsAsFactors = F
                     )
-names(ramphs) <- c("id","title","label","type","private",
+names(ramphs) <- c("id","title","label","type","certainty","private",
                    "capacity","mod.country","chrono.grp","created","last.use",
                    "wikipedia","pleiades",
                    "ext.major","ext.minor","arena.major","arena.minor",
