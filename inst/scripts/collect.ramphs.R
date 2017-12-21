@@ -23,10 +23,10 @@ ramphs = data.frame(jamphs$features$id,
                     jamphs$features$properties$lastuse$date,
                     # sapply(jamphs$features$properties$wikipedia,"[",1),
                     jamphs$features$properties$pleiades,
-                    jamphs$features$properties$dimensions$`exterior-major`,
-                    jamphs$features$properties$dimensions$`exterior-minor`,
-                    jamphs$features$properties$dimensions$`arena-major`,
-                    jamphs$features$properties$dimensions$`arena-minor`,
+                    jamphs$features$properties$dimensions$exteriormajor,
+                    jamphs$features$properties$dimensions$exteriorminor,
+                    jamphs$features$properties$dimensions$arenamajor,
+                    jamphs$features$properties$dimensions$arenaminor,
                     is.na(jamphs$features$properties$exclude), # switch semantics to include == T rather than exclude
                     stringsAsFactors = F
                     )
@@ -128,6 +128,6 @@ use_data(ramphs.sp, overwrite = T)
 rm(X.sp)
 
 # make periods
-ramphs.chrono.grps <- jamphs$`roman-amphitheaters-chronogroups`
+ramphs.chrono.grps <- jamphs$`romanamphitheaterschronogroups`
 names(ramphs.chrono.grps) <- c("title", "earliest.start.date", "start.date", "end.date", "latest.end.date","comment")
 use_data(ramphs.chrono.grps, overwrite = T)
